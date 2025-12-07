@@ -10,6 +10,7 @@ class Subject(Enum):
     MATI = "mati"
     KONRAD = "konrad"
     HANIA = "hania"
+    KASIA = "kasia"
 
 class RecordingModes(Enum):
     MANUAL = 1
@@ -68,7 +69,25 @@ mappings = {
         'A14': 'FC1', # modified
         'A15': 'CPz', # modified // not sure if this is exactly correct
         'A16': 'FC2' # modified
-    }
+    },
+    Subject.KASIA: {
+        'A1': 'Cz',
+        'A2': 'FCz',
+        'A3': 'CP1',
+        'A4': 'FC1',
+        'A5': 'C1',
+        'A6': 'CP3',
+        'A7': 'C3',
+        'A8': 'FC3',
+        'A9': 'C4',
+        'A10': 'FC4',
+        'A11': 'Pz',
+        'A12': 'CP2',
+        'A13': 'CP4',
+        'A14': 'C2',    
+        'A15': 'CPz',
+        'A16': 'FC2'
+        },
 }
 
 def annotate_bdf_files(file_paths):
@@ -107,7 +126,7 @@ def split_annotated_into_segments(file_paths, segment_length_s=2.0, step_s=1.0, 
             print(f"Skipping not annotated file: {data_path}")
             continue
         recording_name = Path(data_path).stem
-        is_real_movement = "real" in data_path.name.lower()
+        #is_real_movement = "real" in data_path.lower()
 
         name_lower = data_path.name.lower()
         subject = next((s for s in Subject if s.value in name_lower))
@@ -126,7 +145,19 @@ def split_annotated_into_segments(file_paths, segment_length_s=2.0, step_s=1.0, 
 
         all_events, all_events_id = mne.events_from_annotations(raw)
         if mode == RecordingModes.LSL:
-            all_events_id = {"relax": 1, "left_hand": 2, "right_hand": 3, "both_hands": 4, "both_feets": 5}
+            events_real = {"relax": 1, "left_hand": 2, "right_hand": 3, "both_hands": 4, "both_feets": 5}
+            events_predicted = {"relax_predicted": 11, "left_hand_predicted": 12, "right_hand_predicted": 13, "both_hands_predicted": 14, "both_feets_predicted": 15}
+            classification_result = {"correct": 20, "incorrect": 21}
+            all_possible_events_id = {**events_real, **events_predicted, **classification_result}
+
+            # filter only events that are really in data (all_events_id)
+            # all_events_id has string keys, so we need to convert, and event values is continously increasing
+            all_events_id_renamed = {k: all_events_id[str(v)] for k, v in all_possible_events_id.items() if str(v) in all_events_id.keys()}
+
+            # events cant happen concurrently, so remove one of them (currently drop exact classification and store only result (correct/incorrect))
+            for events_pred in events_predicted.keys():
+                all_events_id_renamed.pop(events_pred, None)
+            all_events = np.array([e for e in all_events if e[2] in all_events_id_renamed.values()])
 
             reject_criteria = dict(
                 eeg=80e-6,  # 80 µV
@@ -138,7 +169,7 @@ def split_annotated_into_segments(file_paths, segment_length_s=2.0, step_s=1.0, 
             epochs = mne.Epochs(
                 raw=raw,
                 events=all_events,
-                event_id=all_events_id,
+                event_id=all_events_id_renamed,
                 baseline=None,
                 tmin=task_margin,
                 tmax=task_end,
@@ -182,12 +213,12 @@ def split_annotated_into_segments(file_paths, segment_length_s=2.0, step_s=1.0, 
             all_epochs = tools.merge_epochs(splitted_epochs, splitted_relax_epochs)
 
         all_epochs_filename = f"{recording_name}_epochs_splitted_segment={segment_length_s}-step={step_s}-epo.fif"
-        all_epochs.save(f"data/processed/{all_epochs_filename}", overwrite=True)
+        all_epochs.save(f"data/processed/{all_epochs_filename}", overwrite=False)
 
 
 if __name__ == "__main__":
     base_dir = Path(__file__).resolve().parent
-    data_dir = base_dir / "data/konrad-real_movement"
+    data_dir = base_dir / "data/kasia-real_movement"
     print(f"Searching .bdf files in: {data_dir}")
 
     files = sorted(
