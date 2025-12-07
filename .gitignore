@@ -1,0 +1,6 @@
+archive_inzynierka/
+moabb/
+visualisation_out/
+results_with_predictions.h5/
+data/
+*.pyc
