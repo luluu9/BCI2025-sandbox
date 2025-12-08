@@ -143,12 +143,15 @@ def split_annotated_into_segments(file_paths, segment_length_s=2.0, step_s=1.0, 
         montage = mne.channels.make_standard_montage('standard_1020')
         raw.set_montage(montage)
 
-        all_events, all_events_id = mne.events_from_annotations(raw)
         if mode == RecordingModes.LSL:
             events_real = {"relax": 1, "left_hand": 2, "right_hand": 3, "both_hands": 4, "both_feets": 5}
             events_predicted = {"relax_predicted": 11, "left_hand_predicted": 12, "right_hand_predicted": 13, "both_hands_predicted": 14, "both_feets_predicted": 15}
             classification_result = {"correct": 20, "incorrect": 21}
             all_possible_events_id = {**events_real, **events_predicted, **classification_result}
+            
+            # to make sure that event ids are consistent across recordings
+            description_code_to_consistent_id = {str(v): v for v in all_possible_events_id.values()}
+            all_events, all_events_id = mne.events_from_annotations(raw, event_id=description_code_to_consistent_id)
 
             # filter only events that are really in data (all_events_id)
             # all_events_id has string keys, so we need to convert, and event values is continously increasing
@@ -180,6 +183,7 @@ def split_annotated_into_segments(file_paths, segment_length_s=2.0, step_s=1.0, 
 
             all_epochs = tools.split_epochs_into_segments(epochs, segment_length_s, step_s)
         else:
+            all_events, all_events_id = mne.events_from_annotations(raw)
             all_events_id = {'both_feets': 1, 'both_hands': 2, 'left_hand': 3, 'relax': 4, 'right_hand': 5}
             if 'relax' in all_events_id:
                 relax_event_id = {'relax': all_events_id['relax']}
