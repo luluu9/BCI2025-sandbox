@@ -136,7 +136,7 @@ def split_annotated_into_segments(file_paths, segment_length_s=2.0, step_s=1.0, 
         eeg_channels = ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16"]
         raw.pick(picks=eeg_channels)
         raw.resample(sfreq=250)
-        raw.filter(l_freq=1.0, h_freq=40.0, fir_design='firwin')
+        raw.filter(l_freq=8.0, h_freq=32.0, fir_design='firwin')
         raw.notch_filter(freqs=[50.0])
            
         raw.rename_channels(mappings[subject])
@@ -155,6 +155,7 @@ def split_annotated_into_segments(file_paths, segment_length_s=2.0, step_s=1.0, 
             all_events_id_renamed = {k: all_events_id[str(v)] for k, v in all_possible_events_id.items() if str(v) in all_events_id.keys()}
 
             # events cant happen concurrently, so remove one of them (currently drop exact classification and store only result (correct/incorrect))
+            # probably we can merge it in MNE fashion ("[status]/[classification_result]"), but for now just drop
             for events_pred in events_predicted.keys():
                 all_events_id_renamed.pop(events_pred, None)
             all_events = np.array([e for e in all_events if e[2] in all_events_id_renamed.values()])
@@ -212,13 +213,13 @@ def split_annotated_into_segments(file_paths, segment_length_s=2.0, step_s=1.0, 
 
             all_epochs = tools.merge_epochs(splitted_epochs, splitted_relax_epochs)
 
-        all_epochs_filename = f"{recording_name}_epochs_splitted_segment={segment_length_s}-step={step_s}-epo.fif"
-        all_epochs.save(f"data/processed/{all_epochs_filename}", overwrite=False)
+        all_epochs_filename = f"{recording_name}_epochs_splitted_segment={segment_length_s}-step={step_s}-8-32Hz-epo.fif"
+        all_epochs.save(f"data/processed/{all_epochs_filename}", overwrite=True)
 
 
 if __name__ == "__main__":
     base_dir = Path(__file__).resolve().parent
-    data_dir = base_dir / "data/kasia-real_movement"
+    data_dir = base_dir / "data/mati-imagery_movement_lsl"
     print(f"Searching .bdf files in: {data_dir}")
 
     files = sorted(
