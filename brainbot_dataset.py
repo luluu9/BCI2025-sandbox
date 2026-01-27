@@ -40,7 +40,9 @@ class BrainBotDataset(moabb.datasets.base.BaseDataset):
         base = self.data_dir
         filenames = self.data_names[subject]
         epochs_files = []
-        for session in filenames:
+        for i, session in enumerate(filenames):
+            if i >= self.n_sessions:
+                break
             session_paths = [os.path.join(base, fname) for fname in session]
             epochs_files.append(session_paths)
         return epochs_files
