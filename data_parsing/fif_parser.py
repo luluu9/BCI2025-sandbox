@@ -22,6 +22,8 @@ mapping = {
     'A16': 'FC2'
 }
 
+USE_ONLY_REAL_EVENTS = True # if False, use all event types (including classification result)
+
 events_real = {"rest": 1, "left_hand": 2, "right_hand": 3, "hands": 4, "feet": 5}
 events_predicted = {"rest_predicted": 11, "left_hand_predicted": 12, "right_hand_predicted": 13, "hands_predicted": 14, "feet_predicted": 15}
 classification_result = {"correct": 20, "incorrect": 21}
@@ -56,6 +58,11 @@ def split_annotated_into_segments(file_paths, segment_length_s, step_s, output_d
         for events_pred in events_predicted.keys():
             all_events_id_renamed.pop(events_pred, None)
         all_events = np.array([e for e in all_events if e[2] in all_events_id_renamed.values()])
+        
+        if USE_ONLY_REAL_EVENTS:
+            for events_pred in classification_result.keys():
+                all_events_id_renamed.pop(events_pred, None)
+            all_events = np.array([e for e in all_events if e[2] in events_real.values()])
 
         reject_criteria = dict(
             eeg=80e-6,  # 80 µV

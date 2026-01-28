@@ -76,18 +76,21 @@ class BrainBotDataset(moabb.datasets.base.BaseDataset):
         return sessions
 
 def get_brainbot_dataset():
+    # moabb suggests to have sessions_per_subjects as min number of sessions across subjects
+    # so this may lead to some issues, but for now assume max sessions to use all data
+    # (currently no drawbacks of this approach seen)
+    sessions_per_subject = len(max(files.values(), key=len))
     dataset = BrainBotDataset(
         data_dir=data_dir,
-        subjects=[subject_to_test],
+        subjects=list(files.keys()),
         events=loaded_events_id,
         interval=[0.0, 3],
         data_names=files,
-        sessions_per_subject=len(files[subject_to_test]))
-
+        sessions_per_subject=sessions_per_subject)
     return dataset
 
 
-def generate_file_structure(path, subject):
+def generate_file_structure(path):
     # generates moabb compatible file structure for a given subject
     # format:
     # {
@@ -99,52 +102,58 @@ def generate_file_structure(path, subject):
     # }
     file_struct = {}
     if not os.path.exists(path):
-        return {subject: []}
+        return None
 
     # matches: subject3_ses1_run1_...
-    pattern = re.compile(rf"subject{subject}_ses(\d+)_run(\d+)_.*\.epo\.fif")
+    pattern = re.compile(rf"subject(\d+)_ses(\d+)_run(\d+)_.*\.epo\.fif")
     
     sessions_map = {}
     
     for filename in os.listdir(path):
         match = pattern.match(filename)
         if match:
-            ses_idx = int(match.group(1))
-            run_idx = int(match.group(2))
+            subject_idx = int(match.group(1))
+            ses_idx = int(match.group(2))
+            run_idx = int(match.group(3))
             
-            if ses_idx not in sessions_map:
-                sessions_map[ses_idx] = []
-            sessions_map[ses_idx].append((run_idx, filename))
+            if subject_idx not in sessions_map:
+                sessions_map[subject_idx] = {}
+            if ses_idx not in sessions_map[subject_idx]:
+                sessions_map[subject_idx][ses_idx] = []
+            sessions_map[subject_idx][ses_idx].append((run_idx, filename))
     
-    # sort by session index, then by run index
-    sorted_sessions = []
-    for ses_idx in sorted(sessions_map.keys()):
-        runs = sorted(sessions_map[ses_idx], key=lambda x: x[0])
-        sorted_sessions.append([fname for _, fname in runs])
-        
-    file_struct[subject] = sorted_sessions
+    for subject_idx in sessions_map:
+        # sort by session index, then by run index
+        sorted_sessions = []
+        for ses_idx in sorted(sessions_map[subject_idx].keys()):
+            runs = sorted(sessions_map[subject_idx][ses_idx], key=lambda x: x[0])
+            sorted_sessions.append([fname for _, fname in runs])
+            
+        file_struct[subject_idx] = sorted_sessions
+    
     return file_struct
 
 
-subject_to_test = 3
 data_dir = r"brainbot_data/moabb-like/"
-files = generate_file_structure(data_dir, subject_to_test)
+files = generate_file_structure(data_dir)
 
 # assert that event ids are consistent across all subject files
 previous_events_id = None
-for session in files[subject_to_test]:
-    for file in session:
-        loaded_events_id = mne.read_events(data_dir+file, return_event_id=True)[1]
-        #print(loaded_events_id)
-        if previous_events_id is not None:
-            assert loaded_events_id == previous_events_id, f"Event IDs do not match in file {file}"
-        previous_events_id = loaded_events_id
-
+for subject_id in files:
+    subject_sessions = files[subject_id]
+    for session in subject_sessions:
+        for file in session:
+            loaded_events_id = mne.read_events(data_dir+file, return_event_id=True)[1]
+            #print(loaded_events_id)
+            if previous_events_id is not None:
+                assert loaded_events_id == previous_events_id, f"Event IDs do not match in file {file}"
+            previous_events_id = loaded_events_id
 
 if __name__ == "__main__":
     dataset = get_brainbot_dataset()
-    subject_data = dataset._get_single_subject_data(subject_to_test)
+    subject_data = dataset._get_single_subject_data(1)
     print(subject_data)
-    for session_id, session in subject_data.items():
-        for run_id, raw in session.items():
-            print(f"Session {session_id}, Run {run_id}, Raw info: {raw.info}")
+    for subject_id, subject_data in dataset.get_data().items():
+        for session_id, session in subject_data.items():
+            for run_id, raw in session.items():
+                print(f"Subject {subject_id}, Session {session_id}, Run {run_id}")
