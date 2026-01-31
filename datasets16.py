@@ -39,6 +39,16 @@ class Weibo2014_16(Weibo2014):
             'FCz', 'Pz', 'FC2', 'Cz', 'FC4', 'C3', 'CP1', 'C2', 
             'CP4', 'CP3', 'CP2', 'C4', 'CPz', 'FC3', 'C1', 'FC1'
         ]
+        self.event_id = dict(
+                left_hand=1,
+                right_hand=2,
+                hands=3,
+                feet=4,
+                # left_hand_right_foot=5,
+                # right_hand_left_foot=6,
+                rest=7,
+            )
+        print(type(self.event_id))
 
     def _load_one_run(self, subject, run, preload=True):
         # Load the original data (64 ch)
