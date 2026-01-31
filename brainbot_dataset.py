@@ -80,9 +80,10 @@ def get_brainbot_dataset():
     # so this may lead to some issues, but for now assume max sessions to use all data
     # (currently no drawbacks of this approach seen)
     sessions_per_subject = len(max(files.values(), key=len))
+    subjects_sorted = sorted(list(files.keys()))
     dataset = BrainBotDataset(
         data_dir=data_dir,
-        subjects=list(files.keys()),
+        subjects=subjects_sorted,
         events=loaded_events_id,
         interval=[0.0, 3],
         data_names=files,
