@@ -1,0 +1,163 @@
+,dataset,index,pipe1,pipe2,p,smd,nsub
+0,BrainBot,0,AUG Tang SVM Grid,AUG Tang SVM Grid,0.5,0.0,1
+1,BrainBot,1,CSP + LDA,AUG Tang SVM Grid,0.5,,1
+2,BrainBot,2,CSP + SVM Grid,AUG Tang SVM Grid,0.5,,1
+3,BrainBot,3,DLCSPauto + shLDA,AUG Tang SVM Grid,0.5,,1
+4,BrainBot,4,FgMDM,AUG Tang SVM Grid,0.5,,1
+5,BrainBot,5,MDM,AUG Tang SVM Grid,0.5,,1
+6,BrainBot,6,TS ElasticNet Grid,AUG Tang SVM Grid,0.5,,1
+7,BrainBot,7,Tangent Space LR,AUG Tang SVM Grid,0.5,,1
+8,BrainBot,8,Tangent Space SVM Grid,AUG Tang SVM Grid,0.5,,1
+9,BrainBot,9,AUG Tang SVM Grid,CSP + LDA,0.5,,1
+10,BrainBot,10,CSP + LDA,CSP + LDA,0.5,0.0,1
+11,BrainBot,11,CSP + SVM Grid,CSP + LDA,0.5,,1
+12,BrainBot,12,DLCSPauto + shLDA,CSP + LDA,0.5,,1
+13,BrainBot,13,FgMDM,CSP + LDA,0.5,,1
+14,BrainBot,14,MDM,CSP + LDA,0.5,,1
+15,BrainBot,15,TS ElasticNet Grid,CSP + LDA,0.5,,1
+16,BrainBot,16,Tangent Space LR,CSP + LDA,0.5,,1
+17,BrainBot,17,Tangent Space SVM Grid,CSP + LDA,0.5,,1
+18,BrainBot,18,AUG Tang SVM Grid,CSP + SVM Grid,0.5,,1
+19,BrainBot,19,CSP + LDA,CSP + SVM Grid,0.5,,1
+20,BrainBot,20,CSP + SVM Grid,CSP + SVM Grid,0.5,0.0,1
+21,BrainBot,21,DLCSPauto + shLDA,CSP + SVM Grid,0.5,,1
+22,BrainBot,22,FgMDM,CSP + SVM Grid,0.5,,1
+23,BrainBot,23,MDM,CSP + SVM Grid,0.5,,1
+24,BrainBot,24,TS ElasticNet Grid,CSP + SVM Grid,0.5,,1
+25,BrainBot,25,Tangent Space LR,CSP + SVM Grid,0.5,,1
+26,BrainBot,26,Tangent Space SVM Grid,CSP + SVM Grid,0.5,,1
+27,BrainBot,27,AUG Tang SVM Grid,DLCSPauto + shLDA,0.5,,1
+28,BrainBot,28,CSP + LDA,DLCSPauto + shLDA,0.5,,1
+29,BrainBot,29,CSP + SVM Grid,DLCSPauto + shLDA,0.5,,1
+30,BrainBot,30,DLCSPauto + shLDA,DLCSPauto + shLDA,0.5,0.0,1
+31,BrainBot,31,FgMDM,DLCSPauto + shLDA,0.5,,1
+32,BrainBot,32,MDM,DLCSPauto + shLDA,0.5,,1
+33,BrainBot,33,TS ElasticNet Grid,DLCSPauto + shLDA,0.5,,1
+34,BrainBot,34,Tangent Space LR,DLCSPauto + shLDA,0.5,,1
+35,BrainBot,35,Tangent Space SVM Grid,DLCSPauto + shLDA,0.5,,1
+36,BrainBot,36,AUG Tang SVM Grid,FgMDM,0.5,,1
+37,BrainBot,37,CSP + LDA,FgMDM,0.5,,1
+38,BrainBot,38,CSP + SVM Grid,FgMDM,0.5,,1
+39,BrainBot,39,DLCSPauto + shLDA,FgMDM,0.5,,1
+40,BrainBot,40,FgMDM,FgMDM,0.5,0.0,1
+41,BrainBot,41,MDM,FgMDM,0.5,,1
+42,BrainBot,42,TS ElasticNet Grid,FgMDM,0.5,,1
+43,BrainBot,43,Tangent Space LR,FgMDM,0.5,,1
+44,BrainBot,44,Tangent Space SVM Grid,FgMDM,0.5,,1
+45,BrainBot,45,AUG Tang SVM Grid,MDM,0.5,,1
+46,BrainBot,46,CSP + LDA,MDM,0.5,,1
+47,BrainBot,47,CSP + SVM Grid,MDM,0.5,,1
+48,BrainBot,48,DLCSPauto + shLDA,MDM,0.5,,1
+49,BrainBot,49,FgMDM,MDM,0.5,,1
+50,BrainBot,50,MDM,MDM,0.5,0.0,1
+51,BrainBot,51,TS ElasticNet Grid,MDM,0.5,,1
+52,BrainBot,52,Tangent Space LR,MDM,0.5,,1
+53,BrainBot,53,Tangent Space SVM Grid,MDM,0.5,,1
+54,BrainBot,54,AUG Tang SVM Grid,TS ElasticNet Grid,0.5,,1
+55,BrainBot,55,CSP + LDA,TS ElasticNet Grid,0.5,,1
+56,BrainBot,56,CSP + SVM Grid,TS ElasticNet Grid,0.5,,1
+57,BrainBot,57,DLCSPauto + shLDA,TS ElasticNet Grid,0.5,,1
+58,BrainBot,58,FgMDM,TS ElasticNet Grid,0.5,,1
+59,BrainBot,59,MDM,TS ElasticNet Grid,0.5,,1
+60,BrainBot,60,TS ElasticNet Grid,TS ElasticNet Grid,0.5,0.0,1
+61,BrainBot,61,Tangent Space LR,TS ElasticNet Grid,0.5,,1
+62,BrainBot,62,Tangent Space SVM Grid,TS ElasticNet Grid,0.5,,1
+63,BrainBot,63,AUG Tang SVM Grid,Tangent Space LR,0.5,,1
+64,BrainBot,64,CSP + LDA,Tangent Space LR,0.5,,1
+65,BrainBot,65,CSP + SVM Grid,Tangent Space LR,0.5,,1
+66,BrainBot,66,DLCSPauto + shLDA,Tangent Space LR,0.5,,1
+67,BrainBot,67,FgMDM,Tangent Space LR,0.5,,1
+68,BrainBot,68,MDM,Tangent Space LR,0.5,,1
+69,BrainBot,69,TS ElasticNet Grid,Tangent Space LR,0.5,,1
+70,BrainBot,70,Tangent Space LR,Tangent Space LR,0.5,0.0,1
+71,BrainBot,71,Tangent Space SVM Grid,Tangent Space LR,0.5,,1
+72,BrainBot,72,AUG Tang SVM Grid,Tangent Space SVM Grid,0.5,,1
+73,BrainBot,73,CSP + LDA,Tangent Space SVM Grid,0.5,,1
+74,BrainBot,74,CSP + SVM Grid,Tangent Space SVM Grid,0.5,,1
+75,BrainBot,75,DLCSPauto + shLDA,Tangent Space SVM Grid,0.5,,1
+76,BrainBot,76,FgMDM,Tangent Space SVM Grid,0.5,,1
+77,BrainBot,77,MDM,Tangent Space SVM Grid,0.5,,1
+78,BrainBot,78,TS ElasticNet Grid,Tangent Space SVM Grid,0.5,,1
+79,BrainBot,79,Tangent Space LR,Tangent Space SVM Grid,0.5,,1
+80,BrainBot,80,Tangent Space SVM Grid,Tangent Space SVM Grid,0.5,0.0,1
+81,PhysionetMotorImagery16,0,AUG Tang SVM Grid,AUG Tang SVM Grid,0.5,0.0,1
+82,PhysionetMotorImagery16,1,CSP + LDA,AUG Tang SVM Grid,0.5,,1
+83,PhysionetMotorImagery16,2,CSP + SVM Grid,AUG Tang SVM Grid,0.5,,1
+84,PhysionetMotorImagery16,3,DLCSPauto + shLDA,AUG Tang SVM Grid,0.5,,1
+85,PhysionetMotorImagery16,4,FgMDM,AUG Tang SVM Grid,0.5,,1
+86,PhysionetMotorImagery16,5,MDM,AUG Tang SVM Grid,0.5,,1
+87,PhysionetMotorImagery16,6,TS ElasticNet Grid,AUG Tang SVM Grid,0.5,,1
+88,PhysionetMotorImagery16,7,Tangent Space LR,AUG Tang SVM Grid,0.5,,1
+89,PhysionetMotorImagery16,8,Tangent Space SVM Grid,AUG Tang SVM Grid,0.5,,1
+90,PhysionetMotorImagery16,9,AUG Tang SVM Grid,CSP + LDA,0.5,,1
+91,PhysionetMotorImagery16,10,CSP + LDA,CSP + LDA,0.5,0.0,1
+92,PhysionetMotorImagery16,11,CSP + SVM Grid,CSP + LDA,0.5,,1
+93,PhysionetMotorImagery16,12,DLCSPauto + shLDA,CSP + LDA,0.5,,1
+94,PhysionetMotorImagery16,13,FgMDM,CSP + LDA,0.5,,1
+95,PhysionetMotorImagery16,14,MDM,CSP + LDA,0.5,,1
+96,PhysionetMotorImagery16,15,TS ElasticNet Grid,CSP + LDA,0.5,,1
+97,PhysionetMotorImagery16,16,Tangent Space LR,CSP + LDA,0.5,,1
+98,PhysionetMotorImagery16,17,Tangent Space SVM Grid,CSP + LDA,0.5,,1
+99,PhysionetMotorImagery16,18,AUG Tang SVM Grid,CSP + SVM Grid,0.5,,1
+100,PhysionetMotorImagery16,19,CSP + LDA,CSP + SVM Grid,0.5,,1
+101,PhysionetMotorImagery16,20,CSP + SVM Grid,CSP + SVM Grid,0.5,0.0,1
+102,PhysionetMotorImagery16,21,DLCSPauto + shLDA,CSP + SVM Grid,0.5,,1
+103,PhysionetMotorImagery16,22,FgMDM,CSP + SVM Grid,0.5,,1
+104,PhysionetMotorImagery16,23,MDM,CSP + SVM Grid,0.5,,1
+105,PhysionetMotorImagery16,24,TS ElasticNet Grid,CSP + SVM Grid,0.5,,1
+106,PhysionetMotorImagery16,25,Tangent Space LR,CSP + SVM Grid,0.5,,1
+107,PhysionetMotorImagery16,26,Tangent Space SVM Grid,CSP + SVM Grid,0.5,,1
+108,PhysionetMotorImagery16,27,AUG Tang SVM Grid,DLCSPauto + shLDA,0.5,,1
+109,PhysionetMotorImagery16,28,CSP + LDA,DLCSPauto + shLDA,0.5,,1
+110,PhysionetMotorImagery16,29,CSP + SVM Grid,DLCSPauto + shLDA,0.5,,1
+111,PhysionetMotorImagery16,30,DLCSPauto + shLDA,DLCSPauto + shLDA,0.5,0.0,1
+112,PhysionetMotorImagery16,31,FgMDM,DLCSPauto + shLDA,0.5,,1
+113,PhysionetMotorImagery16,32,MDM,DLCSPauto + shLDA,0.5,,1
+114,PhysionetMotorImagery16,33,TS ElasticNet Grid,DLCSPauto + shLDA,0.5,,1
+115,PhysionetMotorImagery16,34,Tangent Space LR,DLCSPauto + shLDA,0.5,,1
+116,PhysionetMotorImagery16,35,Tangent Space SVM Grid,DLCSPauto + shLDA,0.5,,1
+117,PhysionetMotorImagery16,36,AUG Tang SVM Grid,FgMDM,0.5,,1
+118,PhysionetMotorImagery16,37,CSP + LDA,FgMDM,0.5,,1
+119,PhysionetMotorImagery16,38,CSP + SVM Grid,FgMDM,0.5,,1
+120,PhysionetMotorImagery16,39,DLCSPauto + shLDA,FgMDM,0.5,,1
+121,PhysionetMotorImagery16,40,FgMDM,FgMDM,0.5,0.0,1
+122,PhysionetMotorImagery16,41,MDM,FgMDM,0.5,,1
+123,PhysionetMotorImagery16,42,TS ElasticNet Grid,FgMDM,0.5,,1
+124,PhysionetMotorImagery16,43,Tangent Space LR,FgMDM,0.5,,1
+125,PhysionetMotorImagery16,44,Tangent Space SVM Grid,FgMDM,0.5,,1
+126,PhysionetMotorImagery16,45,AUG Tang SVM Grid,MDM,0.5,,1
+127,PhysionetMotorImagery16,46,CSP + LDA,MDM,0.5,,1
+128,PhysionetMotorImagery16,47,CSP + SVM Grid,MDM,0.5,,1
+129,PhysionetMotorImagery16,48,DLCSPauto + shLDA,MDM,0.5,,1
+130,PhysionetMotorImagery16,49,FgMDM,MDM,0.5,,1
+131,PhysionetMotorImagery16,50,MDM,MDM,0.5,0.0,1
+132,PhysionetMotorImagery16,51,TS ElasticNet Grid,MDM,0.5,,1
+133,PhysionetMotorImagery16,52,Tangent Space LR,MDM,0.5,,1
+134,PhysionetMotorImagery16,53,Tangent Space SVM Grid,MDM,0.5,,1
+135,PhysionetMotorImagery16,54,AUG Tang SVM Grid,TS ElasticNet Grid,0.5,,1
+136,PhysionetMotorImagery16,55,CSP + LDA,TS ElasticNet Grid,0.5,,1
+137,PhysionetMotorImagery16,56,CSP + SVM Grid,TS ElasticNet Grid,0.5,,1
+138,PhysionetMotorImagery16,57,DLCSPauto + shLDA,TS ElasticNet Grid,0.5,,1
+139,PhysionetMotorImagery16,58,FgMDM,TS ElasticNet Grid,0.5,,1
+140,PhysionetMotorImagery16,59,MDM,TS ElasticNet Grid,0.5,,1
+141,PhysionetMotorImagery16,60,TS ElasticNet Grid,TS ElasticNet Grid,0.5,0.0,1
+142,PhysionetMotorImagery16,61,Tangent Space LR,TS ElasticNet Grid,0.5,,1
+143,PhysionetMotorImagery16,62,Tangent Space SVM Grid,TS ElasticNet Grid,0.5,,1
+144,PhysionetMotorImagery16,63,AUG Tang SVM Grid,Tangent Space LR,0.5,,1
+145,PhysionetMotorImagery16,64,CSP + LDA,Tangent Space LR,0.5,,1
+146,PhysionetMotorImagery16,65,CSP + SVM Grid,Tangent Space LR,0.5,,1
+147,PhysionetMotorImagery16,66,DLCSPauto + shLDA,Tangent Space LR,0.5,,1
+148,PhysionetMotorImagery16,67,FgMDM,Tangent Space LR,0.5,,1
+149,PhysionetMotorImagery16,68,MDM,Tangent Space LR,0.5,,1
+150,PhysionetMotorImagery16,69,TS ElasticNet Grid,Tangent Space LR,0.5,,1
+151,PhysionetMotorImagery16,70,Tangent Space LR,Tangent Space LR,0.5,0.0,1
+152,PhysionetMotorImagery16,71,Tangent Space SVM Grid,Tangent Space LR,0.5,,1
+153,PhysionetMotorImagery16,72,AUG Tang SVM Grid,Tangent Space SVM Grid,0.5,,1
+154,PhysionetMotorImagery16,73,CSP + LDA,Tangent Space SVM Grid,0.5,,1
+155,PhysionetMotorImagery16,74,CSP + SVM Grid,Tangent Space SVM Grid,0.5,,1
+156,PhysionetMotorImagery16,75,DLCSPauto + shLDA,Tangent Space SVM Grid,0.5,,1
+157,PhysionetMotorImagery16,76,FgMDM,Tangent Space SVM Grid,0.5,,1
+158,PhysionetMotorImagery16,77,MDM,Tangent Space SVM Grid,0.5,,1
+159,PhysionetMotorImagery16,78,TS ElasticNet Grid,Tangent Space SVM Grid,0.5,,1
+160,PhysionetMotorImagery16,79,Tangent Space LR,Tangent Space SVM Grid,0.5,,1
+161,PhysionetMotorImagery16,80,Tangent Space SVM Grid,Tangent Space SVM Grid,0.5,0.0,1
