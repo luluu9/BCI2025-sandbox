@@ -1,19 +1,109 @@
 ,score,time,samples,subject,session,channels,n_sessions,dataset,pipeline,paradigm,evaluation
-0,0.36421052,0.21777925,96.0,1,0,16,1,BrainBot,CSP + LDA,MotorImagery,WithinSession
-1,0.45842105,0.034040023,96.0,1,0,16,1,BrainBot,MDM,MotorImagery,WithinSession
-2,0.35368422,0.2568988,96.0,1,0,16,1,BrainBot,DLCSPauto + shLDA,MotorImagery,WithinSession
-3,0.4173684,24.842693,96.0,1,0,16,1,BrainBot,CSP + SVM Grid,MotorImagery,WithinSession
-4,0.47894737,0.41360316,96.0,1,0,16,1,BrainBot,Tangent Space SVM Grid,MotorImagery,WithinSession
-5,0.45789474,0.13442913,96.0,1,0,16,1,BrainBot,Tangent Space LR,MotorImagery,WithinSession
-6,0.45789474,0.35969186,96.0,1,0,16,1,BrainBot,TS ElasticNet Grid,MotorImagery,WithinSession
-7,0.44947368,181.26872,96.0,1,0,16,1,BrainBot,AUG Tang SVM Grid,MotorImagery,WithinSession
-8,0.55157894,0.035588074,96.0,1,0,16,1,BrainBot,FgMDM,MotorImagery,WithinSession
-9,0.4769748,0.5905383,174.0,1,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
-10,0.55663866,284.19336,174.0,1,0,16,1,PhysionetMotorImagery16,AUG Tang SVM Grid,MotorImagery,WithinSession
-11,0.58,0.11994262,174.0,1,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
-12,0.5744538,0.8429817,174.0,1,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
-13,0.54487395,0.03527417,174.0,1,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
-14,0.56268907,0.039085437,174.0,1,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
-15,0.5917647,0.48184785,174.0,1,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
-16,0.48890758,21.031572,174.0,1,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
-17,0.4368067,0.04743309,174.0,1,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
+0,0.36421052,0.2943825,96.0,1,0,16,4,BrainBot,CSP + LDA,MotorImagery,WithinSession
+1,0.39294294,0.049215507,183.0,2,0,16,4,BrainBot,CSP + LDA,MotorImagery,WithinSession
+2,0.48421052,0.054507114,192.0,3,0,16,4,BrainBot,CSP + LDA,MotorImagery,WithinSession
+3,0.48947367,0.06194377,96.0,3,1,16,4,BrainBot,CSP + LDA,MotorImagery,WithinSession
+4,0.5263158,0.05150094,95.0,3,2,16,4,BrainBot,CSP + LDA,MotorImagery,WithinSession
+5,0.56157637,0.05820618,144.0,3,3,16,4,BrainBot,CSP + LDA,MotorImagery,WithinSession
+6,0.45842105,0.031588458,96.0,1,0,16,4,BrainBot,MDM,MotorImagery,WithinSession
+7,0.44264263,0.039111424,183.0,2,0,16,4,BrainBot,MDM,MotorImagery,WithinSession
+8,0.40607288,0.04039812,192.0,3,0,16,4,BrainBot,MDM,MotorImagery,WithinSession
+9,0.5936842,0.032276392,96.0,3,1,16,4,BrainBot,MDM,MotorImagery,WithinSession
+10,0.4526316,0.032812785,95.0,3,2,16,4,BrainBot,MDM,MotorImagery,WithinSession
+11,0.5406404,0.03668232,144.0,3,3,16,4,BrainBot,MDM,MotorImagery,WithinSession
+12,0.35368422,0.15104079,96.0,1,0,16,4,BrainBot,DLCSPauto + shLDA,MotorImagery,WithinSession
+13,0.41471472,0.1488727,183.0,2,0,16,4,BrainBot,DLCSPauto + shLDA,MotorImagery,WithinSession
+14,0.4634278,0.14653745,192.0,3,0,16,4,BrainBot,DLCSPauto + shLDA,MotorImagery,WithinSession
+15,0.5,0.14707193,96.0,3,1,16,4,BrainBot,DLCSPauto + shLDA,MotorImagery,WithinSession
+16,0.5263158,0.14095421,95.0,3,2,16,4,BrainBot,DLCSPauto + shLDA,MotorImagery,WithinSession
+17,0.54802954,0.14083219,144.0,3,3,16,4,BrainBot,DLCSPauto + shLDA,MotorImagery,WithinSession
+18,0.4173684,23.862892,96.0,1,0,16,4,BrainBot,CSP + SVM Grid,MotorImagery,WithinSession
+19,0.4481982,25.886843,183.0,2,0,16,4,BrainBot,CSP + SVM Grid,MotorImagery,WithinSession
+20,0.45249662,23.905447,192.0,3,0,16,4,BrainBot,CSP + SVM Grid,MotorImagery,WithinSession
+21,0.47947368,24.94521,96.0,3,1,16,4,BrainBot,CSP + SVM Grid,MotorImagery,WithinSession
+22,0.49473685,23.903881,95.0,3,2,16,4,BrainBot,CSP + SVM Grid,MotorImagery,WithinSession
+23,0.5761084,23.41703,144.0,3,3,16,4,BrainBot,CSP + SVM Grid,MotorImagery,WithinSession
+24,0.47894737,0.35813904,96.0,1,0,16,4,BrainBot,Tangent Space SVM Grid,MotorImagery,WithinSession
+25,0.5297297,0.56170875,183.0,2,0,16,4,BrainBot,Tangent Space SVM Grid,MotorImagery,WithinSession
+26,0.42186233,0.62569153,192.0,3,0,16,4,BrainBot,Tangent Space SVM Grid,MotorImagery,WithinSession
+27,0.53157896,0.38614646,96.0,3,1,16,4,BrainBot,Tangent Space SVM Grid,MotorImagery,WithinSession
+28,0.48421052,0.35965747,95.0,3,2,16,4,BrainBot,Tangent Space SVM Grid,MotorImagery,WithinSession
+29,0.6320197,0.45663762,144.0,3,3,16,4,BrainBot,Tangent Space SVM Grid,MotorImagery,WithinSession
+30,0.45789474,0.12225652,96.0,1,0,16,4,BrainBot,Tangent Space LR,MotorImagery,WithinSession
+31,0.4536036,0.12986803,183.0,2,0,16,4,BrainBot,Tangent Space LR,MotorImagery,WithinSession
+32,0.48933873,0.14341983,192.0,3,0,16,4,BrainBot,Tangent Space LR,MotorImagery,WithinSession
+33,0.6036842,0.12471032,96.0,3,1,16,4,BrainBot,Tangent Space LR,MotorImagery,WithinSession
+34,0.5263158,0.122737266,95.0,3,2,16,4,BrainBot,Tangent Space LR,MotorImagery,WithinSession
+35,0.65270936,0.12700363,144.0,3,3,16,4,BrainBot,Tangent Space LR,MotorImagery,WithinSession
+36,0.45789474,0.2485588,96.0,1,0,16,4,BrainBot,TS ElasticNet Grid,MotorImagery,WithinSession
+37,0.4481982,0.7038424,183.0,2,0,16,4,BrainBot,TS ElasticNet Grid,MotorImagery,WithinSession
+38,0.45789474,0.63870645,192.0,3,0,16,4,BrainBot,TS ElasticNet Grid,MotorImagery,WithinSession
+39,0.54157895,0.41517025,96.0,3,1,16,4,BrainBot,TS ElasticNet Grid,MotorImagery,WithinSession
+40,0.5368421,0.3718176,95.0,3,2,16,4,BrainBot,TS ElasticNet Grid,MotorImagery,WithinSession
+41,0.68719214,0.46785265,144.0,3,3,16,4,BrainBot,TS ElasticNet Grid,MotorImagery,WithinSession
+42,0.44947368,168.20592,96.0,1,0,16,4,BrainBot,AUG Tang SVM Grid,MotorImagery,WithinSession
+43,0.5575075,351.40405,183.0,2,0,16,4,BrainBot,AUG Tang SVM Grid,MotorImagery,WithinSession
+44,0.46329284,362.37936,192.0,3,0,16,4,BrainBot,AUG Tang SVM Grid,MotorImagery,WithinSession
+45,0.53105265,189.17482,96.0,3,1,16,4,BrainBot,AUG Tang SVM Grid,MotorImagery,WithinSession
+46,0.44210526,184.87888,95.0,3,2,16,4,BrainBot,AUG Tang SVM Grid,MotorImagery,WithinSession
+47,0.6591133,262.0152,144.0,3,3,16,4,BrainBot,AUG Tang SVM Grid,MotorImagery,WithinSession
+48,0.55157894,0.03570633,96.0,1,0,16,4,BrainBot,FgMDM,MotorImagery,WithinSession
+49,0.4918919,0.044440366,183.0,2,0,16,4,BrainBot,FgMDM,MotorImagery,WithinSession
+50,0.41147098,0.0461298,192.0,3,0,16,4,BrainBot,FgMDM,MotorImagery,WithinSession
+51,0.56210524,0.035857774,96.0,3,1,16,4,BrainBot,FgMDM,MotorImagery,WithinSession
+52,0.47368422,0.033762075,95.0,3,2,16,4,BrainBot,FgMDM,MotorImagery,WithinSession
+53,0.59704435,0.03811269,144.0,3,3,16,4,BrainBot,FgMDM,MotorImagery,WithinSession
+54,0.48268908,0.14284606,174.0,1,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
+55,0.4252101,0.14629345,174.0,2,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
+56,0.4882353,0.14471479,174.0,3,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
+57,0.5119328,0.13643655,174.0,4,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
+58,0.45394957,0.14879623,174.0,5,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
+59,0.46,0.14230528,174.0,6,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
+60,0.55663866,262.94083,174.0,1,0,16,1,PhysionetMotorImagery16,AUG Tang SVM Grid,MotorImagery,WithinSession
+61,0.6031933,271.96182,174.0,2,0,16,1,PhysionetMotorImagery16,AUG Tang SVM Grid,MotorImagery,WithinSession
+62,0.51714283,264.05603,174.0,3,0,16,1,PhysionetMotorImagery16,AUG Tang SVM Grid,MotorImagery,WithinSession
+63,0.7643697,258.45767,174.0,4,0,16,1,PhysionetMotorImagery16,AUG Tang SVM Grid,MotorImagery,WithinSession
+64,0.54016805,257.66922,174.0,5,0,16,1,PhysionetMotorImagery16,AUG Tang SVM Grid,MotorImagery,WithinSession
+65,0.47747898,367.20792,174.0,6,0,16,1,PhysionetMotorImagery16,AUG Tang SVM Grid,MotorImagery,WithinSession
+66,0.58,0.13146853,174.0,1,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
+67,0.6262185,0.1278306,174.0,2,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
+68,0.5053781,0.12645178,174.0,3,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
+69,0.71882355,0.129487,174.0,4,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
+70,0.5058824,0.12480607,174.0,5,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
+71,0.4312605,0.1266584,174.0,6,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
+72,0.5744538,0.609946,174.0,1,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
+73,0.6262185,0.5122841,174.0,2,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
+74,0.49411765,0.5036264,174.0,3,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
+75,0.73613447,0.4767891,174.0,4,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
+76,0.49983194,0.6619177,174.0,5,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
+77,0.47126052,0.5149253,174.0,6,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
+78,0.54487395,0.035946082,174.0,1,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
+79,0.55142856,0.038457155,174.0,2,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
+80,0.28773108,0.038182545,174.0,3,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
+81,0.6892437,0.035708617,174.0,4,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
+82,0.3852101,0.03574481,174.0,5,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
+83,0.20134453,0.03554654,174.0,6,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
+84,0.56268907,0.039547205,174.0,1,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
+85,0.6436975,0.04000206,174.0,2,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
+86,0.39714286,0.039534092,174.0,3,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
+87,0.67798316,0.040130377,174.0,4,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
+88,0.47126052,0.037407827,174.0,5,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
+89,0.3157983,0.039877843,174.0,6,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
+90,0.5917647,0.49282146,174.0,1,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
+91,0.5855462,0.5150061,174.0,2,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
+92,0.5058824,0.49243632,174.0,3,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
+93,0.7647059,0.5085469,174.0,4,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
+94,0.5228571,0.5011688,174.0,5,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
+95,0.48285714,0.49502707,174.0,6,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
+96,0.48890758,21.184464,174.0,1,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
+97,0.47109243,19.089352,174.0,2,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
+98,0.5,21.766146,174.0,3,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
+99,0.5342857,22.268614,174.0,4,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
+100,0.48285714,26.749447,174.0,5,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
+101,0.48285714,20.275661,174.0,6,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
+102,0.442521,0.044692803,174.0,1,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
+103,0.4077311,0.04172077,174.0,2,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
+104,0.48806724,0.043399382,174.0,3,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
+105,0.48285714,0.041303586,174.0,4,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
+106,0.44806722,0.04325404,174.0,5,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
+107,0.4544538,0.042948246,174.0,6,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
