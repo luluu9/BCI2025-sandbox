@@ -57,3 +57,29 @@ class Weibo2014_16(Weibo2014):
         raw.pick_channels(self.selected_channels)
         
         return raw
+
+
+class Weibo2014_64_5_classes(Weibo2014):
+    """
+    Weibo2014 dataset with selected classes.
+    """
+
+    def __init__(self):
+        super().__init__()
+        self.code = "Weibo2014_64_5-classes"
+        self.event_id = dict(
+                left_hand=1,
+                right_hand=2,
+                hands=3,
+                feet=4,
+                # left_hand_right_foot=5,
+                # right_hand_left_foot=6,
+                rest=7,
+            )
+        print(type(self.event_id))
+
+    def _load_one_run(self, subject, run, preload=True):
+        # Load the original data (64 ch)
+        raw = super()._load_one_run(subject, run, preload=preload)
+        
+        return raw
