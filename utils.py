@@ -1,6 +1,6 @@
-from moabb.datasets import PhysionetMI, Weibo2014
+from moabb.datasets import PhysionetMI
 from brainbot_dataset import get_brainbot_dataset
-from datasets16 import PhysionetMI16, Weibo2014_16
+from datasets import PhysionetMI16, Weibo2014_16, Weibo2014_64_5_classes
 
 
 def get_all_datasets(subjects=10, max_trials=4):
@@ -14,7 +14,7 @@ def get_all_datasets(subjects=10, max_trials=4):
     physionet16_dataset = PhysionetMI16()
     physionet16_dataset.subject_list = physionet16_dataset.subject_list[:subjects]
     
-    weibo2014_dataset = Weibo2014()
+    weibo2014_dataset = Weibo2014_64_5_classes()
     weibo2014_dataset.subject_list = weibo2014_dataset.subject_list[:subjects]
     
     weibo2014_16_dataset = Weibo2014_16()
@@ -27,3 +27,20 @@ def get_all_datasets(subjects=10, max_trials=4):
 
     datasets = [brainbot_dataset, physionet16_dataset, physionet_dataset, weibo2014_dataset, weibo2014_16_dataset]
     return datasets
+
+def print_results_summary(results_df):
+    print("Results Summary:")
+    summary = results_df.groupby(['pipeline', 'dataset'])['score'].agg(['mean', 'std', 'count'])
+    summary['mean'] = summary['mean'].round(3)
+    summary['std'] = summary['std'].round(3)
+    print(summary.to_string())
+    print("=" * 50)
+
+    print("\nDetailed Results by Subject and Dataset:")
+    detailed = results_df.pivot_table(
+        index=['dataset', 'subject', 'session'],
+        columns='pipeline',
+        values='score'
+    )
+    print(detailed.round(3).to_string())
+    print("=" * 50)
