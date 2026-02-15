@@ -44,3 +44,33 @@ def print_results_summary(results_df):
     )
     print(detailed.round(3).to_string())
     print("=" * 50)
+
+
+def run_moabb_benchmark(pipelines_dir, base_dir="./benchmarks", datasets_list=datasets, n_jobs=1):
+    pipelines_path = os.path.join(os.getcwd(), pipelines_dir)
+    print(pipelines_path)
+
+    cache_config = dict(
+        use=True,
+        save_raw=True,
+        save_epochs=True,
+        save_array=True,
+        overwrite_raw=False,
+        overwrite_epochs=False,
+        overwrite_array=False,
+    )
+
+    print("Using cache dir:", mne.get_config('MNE_DATA'))
+
+    return benchmark(
+        pipelines=pipelines_path,
+        evaluations=["WithinSession"],
+        paradigms=["MotorImagery"],
+        include_datasets=datasets_list,
+        results=os.path.join(base_dir, f"results-{pipelines_dir}"),
+        overwrite=False,
+        plot=False,
+        output=os.path.join(base_dir, f"output-{pipelines_dir}"),
+        n_jobs=n_jobs,
+        cache_config=cache_config
+    )
