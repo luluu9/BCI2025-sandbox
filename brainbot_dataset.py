@@ -25,11 +25,14 @@ class BrainBotDataset(moabb.datasets.base.BaseDataset):
         sessions_per_subject : int
             Number of sessions per subject.
         """
+        duration_ms = int((interval[1] - interval[0]) * 1000)
+        dataset_code = f"BrainBot{duration_ms}ms"
+
         super().__init__(
             subjects=subjects,
             sessions_per_subject=sessions_per_subject,
             events=events,
-            code="BrainBot",
+            code=dataset_code,
             interval=interval,
             paradigm="imagery",
         )
@@ -75,7 +78,7 @@ class BrainBotDataset(moabb.datasets.base.BaseDataset):
         
         return sessions
 
-def get_brainbot_dataset():
+def get_brainbot_dataset(interval=[0.0, 2.5]):
     # moabb suggests to have sessions_per_subjects as min number of sessions across subjects
     # so this may lead to some issues, but for now assume max sessions to use all data
     # (currently no drawbacks of this approach seen)
@@ -85,7 +88,7 @@ def get_brainbot_dataset():
         data_dir=data_dir,
         subjects=subjects_sorted,
         events=loaded_events_id,
-        interval=[0.0, 3],
+        interval=interval,
         data_names=files,
         sessions_per_subject=sessions_per_subject)
     return dataset
@@ -135,7 +138,7 @@ def generate_file_structure(path):
     return file_struct
 
 
-data_dir = r"brainbot_data/moabb-like/"
+data_dir = r"brainbot_data/3s-interval/"
 files = generate_file_structure(data_dir)
 
 # assert that event ids are consistent across all subject files

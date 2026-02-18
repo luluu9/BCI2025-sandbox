@@ -1,12 +1,18 @@
+import os
+import mne
+from moabb.benchmark import benchmark
 from moabb.datasets import PhysionetMI
 from brainbot_dataset import get_brainbot_dataset
 from datasets import PhysionetMI16, Weibo2014_16, Weibo2014_64_5_classes
 
 
-def get_all_datasets(subjects=10, max_trials=4):
-    brainbot_dataset = get_brainbot_dataset()
-    brainbot_dataset.n_sessions = min(max_trials, brainbot_dataset.n_sessions)
-    brainbot_dataset.subject_list = brainbot_dataset.subject_list[:subjects]
+def get_all_datasets(subjects=10, max_trials=4, brainbot_intervals=[[0, 2.5], [0, 5]]):
+    brainbot_datasets = []
+    for interval in brainbot_intervals:
+        bb_ds = get_brainbot_dataset(interval=interval)
+        bb_ds.n_sessions = min(max_trials, bb_ds.n_sessions)
+        bb_ds.subject_list = bb_ds.subject_list[:subjects]
+        brainbot_datasets.append(bb_ds)
     
     physionet_dataset = PhysionetMI()
     physionet_dataset.subject_list = physionet_dataset.subject_list[:subjects]
@@ -25,7 +31,7 @@ def get_all_datasets(subjects=10, max_trials=4):
     assert len(physionet16_dataset.subject_list) == subjects
     assert len(physionet_dataset.subject_list) == subjects
 
-    datasets = [brainbot_dataset, physionet16_dataset, physionet_dataset, weibo2014_dataset, weibo2014_16_dataset]
+    datasets = brainbot_datasets + [physionet16_dataset, physionet_dataset, weibo2014_dataset, weibo2014_16_dataset]
     return datasets
 
 def print_results_summary(results_df):
@@ -46,9 +52,12 @@ def print_results_summary(results_df):
     print("=" * 50)
 
 
-def run_moabb_benchmark(pipelines_dir, base_dir="./benchmarks", datasets_list=datasets, n_jobs=1):
+def run_moabb_benchmark(pipelines_dir, base_dir="./benchmarks", datasets_list=None, n_jobs=1):
     pipelines_path = os.path.join(os.getcwd(), pipelines_dir)
     print(pipelines_path)
+
+    if datasets_list is None:
+        datasets_list = get_all_datasets()
 
     cache_config = dict(
         use=True,
