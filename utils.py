@@ -5,14 +5,17 @@ from moabb.datasets import PhysionetMI
 from brainbot_dataset import get_brainbot_dataset
 from datasets import PhysionetMI16, Weibo2014_16, Weibo2014_64_5_classes
 
-
-def get_all_datasets(subjects=10, max_trials=4, brainbot_intervals=[[0, 2.5], [0, 5]]):
+def get_brainbot_datasets(subjects=10, max_trials=4, brainbot_intervals=[[0.0, 2.5]]):
     brainbot_datasets = []
     for interval in brainbot_intervals:
         bb_ds = get_brainbot_dataset(interval=interval)
         bb_ds.n_sessions = min(max_trials, bb_ds.n_sessions)
         bb_ds.subject_list = bb_ds.subject_list[:subjects]
         brainbot_datasets.append(bb_ds)
+    return brainbot_datasets
+
+def get_all_datasets(subjects=10, max_trials=4, brainbot_intervals=[[0, 2.5], [0, 5]]):
+    brainbot_datasets = get_brainbot_datasets(subjects=subjects, max_trials=max_trials, brainbot_intervals=brainbot_intervals)
     
     physionet_dataset = PhysionetMI()
     physionet_dataset.subject_list = physionet_dataset.subject_list[:subjects]
@@ -52,7 +55,7 @@ def print_results_summary(results_df):
     print("=" * 50)
 
 
-def run_moabb_benchmark(pipelines_dir, base_dir="./benchmarks", datasets_list=None, n_jobs=1):
+def run_moabb_benchmark(pipelines_dir, base_dir="./benchmarks", datasets_list=None, n_jobs=1, overwrite=False):
     pipelines_path = os.path.join(os.getcwd(), pipelines_dir)
     print(pipelines_path)
 
@@ -77,7 +80,7 @@ def run_moabb_benchmark(pipelines_dir, base_dir="./benchmarks", datasets_list=No
         paradigms=["MotorImagery"],
         include_datasets=datasets_list,
         results=os.path.join(base_dir, f"results-{pipelines_dir}"),
-        overwrite=False,
+        overwrite=overwrite,
         plot=False,
         output=os.path.join(base_dir, f"output-{pipelines_dir}"),
         n_jobs=n_jobs,
