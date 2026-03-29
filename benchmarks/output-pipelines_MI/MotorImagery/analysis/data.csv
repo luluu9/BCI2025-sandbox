@@ -1,621 +1,193 @@
 ,score,time,samples,subject,session,channels,n_sessions,dataset,pipeline,paradigm,evaluation
-0,0.7075,48.701122,400.0,1,0,60,1,Weibo2014_16,TS ElasticNet Grid,MotorImagery,WithinSession
-1,0.7725,40.05332,400.0,2,0,60,1,Weibo2014_16,TS ElasticNet Grid,MotorImagery,WithinSession
-2,0.5775,37.6008,400.0,3,0,60,1,Weibo2014_16,TS ElasticNet Grid,MotorImagery,WithinSession
-3,0.685,37.55476,400.0,4,0,60,1,Weibo2014_16,TS ElasticNet Grid,MotorImagery,WithinSession
-4,0.6775,69.1562,400.0,5,0,60,1,Weibo2014_16,TS ElasticNet Grid,MotorImagery,WithinSession
-5,0.76944447,36.93194,360.0,6,0,60,1,Weibo2014_16,TS ElasticNet Grid,MotorImagery,WithinSession
-6,0.76,50.442696,400.0,7,0,60,1,Weibo2014_16,TS ElasticNet Grid,MotorImagery,WithinSession
-7,0.8375,95.48048,400.0,8,0,60,1,Weibo2014_16,TS ElasticNet Grid,MotorImagery,WithinSession
-8,0.8475,41.18506,400.0,9,0,60,1,Weibo2014_16,TS ElasticNet Grid,MotorImagery,WithinSession
-9,0.6775,28.389862,400.0,10,0,60,1,Weibo2014_16,TS ElasticNet Grid,MotorImagery,WithinSession
-10,0.7075,48.286068,400.0,1,0,60,1,Weibo2014_64_5-classes,TS ElasticNet Grid,MotorImagery,WithinSession
-11,0.7725,39.837116,400.0,2,0,60,1,Weibo2014_64_5-classes,TS ElasticNet Grid,MotorImagery,WithinSession
-12,0.5775,37.35933,400.0,3,0,60,1,Weibo2014_64_5-classes,TS ElasticNet Grid,MotorImagery,WithinSession
-13,0.685,37.458874,400.0,4,0,60,1,Weibo2014_64_5-classes,TS ElasticNet Grid,MotorImagery,WithinSession
-14,0.6775,67.78801,400.0,5,0,60,1,Weibo2014_64_5-classes,TS ElasticNet Grid,MotorImagery,WithinSession
-15,0.76944447,36.865826,360.0,6,0,60,1,Weibo2014_64_5-classes,TS ElasticNet Grid,MotorImagery,WithinSession
-16,0.76,50.06391,400.0,7,0,60,1,Weibo2014_64_5-classes,TS ElasticNet Grid,MotorImagery,WithinSession
-17,0.8375,94.80279,400.0,8,0,60,1,Weibo2014_64_5-classes,TS ElasticNet Grid,MotorImagery,WithinSession
-18,0.8475,41.034737,400.0,9,0,60,1,Weibo2014_64_5-classes,TS ElasticNet Grid,MotorImagery,WithinSession
-19,0.6775,28.357891,400.0,10,0,60,1,Weibo2014_64_5-classes,TS ElasticNet Grid,MotorImagery,WithinSession
-20,0.52,0.38899332,400.0,1,0,60,1,Weibo2014_16,CSP + LDA,MotorImagery,WithinSession
-21,0.4025,1.0317993,400.0,2,0,60,1,Weibo2014_16,CSP + LDA,MotorImagery,WithinSession
-22,0.4275,0.98539376,400.0,3,0,60,1,Weibo2014_16,CSP + LDA,MotorImagery,WithinSession
-23,0.395,0.99065715,400.0,4,0,60,1,Weibo2014_16,CSP + LDA,MotorImagery,WithinSession
-24,0.435,0.9414895,400.0,5,0,60,1,Weibo2014_16,CSP + LDA,MotorImagery,WithinSession
-25,0.57222223,0.9254793,360.0,6,0,60,1,Weibo2014_16,CSP + LDA,MotorImagery,WithinSession
-26,0.4425,1.0882602,400.0,7,0,60,1,Weibo2014_16,CSP + LDA,MotorImagery,WithinSession
-27,0.6525,0.84864247,400.0,8,0,60,1,Weibo2014_16,CSP + LDA,MotorImagery,WithinSession
-28,0.6825,1.0042615,400.0,9,0,60,1,Weibo2014_16,CSP + LDA,MotorImagery,WithinSession
-29,0.3375,0.88973534,400.0,10,0,60,1,Weibo2014_16,CSP + LDA,MotorImagery,WithinSession
-30,0.52,0.93633664,400.0,1,0,60,1,Weibo2014_64_5-classes,CSP + LDA,MotorImagery,WithinSession
-31,0.4025,0.9949111,400.0,2,0,60,1,Weibo2014_64_5-classes,CSP + LDA,MotorImagery,WithinSession
-32,0.4275,0.99658585,400.0,3,0,60,1,Weibo2014_64_5-classes,CSP + LDA,MotorImagery,WithinSession
-33,0.395,0.98495847,400.0,4,0,60,1,Weibo2014_64_5-classes,CSP + LDA,MotorImagery,WithinSession
-34,0.435,0.9326044,400.0,5,0,60,1,Weibo2014_64_5-classes,CSP + LDA,MotorImagery,WithinSession
-35,0.57222223,0.9694054,360.0,6,0,60,1,Weibo2014_64_5-classes,CSP + LDA,MotorImagery,WithinSession
-36,0.4425,1.0744085,400.0,7,0,60,1,Weibo2014_64_5-classes,CSP + LDA,MotorImagery,WithinSession
-37,0.6525,0.8494767,400.0,8,0,60,1,Weibo2014_64_5-classes,CSP + LDA,MotorImagery,WithinSession
-38,0.6825,1.0334562,400.0,9,0,60,1,Weibo2014_64_5-classes,CSP + LDA,MotorImagery,WithinSession
-39,0.3375,0.8855215,400.0,10,0,60,1,Weibo2014_64_5-classes,CSP + LDA,MotorImagery,WithinSession
-40,0.65,2.455046,400.0,1,0,60,1,Weibo2014_16,FgMDM,MotorImagery,WithinSession
-41,0.6725,2.2867696,400.0,2,0,60,1,Weibo2014_16,FgMDM,MotorImagery,WithinSession
-42,0.515,2.201124,400.0,3,0,60,1,Weibo2014_16,FgMDM,MotorImagery,WithinSession
-43,0.67,2.2114635,400.0,4,0,60,1,Weibo2014_16,FgMDM,MotorImagery,WithinSession
-44,0.565,2.2022665,400.0,5,0,60,1,Weibo2014_16,FgMDM,MotorImagery,WithinSession
-45,0.65,2.0739074,360.0,6,0,60,1,Weibo2014_16,FgMDM,MotorImagery,WithinSession
-46,0.64,2.1691825,400.0,7,0,60,1,Weibo2014_16,FgMDM,MotorImagery,WithinSession
-47,0.7525,2.882445,400.0,8,0,60,1,Weibo2014_16,FgMDM,MotorImagery,WithinSession
-48,0.835,2.1522367,400.0,9,0,60,1,Weibo2014_16,FgMDM,MotorImagery,WithinSession
-49,0.62,2.1978257,400.0,10,0,60,1,Weibo2014_16,FgMDM,MotorImagery,WithinSession
-50,0.65,2.420819,400.0,1,0,60,1,Weibo2014_64_5-classes,FgMDM,MotorImagery,WithinSession
-51,0.6725,2.2214203,400.0,2,0,60,1,Weibo2014_64_5-classes,FgMDM,MotorImagery,WithinSession
-52,0.515,2.1854498,400.0,3,0,60,1,Weibo2014_64_5-classes,FgMDM,MotorImagery,WithinSession
-53,0.67,2.1738648,400.0,4,0,60,1,Weibo2014_64_5-classes,FgMDM,MotorImagery,WithinSession
-54,0.565,2.1489873,400.0,5,0,60,1,Weibo2014_64_5-classes,FgMDM,MotorImagery,WithinSession
-55,0.65,2.0992248,360.0,6,0,60,1,Weibo2014_64_5-classes,FgMDM,MotorImagery,WithinSession
-56,0.64,2.1423204,400.0,7,0,60,1,Weibo2014_64_5-classes,FgMDM,MotorImagery,WithinSession
-57,0.7525,2.9381635,400.0,8,0,60,1,Weibo2014_64_5-classes,FgMDM,MotorImagery,WithinSession
-58,0.835,2.20724,400.0,9,0,60,1,Weibo2014_64_5-classes,FgMDM,MotorImagery,WithinSession
-59,0.62,2.2021859,400.0,10,0,60,1,Weibo2014_64_5-classes,FgMDM,MotorImagery,WithinSession
-60,0.515,133.70084,400.0,1,0,60,1,Weibo2014_16,CSP + SVM Grid,MotorImagery,WithinSession
-61,0.425,142.9026,400.0,2,0,60,1,Weibo2014_16,CSP + SVM Grid,MotorImagery,WithinSession
-62,0.495,140.14113,400.0,3,0,60,1,Weibo2014_16,CSP + SVM Grid,MotorImagery,WithinSession
-63,0.4375,133.89784,400.0,4,0,60,1,Weibo2014_16,CSP + SVM Grid,MotorImagery,WithinSession
-64,0.4925,126.65437,400.0,5,0,60,1,Weibo2014_16,CSP + SVM Grid,MotorImagery,WithinSession
-65,0.69722223,132.56155,360.0,6,0,60,1,Weibo2014_16,CSP + SVM Grid,MotorImagery,WithinSession
-66,0.47,152.23148,400.0,7,0,60,1,Weibo2014_16,CSP + SVM Grid,MotorImagery,WithinSession
-67,0.6475,114.74219,400.0,8,0,60,1,Weibo2014_16,CSP + SVM Grid,MotorImagery,WithinSession
-68,0.715,139.6359,400.0,9,0,60,1,Weibo2014_16,CSP + SVM Grid,MotorImagery,WithinSession
-69,0.3825,126.14105,400.0,10,0,60,1,Weibo2014_16,CSP + SVM Grid,MotorImagery,WithinSession
-70,0.375,1.3785392,400.0,1,0,60,1,Weibo2014_16,MDM,MotorImagery,WithinSession
-71,0.39,1.0689651,400.0,2,0,60,1,Weibo2014_16,MDM,MotorImagery,WithinSession
-72,0.4425,1.0295092,400.0,3,0,60,1,Weibo2014_16,MDM,MotorImagery,WithinSession
-73,0.47,1.0664918,400.0,4,0,60,1,Weibo2014_16,MDM,MotorImagery,WithinSession
-74,0.2725,1.0543692,400.0,5,0,60,1,Weibo2014_16,MDM,MotorImagery,WithinSession
-75,0.49166667,0.9702302,360.0,6,0,60,1,Weibo2014_16,MDM,MotorImagery,WithinSession
-76,0.5075,1.0672096,400.0,7,0,60,1,Weibo2014_16,MDM,MotorImagery,WithinSession
-77,0.33,1.8311636,400.0,8,0,60,1,Weibo2014_16,MDM,MotorImagery,WithinSession
-78,0.5625,1.0530692,400.0,9,0,60,1,Weibo2014_16,MDM,MotorImagery,WithinSession
-79,0.51,0.98328674,400.0,10,0,60,1,Weibo2014_16,MDM,MotorImagery,WithinSession
-80,0.375,1.3815674,400.0,1,0,60,1,Weibo2014_64_5-classes,MDM,MotorImagery,WithinSession
-81,0.39,1.0599926,400.0,2,0,60,1,Weibo2014_64_5-classes,MDM,MotorImagery,WithinSession
-82,0.4425,1.0463712,400.0,3,0,60,1,Weibo2014_64_5-classes,MDM,MotorImagery,WithinSession
-83,0.47,1.0631543,400.0,4,0,60,1,Weibo2014_64_5-classes,MDM,MotorImagery,WithinSession
-84,0.2725,1.0386591,400.0,5,0,60,1,Weibo2014_64_5-classes,MDM,MotorImagery,WithinSession
-85,0.49166667,0.9866596,360.0,6,0,60,1,Weibo2014_64_5-classes,MDM,MotorImagery,WithinSession
-86,0.5075,1.0618893,400.0,7,0,60,1,Weibo2014_64_5-classes,MDM,MotorImagery,WithinSession
-87,0.33,1.84041,400.0,8,0,60,1,Weibo2014_64_5-classes,MDM,MotorImagery,WithinSession
-88,0.5625,1.0504704,400.0,9,0,60,1,Weibo2014_64_5-classes,MDM,MotorImagery,WithinSession
-89,0.51,0.99127114,400.0,10,0,60,1,Weibo2014_64_5-classes,MDM,MotorImagery,WithinSession
-90,0.7175,3.533242,400.0,1,0,60,1,Weibo2014_16,Tangent Space LR,MotorImagery,WithinSession
-91,0.745,2.4149125,400.0,2,0,60,1,Weibo2014_16,Tangent Space LR,MotorImagery,WithinSession
-92,0.6,1.8916769,400.0,3,0,60,1,Weibo2014_16,Tangent Space LR,MotorImagery,WithinSession
-93,0.7175,2.0069213,400.0,4,0,60,1,Weibo2014_16,Tangent Space LR,MotorImagery,WithinSession
-94,0.6675,3.4177544,400.0,5,0,60,1,Weibo2014_16,Tangent Space LR,MotorImagery,WithinSession
-95,0.75,1.800648,360.0,6,0,60,1,Weibo2014_16,Tangent Space LR,MotorImagery,WithinSession
-96,0.7375,2.4133933,400.0,7,0,60,1,Weibo2014_16,Tangent Space LR,MotorImagery,WithinSession
-97,0.84,3.9090214,400.0,8,0,60,1,Weibo2014_16,Tangent Space LR,MotorImagery,WithinSession
-98,0.845,1.974889,400.0,9,0,60,1,Weibo2014_16,Tangent Space LR,MotorImagery,WithinSession
-99,0.66,1.4947003,400.0,10,0,60,1,Weibo2014_16,Tangent Space LR,MotorImagery,WithinSession
-100,0.7175,3.572067,400.0,1,0,60,1,Weibo2014_64_5-classes,Tangent Space LR,MotorImagery,WithinSession
-101,0.745,2.3676994,400.0,2,0,60,1,Weibo2014_64_5-classes,Tangent Space LR,MotorImagery,WithinSession
-102,0.6,2.0674028,400.0,3,0,60,1,Weibo2014_64_5-classes,Tangent Space LR,MotorImagery,WithinSession
-103,0.7175,1.9524858,400.0,4,0,60,1,Weibo2014_64_5-classes,Tangent Space LR,MotorImagery,WithinSession
-104,0.6675,3.4502246,400.0,5,0,60,1,Weibo2014_64_5-classes,Tangent Space LR,MotorImagery,WithinSession
-105,0.75,1.6378886,360.0,6,0,60,1,Weibo2014_64_5-classes,Tangent Space LR,MotorImagery,WithinSession
-106,0.7375,2.2788484,400.0,7,0,60,1,Weibo2014_64_5-classes,Tangent Space LR,MotorImagery,WithinSession
-107,0.84,4.0792522,400.0,8,0,60,1,Weibo2014_64_5-classes,Tangent Space LR,MotorImagery,WithinSession
-108,0.845,1.7727993,400.0,9,0,60,1,Weibo2014_64_5-classes,Tangent Space LR,MotorImagery,WithinSession
-109,0.66,1.4698015,400.0,10,0,60,1,Weibo2014_64_5-classes,Tangent Space LR,MotorImagery,WithinSession
-110,0.525,0.9454075,400.0,1,0,60,1,Weibo2014_16,DLCSPauto + shLDA,MotorImagery,WithinSession
-111,0.4,1.0017623,400.0,2,0,60,1,Weibo2014_16,DLCSPauto + shLDA,MotorImagery,WithinSession
-112,0.445,0.999144,400.0,3,0,60,1,Weibo2014_16,DLCSPauto + shLDA,MotorImagery,WithinSession
-113,0.4,0.98683584,400.0,4,0,60,1,Weibo2014_16,DLCSPauto + shLDA,MotorImagery,WithinSession
-114,0.41,0.9208155,400.0,5,0,60,1,Weibo2014_16,DLCSPauto + shLDA,MotorImagery,WithinSession
-115,0.56666666,0.9854797,360.0,6,0,60,1,Weibo2014_16,DLCSPauto + shLDA,MotorImagery,WithinSession
-116,0.4375,1.0779922,400.0,7,0,60,1,Weibo2014_16,DLCSPauto + shLDA,MotorImagery,WithinSession
-117,0.645,0.82808053,400.0,8,0,60,1,Weibo2014_16,DLCSPauto + shLDA,MotorImagery,WithinSession
-118,0.7,1.0163198,400.0,9,0,60,1,Weibo2014_16,DLCSPauto + shLDA,MotorImagery,WithinSession
-119,0.3425,0.9215558,400.0,10,0,60,1,Weibo2014_16,DLCSPauto + shLDA,MotorImagery,WithinSession
-120,0.525,0.9239173,400.0,1,0,60,1,Weibo2014_64_5-classes,DLCSPauto + shLDA,MotorImagery,WithinSession
-121,0.4,1.0059009,400.0,2,0,60,1,Weibo2014_64_5-classes,DLCSPauto + shLDA,MotorImagery,WithinSession
-122,0.445,1.0096674,400.0,3,0,60,1,Weibo2014_64_5-classes,DLCSPauto + shLDA,MotorImagery,WithinSession
-123,0.4,0.9655732,400.0,4,0,60,1,Weibo2014_64_5-classes,DLCSPauto + shLDA,MotorImagery,WithinSession
-124,0.41,0.9352099,400.0,5,0,60,1,Weibo2014_64_5-classes,DLCSPauto + shLDA,MotorImagery,WithinSession
-125,0.56666666,0.9439353,360.0,6,0,60,1,Weibo2014_64_5-classes,DLCSPauto + shLDA,MotorImagery,WithinSession
-126,0.4375,1.0735123,400.0,7,0,60,1,Weibo2014_64_5-classes,DLCSPauto + shLDA,MotorImagery,WithinSession
-127,0.645,0.80675924,400.0,8,0,60,1,Weibo2014_64_5-classes,DLCSPauto + shLDA,MotorImagery,WithinSession
-128,0.7,1.000959,400.0,9,0,60,1,Weibo2014_64_5-classes,DLCSPauto + shLDA,MotorImagery,WithinSession
-129,0.3425,0.91297084,400.0,10,0,60,1,Weibo2014_64_5-classes,DLCSPauto + shLDA,MotorImagery,WithinSession
-130,0.69,22.945232,400.0,1,0,60,1,Weibo2014_16,Tangent Space SVM Grid,MotorImagery,WithinSession
-131,0.7475,19.460545,400.0,2,0,60,1,Weibo2014_16,Tangent Space SVM Grid,MotorImagery,WithinSession
-132,0.5675,19.341978,400.0,3,0,60,1,Weibo2014_16,Tangent Space SVM Grid,MotorImagery,WithinSession
-133,0.7075,19.348692,400.0,4,0,60,1,Weibo2014_16,Tangent Space SVM Grid,MotorImagery,WithinSession
-134,0.6325,19.355495,400.0,5,0,60,1,Weibo2014_16,Tangent Space SVM Grid,MotorImagery,WithinSession
-135,0.71944445,17.37487,360.0,6,0,60,1,Weibo2014_16,Tangent Space SVM Grid,MotorImagery,WithinSession
-136,0.72,19.519209,400.0,7,0,60,1,Weibo2014_16,Tangent Space SVM Grid,MotorImagery,WithinSession
-137,0.83,29.62583,400.0,8,0,60,1,Weibo2014_16,Tangent Space SVM Grid,MotorImagery,WithinSession
-138,0.85,19.129383,400.0,9,0,60,1,Weibo2014_16,Tangent Space SVM Grid,MotorImagery,WithinSession
-139,0.645,18.476374,400.0,10,0,60,1,Weibo2014_16,Tangent Space SVM Grid,MotorImagery,WithinSession
-140,0.69,22.729338,400.0,1,0,60,1,Weibo2014_64_5-classes,Tangent Space SVM Grid,MotorImagery,WithinSession
-141,0.7475,19.347887,400.0,2,0,60,1,Weibo2014_64_5-classes,Tangent Space SVM Grid,MotorImagery,WithinSession
-142,0.5675,19.52641,400.0,3,0,60,1,Weibo2014_64_5-classes,Tangent Space SVM Grid,MotorImagery,WithinSession
-143,0.7075,19.185358,400.0,4,0,60,1,Weibo2014_64_5-classes,Tangent Space SVM Grid,MotorImagery,WithinSession
-144,0.6325,19.364576,400.0,5,0,60,1,Weibo2014_64_5-classes,Tangent Space SVM Grid,MotorImagery,WithinSession
-145,0.71944445,17.319496,360.0,6,0,60,1,Weibo2014_64_5-classes,Tangent Space SVM Grid,MotorImagery,WithinSession
-146,0.72,19.381468,400.0,7,0,60,1,Weibo2014_64_5-classes,Tangent Space SVM Grid,MotorImagery,WithinSession
-147,0.83,29.568401,400.0,8,0,60,1,Weibo2014_64_5-classes,Tangent Space SVM Grid,MotorImagery,WithinSession
-148,0.85,19.250515,400.0,9,0,60,1,Weibo2014_64_5-classes,Tangent Space SVM Grid,MotorImagery,WithinSession
-149,0.645,18.571754,400.0,10,0,60,1,Weibo2014_64_5-classes,Tangent Space SVM Grid,MotorImagery,WithinSession
-150,0.5006723,1.0831666,174.0,1,0,64,1,PhysionetMotorImagery,DLCSPauto + shLDA,MotorImagery,WithinSession
-151,0.5285714,1.109308,174.0,2,0,64,1,PhysionetMotorImagery,DLCSPauto + shLDA,MotorImagery,WithinSession
-152,0.59210086,1.1381605,174.0,3,0,64,1,PhysionetMotorImagery,DLCSPauto + shLDA,MotorImagery,WithinSession
-153,0.54537815,1.1934103,174.0,4,0,64,1,PhysionetMotorImagery,DLCSPauto + shLDA,MotorImagery,WithinSession
-154,0.35647058,1.2503763,174.0,5,0,64,1,PhysionetMotorImagery,DLCSPauto + shLDA,MotorImagery,WithinSession
-155,0.42487395,0.99408555,174.0,6,0,64,1,PhysionetMotorImagery,DLCSPauto + shLDA,MotorImagery,WithinSession
-156,0.5294118,1.1155965,174.0,7,0,64,1,PhysionetMotorImagery,DLCSPauto + shLDA,MotorImagery,WithinSession
-157,0.47663864,1.1401564,174.0,8,0,64,1,PhysionetMotorImagery,DLCSPauto + shLDA,MotorImagery,WithinSession
-158,0.4368067,0.9485148,174.0,9,0,64,1,PhysionetMotorImagery,DLCSPauto + shLDA,MotorImagery,WithinSession
-159,0.4544538,1.332022,174.0,10,0,64,1,PhysionetMotorImagery,DLCSPauto + shLDA,MotorImagery,WithinSession
-160,0.48268908,0.14284606,174.0,1,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
-161,0.4252101,0.14629345,174.0,2,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
-162,0.4882353,0.14471479,174.0,3,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
-163,0.5119328,0.13643655,174.0,4,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
-164,0.45394957,0.14879623,174.0,5,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
-165,0.46,0.14230528,174.0,6,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
-166,0.6378151,0.06856451,174.0,7,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
-167,0.4887395,0.06732349,174.0,8,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
-168,0.43092436,0.073689125,174.0,9,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
-169,0.48857144,0.09382324,174.0,10,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
-170,0.70134455,2.1686697,174.0,1,0,64,1,PhysionetMotorImagery,Tangent Space LR,MotorImagery,WithinSession
-171,0.66655463,2.9336715,174.0,2,0,64,1,PhysionetMotorImagery,Tangent Space LR,MotorImagery,WithinSession
-172,0.6036975,1.812538,174.0,3,0,64,1,PhysionetMotorImagery,Tangent Space LR,MotorImagery,WithinSession
-173,0.81563026,2.4153965,174.0,4,0,64,1,PhysionetMotorImagery,Tangent Space LR,MotorImagery,WithinSession
-174,0.48268908,1.8263239,174.0,5,0,64,1,PhysionetMotorImagery,Tangent Space LR,MotorImagery,WithinSession
-175,0.5290756,4.149938,174.0,6,0,64,1,PhysionetMotorImagery,Tangent Space LR,MotorImagery,WithinSession
-176,0.83310926,2.1900706,174.0,7,0,64,1,PhysionetMotorImagery,Tangent Space LR,MotorImagery,WithinSession
-177,0.6497479,2.5037432,174.0,8,0,64,1,PhysionetMotorImagery,Tangent Space LR,MotorImagery,WithinSession
-178,0.5057143,2.8450146,174.0,9,0,64,1,PhysionetMotorImagery,Tangent Space LR,MotorImagery,WithinSession
-179,0.5230252,3.2486975,174.0,10,0,64,1,PhysionetMotorImagery,Tangent Space LR,MotorImagery,WithinSession
-180,0.58,0.13146853,174.0,1,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
-181,0.6262185,0.1278306,174.0,2,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
-182,0.5053781,0.12645178,174.0,3,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
-183,0.71882355,0.129487,174.0,4,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
-184,0.5058824,0.12480607,174.0,5,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
-185,0.4312605,0.1266584,174.0,6,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
-186,0.7584874,0.09233813,174.0,7,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
-187,0.5231933,0.087132975,174.0,8,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
-188,0.517479,0.09371314,174.0,9,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
-189,0.5231933,0.08894424,174.0,10,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
-190,0.729916,16.435505,174.0,1,0,64,1,PhysionetMotorImagery,TS ElasticNet Grid,MotorImagery,WithinSession
-191,0.7352941,32.043697,174.0,2,0,64,1,PhysionetMotorImagery,TS ElasticNet Grid,MotorImagery,WithinSession
-192,0.6672269,16.44566,174.0,3,0,64,1,PhysionetMotorImagery,TS ElasticNet Grid,MotorImagery,WithinSession
-193,0.81613445,17.471638,174.0,4,0,64,1,PhysionetMotorImagery,TS ElasticNet Grid,MotorImagery,WithinSession
-194,0.47747898,16.213488,174.0,5,0,64,1,PhysionetMotorImagery,TS ElasticNet Grid,MotorImagery,WithinSession
-195,0.4821849,22.108397,174.0,6,0,64,1,PhysionetMotorImagery,TS ElasticNet Grid,MotorImagery,WithinSession
-196,0.8563025,18.83467,174.0,7,0,64,1,PhysionetMotorImagery,TS ElasticNet Grid,MotorImagery,WithinSession
-197,0.5922689,16.476465,174.0,8,0,64,1,PhysionetMotorImagery,TS ElasticNet Grid,MotorImagery,WithinSession
-198,0.47714287,15.57828,174.0,9,0,64,1,PhysionetMotorImagery,TS ElasticNet Grid,MotorImagery,WithinSession
-199,0.5115966,19.719833,174.0,10,0,64,1,PhysionetMotorImagery,TS ElasticNet Grid,MotorImagery,WithinSession
-200,0.5744538,0.609946,174.0,1,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
-201,0.6262185,0.5122841,174.0,2,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
-202,0.49411765,0.5036264,174.0,3,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
-203,0.73613447,0.4767891,174.0,4,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
-204,0.49983194,0.6619177,174.0,5,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
-205,0.47126052,0.5149253,174.0,6,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
-206,0.7529412,1.0347037,174.0,7,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
-207,0.5057143,0.99710125,174.0,8,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
-208,0.5117647,0.9933823,174.0,9,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
-209,0.5231933,1.0350261,174.0,10,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
-210,0.6260504,0.55500346,174.0,1,0,64,1,PhysionetMotorImagery,MDM,MotorImagery,WithinSession
-211,0.5109244,0.5841069,174.0,2,0,64,1,PhysionetMotorImagery,MDM,MotorImagery,WithinSession
-212,0.38537815,0.55602825,174.0,3,0,64,1,PhysionetMotorImagery,MDM,MotorImagery,WithinSession
-213,0.752605,0.58355236,174.0,4,0,64,1,PhysionetMotorImagery,MDM,MotorImagery,WithinSession
-214,0.39092436,0.55168617,174.0,5,0,64,1,PhysionetMotorImagery,MDM,MotorImagery,WithinSession
-215,0.2410084,0.59070724,174.0,6,0,64,1,PhysionetMotorImagery,MDM,MotorImagery,WithinSession
-216,0.58016807,0.5897938,174.0,7,0,64,1,PhysionetMotorImagery,MDM,MotorImagery,WithinSession
-217,0.43109244,0.55441505,174.0,8,0,64,1,PhysionetMotorImagery,MDM,MotorImagery,WithinSession
-218,0.21327731,0.5891001,174.0,9,0,64,1,PhysionetMotorImagery,MDM,MotorImagery,WithinSession
-219,0.22386554,0.5628954,174.0,10,0,64,1,PhysionetMotorImagery,MDM,MotorImagery,WithinSession
-220,0.54487395,0.035946082,174.0,1,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
-221,0.55142856,0.038457155,174.0,2,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
-222,0.28773108,0.038182545,174.0,3,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
-223,0.6892437,0.035708617,174.0,4,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
-224,0.3852101,0.03574481,174.0,5,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
-225,0.20134453,0.03554654,174.0,6,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
-226,0.6141176,0.050073147,174.0,7,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
-227,0.34521008,0.052334882,174.0,8,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
-228,0.23042017,0.05235977,174.0,9,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
-229,0.28739497,0.052953195,174.0,10,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
-230,0.66117644,1.9331268,174.0,1,0,64,1,PhysionetMotorImagery,FgMDM,MotorImagery,WithinSession
-231,0.56890756,1.9261574,174.0,2,0,64,1,PhysionetMotorImagery,FgMDM,MotorImagery,WithinSession
-232,0.58638656,2.1106439,174.0,3,0,64,1,PhysionetMotorImagery,FgMDM,MotorImagery,WithinSession
-233,0.80470586,1.9005194,174.0,4,0,64,1,PhysionetMotorImagery,FgMDM,MotorImagery,WithinSession
-234,0.47680673,1.8798968,174.0,5,0,64,1,PhysionetMotorImagery,FgMDM,MotorImagery,WithinSession
-235,0.44840336,1.8682591,174.0,6,0,64,1,PhysionetMotorImagery,FgMDM,MotorImagery,WithinSession
-236,0.787563,1.899829,174.0,7,0,64,1,PhysionetMotorImagery,FgMDM,MotorImagery,WithinSession
-237,0.54067224,1.8974323,174.0,8,0,64,1,PhysionetMotorImagery,FgMDM,MotorImagery,WithinSession
-238,0.5287395,1.883449,174.0,9,0,64,1,PhysionetMotorImagery,FgMDM,MotorImagery,WithinSession
-239,0.48857144,1.8963524,174.0,10,0,64,1,PhysionetMotorImagery,FgMDM,MotorImagery,WithinSession
-240,0.56268907,0.039547205,174.0,1,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
-241,0.6436975,0.04000206,174.0,2,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
-242,0.39714286,0.039534092,174.0,3,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
-243,0.67798316,0.040130377,174.0,4,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
-244,0.47126052,0.037407827,174.0,5,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
-245,0.3157983,0.039877843,174.0,6,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
-246,0.7295798,0.23299217,174.0,7,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
-247,0.39058822,0.29833966,174.0,8,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
-248,0.4317647,0.22535133,174.0,9,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
-249,0.4317647,0.25160518,174.0,10,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
-250,0.69563025,9.500361,174.0,1,0,64,1,PhysionetMotorImagery,Tangent Space SVM Grid,MotorImagery,WithinSession
-251,0.712437,10.03322,174.0,2,0,64,1,PhysionetMotorImagery,Tangent Space SVM Grid,MotorImagery,WithinSession
-252,0.5919328,9.558607,174.0,3,0,64,1,PhysionetMotorImagery,Tangent Space SVM Grid,MotorImagery,WithinSession
-253,0.78134453,9.637939,174.0,4,0,64,1,PhysionetMotorImagery,Tangent Space SVM Grid,MotorImagery,WithinSession
-254,0.48285714,9.6661215,174.0,5,0,64,1,PhysionetMotorImagery,Tangent Space SVM Grid,MotorImagery,WithinSession
-255,0.47714287,9.854119,174.0,6,0,64,1,PhysionetMotorImagery,Tangent Space SVM Grid,MotorImagery,WithinSession
-256,0.83310926,9.944113,174.0,7,0,64,1,PhysionetMotorImagery,Tangent Space SVM Grid,MotorImagery,WithinSession
-257,0.6386555,9.569996,174.0,8,0,64,1,PhysionetMotorImagery,Tangent Space SVM Grid,MotorImagery,WithinSession
-258,0.5117647,10.031318,174.0,9,0,64,1,PhysionetMotorImagery,Tangent Space SVM Grid,MotorImagery,WithinSession
-259,0.5285714,9.568347,174.0,10,0,64,1,PhysionetMotorImagery,Tangent Space SVM Grid,MotorImagery,WithinSession
-260,0.5917647,0.49282146,174.0,1,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
-261,0.5855462,0.5150061,174.0,2,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
-262,0.5058824,0.49243632,174.0,3,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
-263,0.7647059,0.5085469,174.0,4,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
-264,0.5228571,0.5011688,174.0,5,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
-265,0.48285714,0.49502707,174.0,6,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
-266,0.752437,1.0169225,174.0,7,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
-267,0.54016805,1.0317602,174.0,8,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
-268,0.48857144,1.0308682,174.0,9,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
-269,0.5114286,1.0265427,174.0,10,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
-270,0.48890758,21.184464,174.0,1,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
-271,0.47109243,19.089352,174.0,2,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
-272,0.5,21.766146,174.0,3,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
-273,0.5342857,22.268614,174.0,4,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
-274,0.48285714,26.749447,174.0,5,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
-275,0.48285714,20.275661,174.0,6,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
-276,0.614958,10.076891,174.0,7,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
-277,0.4942857,10.295957,174.0,8,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
-278,0.48285714,11.874509,174.0,9,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
-279,0.48840335,12.554469,174.0,10,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
-280,0.5290756,0.5454176,174.0,1,0,64,1,PhysionetMotorImagery,CSP + LDA,MotorImagery,WithinSession
-281,0.46588236,1.1347016,174.0,2,0,64,1,PhysionetMotorImagery,CSP + LDA,MotorImagery,WithinSession
-282,0.58084035,1.158503,174.0,3,0,64,1,PhysionetMotorImagery,CSP + LDA,MotorImagery,WithinSession
-283,0.52840334,1.1876483,174.0,4,0,64,1,PhysionetMotorImagery,CSP + LDA,MotorImagery,WithinSession
-284,0.39109245,1.3399559,174.0,5,0,64,1,PhysionetMotorImagery,CSP + LDA,MotorImagery,WithinSession
-285,0.43663865,0.98297733,174.0,6,0,64,1,PhysionetMotorImagery,CSP + LDA,MotorImagery,WithinSession
-286,0.5005042,1.1123396,174.0,7,0,64,1,PhysionetMotorImagery,CSP + LDA,MotorImagery,WithinSession
-287,0.47109243,1.1311663,174.0,8,0,64,1,PhysionetMotorImagery,CSP + LDA,MotorImagery,WithinSession
-288,0.41378152,0.9776917,174.0,9,0,64,1,PhysionetMotorImagery,CSP + LDA,MotorImagery,WithinSession
-289,0.40218487,1.3390561,174.0,10,0,64,1,PhysionetMotorImagery,CSP + LDA,MotorImagery,WithinSession
-290,0.442521,0.044692803,174.0,1,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
-291,0.4077311,0.04172077,174.0,2,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
-292,0.48806724,0.043399382,174.0,3,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
-293,0.48285714,0.041303586,174.0,4,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
-294,0.44806722,0.04325404,174.0,5,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
-295,0.4544538,0.042948246,174.0,6,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
-296,0.6378151,0.06784229,174.0,7,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
-297,0.4887395,0.06609855,174.0,8,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
-298,0.41966388,0.074483156,174.0,9,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
-299,0.44218487,0.09446125,174.0,10,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
-300,0.7075,48.701122,400.0,1,0,60,1,Weibo2014_16,TS ElasticNet Grid,MotorImagery,WithinSession
-301,0.7725,40.05332,400.0,2,0,60,1,Weibo2014_16,TS ElasticNet Grid,MotorImagery,WithinSession
-302,0.5775,37.6008,400.0,3,0,60,1,Weibo2014_16,TS ElasticNet Grid,MotorImagery,WithinSession
-303,0.685,37.55476,400.0,4,0,60,1,Weibo2014_16,TS ElasticNet Grid,MotorImagery,WithinSession
-304,0.6775,69.1562,400.0,5,0,60,1,Weibo2014_16,TS ElasticNet Grid,MotorImagery,WithinSession
-305,0.76944447,36.93194,360.0,6,0,60,1,Weibo2014_16,TS ElasticNet Grid,MotorImagery,WithinSession
-306,0.76,50.442696,400.0,7,0,60,1,Weibo2014_16,TS ElasticNet Grid,MotorImagery,WithinSession
-307,0.8375,95.48048,400.0,8,0,60,1,Weibo2014_16,TS ElasticNet Grid,MotorImagery,WithinSession
-308,0.8475,41.18506,400.0,9,0,60,1,Weibo2014_16,TS ElasticNet Grid,MotorImagery,WithinSession
-309,0.6775,28.389862,400.0,10,0,60,1,Weibo2014_16,TS ElasticNet Grid,MotorImagery,WithinSession
-310,0.7075,48.286068,400.0,1,0,60,1,Weibo2014_64_5-classes,TS ElasticNet Grid,MotorImagery,WithinSession
-311,0.7725,39.837116,400.0,2,0,60,1,Weibo2014_64_5-classes,TS ElasticNet Grid,MotorImagery,WithinSession
-312,0.5775,37.35933,400.0,3,0,60,1,Weibo2014_64_5-classes,TS ElasticNet Grid,MotorImagery,WithinSession
-313,0.685,37.458874,400.0,4,0,60,1,Weibo2014_64_5-classes,TS ElasticNet Grid,MotorImagery,WithinSession
-314,0.6775,67.78801,400.0,5,0,60,1,Weibo2014_64_5-classes,TS ElasticNet Grid,MotorImagery,WithinSession
-315,0.76944447,36.865826,360.0,6,0,60,1,Weibo2014_64_5-classes,TS ElasticNet Grid,MotorImagery,WithinSession
-316,0.76,50.06391,400.0,7,0,60,1,Weibo2014_64_5-classes,TS ElasticNet Grid,MotorImagery,WithinSession
-317,0.8375,94.80279,400.0,8,0,60,1,Weibo2014_64_5-classes,TS ElasticNet Grid,MotorImagery,WithinSession
-318,0.8475,41.034737,400.0,9,0,60,1,Weibo2014_64_5-classes,TS ElasticNet Grid,MotorImagery,WithinSession
-319,0.6775,28.357891,400.0,10,0,60,1,Weibo2014_64_5-classes,TS ElasticNet Grid,MotorImagery,WithinSession
-320,0.52,0.38899332,400.0,1,0,60,1,Weibo2014_16,CSP + LDA,MotorImagery,WithinSession
-321,0.4025,1.0317993,400.0,2,0,60,1,Weibo2014_16,CSP + LDA,MotorImagery,WithinSession
-322,0.4275,0.98539376,400.0,3,0,60,1,Weibo2014_16,CSP + LDA,MotorImagery,WithinSession
-323,0.395,0.99065715,400.0,4,0,60,1,Weibo2014_16,CSP + LDA,MotorImagery,WithinSession
-324,0.435,0.9414895,400.0,5,0,60,1,Weibo2014_16,CSP + LDA,MotorImagery,WithinSession
-325,0.57222223,0.9254793,360.0,6,0,60,1,Weibo2014_16,CSP + LDA,MotorImagery,WithinSession
-326,0.4425,1.0882602,400.0,7,0,60,1,Weibo2014_16,CSP + LDA,MotorImagery,WithinSession
-327,0.6525,0.84864247,400.0,8,0,60,1,Weibo2014_16,CSP + LDA,MotorImagery,WithinSession
-328,0.6825,1.0042615,400.0,9,0,60,1,Weibo2014_16,CSP + LDA,MotorImagery,WithinSession
-329,0.3375,0.88973534,400.0,10,0,60,1,Weibo2014_16,CSP + LDA,MotorImagery,WithinSession
-330,0.52,0.93633664,400.0,1,0,60,1,Weibo2014_64_5-classes,CSP + LDA,MotorImagery,WithinSession
-331,0.4025,0.9949111,400.0,2,0,60,1,Weibo2014_64_5-classes,CSP + LDA,MotorImagery,WithinSession
-332,0.4275,0.99658585,400.0,3,0,60,1,Weibo2014_64_5-classes,CSP + LDA,MotorImagery,WithinSession
-333,0.395,0.98495847,400.0,4,0,60,1,Weibo2014_64_5-classes,CSP + LDA,MotorImagery,WithinSession
-334,0.435,0.9326044,400.0,5,0,60,1,Weibo2014_64_5-classes,CSP + LDA,MotorImagery,WithinSession
-335,0.57222223,0.9694054,360.0,6,0,60,1,Weibo2014_64_5-classes,CSP + LDA,MotorImagery,WithinSession
-336,0.4425,1.0744085,400.0,7,0,60,1,Weibo2014_64_5-classes,CSP + LDA,MotorImagery,WithinSession
-337,0.6525,0.8494767,400.0,8,0,60,1,Weibo2014_64_5-classes,CSP + LDA,MotorImagery,WithinSession
-338,0.6825,1.0334562,400.0,9,0,60,1,Weibo2014_64_5-classes,CSP + LDA,MotorImagery,WithinSession
-339,0.3375,0.8855215,400.0,10,0,60,1,Weibo2014_64_5-classes,CSP + LDA,MotorImagery,WithinSession
-340,0.65,2.455046,400.0,1,0,60,1,Weibo2014_16,FgMDM,MotorImagery,WithinSession
-341,0.6725,2.2867696,400.0,2,0,60,1,Weibo2014_16,FgMDM,MotorImagery,WithinSession
-342,0.515,2.201124,400.0,3,0,60,1,Weibo2014_16,FgMDM,MotorImagery,WithinSession
-343,0.67,2.2114635,400.0,4,0,60,1,Weibo2014_16,FgMDM,MotorImagery,WithinSession
-344,0.565,2.2022665,400.0,5,0,60,1,Weibo2014_16,FgMDM,MotorImagery,WithinSession
-345,0.65,2.0739074,360.0,6,0,60,1,Weibo2014_16,FgMDM,MotorImagery,WithinSession
-346,0.64,2.1691825,400.0,7,0,60,1,Weibo2014_16,FgMDM,MotorImagery,WithinSession
-347,0.7525,2.882445,400.0,8,0,60,1,Weibo2014_16,FgMDM,MotorImagery,WithinSession
-348,0.835,2.1522367,400.0,9,0,60,1,Weibo2014_16,FgMDM,MotorImagery,WithinSession
-349,0.62,2.1978257,400.0,10,0,60,1,Weibo2014_16,FgMDM,MotorImagery,WithinSession
-350,0.65,2.420819,400.0,1,0,60,1,Weibo2014_64_5-classes,FgMDM,MotorImagery,WithinSession
-351,0.6725,2.2214203,400.0,2,0,60,1,Weibo2014_64_5-classes,FgMDM,MotorImagery,WithinSession
-352,0.515,2.1854498,400.0,3,0,60,1,Weibo2014_64_5-classes,FgMDM,MotorImagery,WithinSession
-353,0.67,2.1738648,400.0,4,0,60,1,Weibo2014_64_5-classes,FgMDM,MotorImagery,WithinSession
-354,0.565,2.1489873,400.0,5,0,60,1,Weibo2014_64_5-classes,FgMDM,MotorImagery,WithinSession
-355,0.65,2.0992248,360.0,6,0,60,1,Weibo2014_64_5-classes,FgMDM,MotorImagery,WithinSession
-356,0.64,2.1423204,400.0,7,0,60,1,Weibo2014_64_5-classes,FgMDM,MotorImagery,WithinSession
-357,0.7525,2.9381635,400.0,8,0,60,1,Weibo2014_64_5-classes,FgMDM,MotorImagery,WithinSession
-358,0.835,2.20724,400.0,9,0,60,1,Weibo2014_64_5-classes,FgMDM,MotorImagery,WithinSession
-359,0.62,2.2021859,400.0,10,0,60,1,Weibo2014_64_5-classes,FgMDM,MotorImagery,WithinSession
-360,0.515,133.70084,400.0,1,0,60,1,Weibo2014_16,CSP + SVM Grid,MotorImagery,WithinSession
-361,0.425,142.9026,400.0,2,0,60,1,Weibo2014_16,CSP + SVM Grid,MotorImagery,WithinSession
-362,0.495,140.14113,400.0,3,0,60,1,Weibo2014_16,CSP + SVM Grid,MotorImagery,WithinSession
-363,0.4375,133.89784,400.0,4,0,60,1,Weibo2014_16,CSP + SVM Grid,MotorImagery,WithinSession
-364,0.4925,126.65437,400.0,5,0,60,1,Weibo2014_16,CSP + SVM Grid,MotorImagery,WithinSession
-365,0.69722223,132.56155,360.0,6,0,60,1,Weibo2014_16,CSP + SVM Grid,MotorImagery,WithinSession
-366,0.47,152.23148,400.0,7,0,60,1,Weibo2014_16,CSP + SVM Grid,MotorImagery,WithinSession
-367,0.6475,114.74219,400.0,8,0,60,1,Weibo2014_16,CSP + SVM Grid,MotorImagery,WithinSession
-368,0.715,139.6359,400.0,9,0,60,1,Weibo2014_16,CSP + SVM Grid,MotorImagery,WithinSession
-369,0.3825,126.14105,400.0,10,0,60,1,Weibo2014_16,CSP + SVM Grid,MotorImagery,WithinSession
-370,0.515,127.49736,400.0,1,0,60,1,Weibo2014_64_5-classes,CSP + SVM Grid,MotorImagery,WithinSession
-371,0.425,142.8831,400.0,2,0,60,1,Weibo2014_64_5-classes,CSP + SVM Grid,MotorImagery,WithinSession
-372,0.495,140.68832,400.0,3,0,60,1,Weibo2014_64_5-classes,CSP + SVM Grid,MotorImagery,WithinSession
-373,0.4375,134.0044,400.0,4,0,60,1,Weibo2014_64_5-classes,CSP + SVM Grid,MotorImagery,WithinSession
-374,0.4925,127.40029,400.0,5,0,60,1,Weibo2014_64_5-classes,CSP + SVM Grid,MotorImagery,WithinSession
-375,0.69722223,132.39388,360.0,6,0,60,1,Weibo2014_64_5-classes,CSP + SVM Grid,MotorImagery,WithinSession
-376,0.47,152.57597,400.0,7,0,60,1,Weibo2014_64_5-classes,CSP + SVM Grid,MotorImagery,WithinSession
-377,0.6475,114.83997,400.0,8,0,60,1,Weibo2014_64_5-classes,CSP + SVM Grid,MotorImagery,WithinSession
-378,0.715,139.99133,400.0,9,0,60,1,Weibo2014_64_5-classes,CSP + SVM Grid,MotorImagery,WithinSession
-379,0.3825,126.55104,400.0,10,0,60,1,Weibo2014_64_5-classes,CSP + SVM Grid,MotorImagery,WithinSession
-380,0.375,1.3785392,400.0,1,0,60,1,Weibo2014_16,MDM,MotorImagery,WithinSession
-381,0.39,1.0689651,400.0,2,0,60,1,Weibo2014_16,MDM,MotorImagery,WithinSession
-382,0.4425,1.0295092,400.0,3,0,60,1,Weibo2014_16,MDM,MotorImagery,WithinSession
-383,0.47,1.0664918,400.0,4,0,60,1,Weibo2014_16,MDM,MotorImagery,WithinSession
-384,0.2725,1.0543692,400.0,5,0,60,1,Weibo2014_16,MDM,MotorImagery,WithinSession
-385,0.49166667,0.9702302,360.0,6,0,60,1,Weibo2014_16,MDM,MotorImagery,WithinSession
-386,0.5075,1.0672096,400.0,7,0,60,1,Weibo2014_16,MDM,MotorImagery,WithinSession
-387,0.33,1.8311636,400.0,8,0,60,1,Weibo2014_16,MDM,MotorImagery,WithinSession
-388,0.5625,1.0530692,400.0,9,0,60,1,Weibo2014_16,MDM,MotorImagery,WithinSession
-389,0.51,0.98328674,400.0,10,0,60,1,Weibo2014_16,MDM,MotorImagery,WithinSession
-390,0.375,1.3815674,400.0,1,0,60,1,Weibo2014_64_5-classes,MDM,MotorImagery,WithinSession
-391,0.39,1.0599926,400.0,2,0,60,1,Weibo2014_64_5-classes,MDM,MotorImagery,WithinSession
-392,0.4425,1.0463712,400.0,3,0,60,1,Weibo2014_64_5-classes,MDM,MotorImagery,WithinSession
-393,0.47,1.0631543,400.0,4,0,60,1,Weibo2014_64_5-classes,MDM,MotorImagery,WithinSession
-394,0.2725,1.0386591,400.0,5,0,60,1,Weibo2014_64_5-classes,MDM,MotorImagery,WithinSession
-395,0.49166667,0.9866596,360.0,6,0,60,1,Weibo2014_64_5-classes,MDM,MotorImagery,WithinSession
-396,0.5075,1.0618893,400.0,7,0,60,1,Weibo2014_64_5-classes,MDM,MotorImagery,WithinSession
-397,0.33,1.84041,400.0,8,0,60,1,Weibo2014_64_5-classes,MDM,MotorImagery,WithinSession
-398,0.5625,1.0504704,400.0,9,0,60,1,Weibo2014_64_5-classes,MDM,MotorImagery,WithinSession
-399,0.51,0.99127114,400.0,10,0,60,1,Weibo2014_64_5-classes,MDM,MotorImagery,WithinSession
-400,0.7175,3.533242,400.0,1,0,60,1,Weibo2014_16,Tangent Space LR,MotorImagery,WithinSession
-401,0.745,2.4149125,400.0,2,0,60,1,Weibo2014_16,Tangent Space LR,MotorImagery,WithinSession
-402,0.6,1.8916769,400.0,3,0,60,1,Weibo2014_16,Tangent Space LR,MotorImagery,WithinSession
-403,0.7175,2.0069213,400.0,4,0,60,1,Weibo2014_16,Tangent Space LR,MotorImagery,WithinSession
-404,0.6675,3.4177544,400.0,5,0,60,1,Weibo2014_16,Tangent Space LR,MotorImagery,WithinSession
-405,0.75,1.800648,360.0,6,0,60,1,Weibo2014_16,Tangent Space LR,MotorImagery,WithinSession
-406,0.7375,2.4133933,400.0,7,0,60,1,Weibo2014_16,Tangent Space LR,MotorImagery,WithinSession
-407,0.84,3.9090214,400.0,8,0,60,1,Weibo2014_16,Tangent Space LR,MotorImagery,WithinSession
-408,0.845,1.974889,400.0,9,0,60,1,Weibo2014_16,Tangent Space LR,MotorImagery,WithinSession
-409,0.66,1.4947003,400.0,10,0,60,1,Weibo2014_16,Tangent Space LR,MotorImagery,WithinSession
-410,0.7175,3.572067,400.0,1,0,60,1,Weibo2014_64_5-classes,Tangent Space LR,MotorImagery,WithinSession
-411,0.745,2.3676994,400.0,2,0,60,1,Weibo2014_64_5-classes,Tangent Space LR,MotorImagery,WithinSession
-412,0.6,2.0674028,400.0,3,0,60,1,Weibo2014_64_5-classes,Tangent Space LR,MotorImagery,WithinSession
-413,0.7175,1.9524858,400.0,4,0,60,1,Weibo2014_64_5-classes,Tangent Space LR,MotorImagery,WithinSession
-414,0.6675,3.4502246,400.0,5,0,60,1,Weibo2014_64_5-classes,Tangent Space LR,MotorImagery,WithinSession
-415,0.75,1.6378886,360.0,6,0,60,1,Weibo2014_64_5-classes,Tangent Space LR,MotorImagery,WithinSession
-416,0.7375,2.2788484,400.0,7,0,60,1,Weibo2014_64_5-classes,Tangent Space LR,MotorImagery,WithinSession
-417,0.84,4.0792522,400.0,8,0,60,1,Weibo2014_64_5-classes,Tangent Space LR,MotorImagery,WithinSession
-418,0.845,1.7727993,400.0,9,0,60,1,Weibo2014_64_5-classes,Tangent Space LR,MotorImagery,WithinSession
-419,0.66,1.4698015,400.0,10,0,60,1,Weibo2014_64_5-classes,Tangent Space LR,MotorImagery,WithinSession
-420,0.525,0.9454075,400.0,1,0,60,1,Weibo2014_16,DLCSPauto + shLDA,MotorImagery,WithinSession
-421,0.4,1.0017623,400.0,2,0,60,1,Weibo2014_16,DLCSPauto + shLDA,MotorImagery,WithinSession
-422,0.445,0.999144,400.0,3,0,60,1,Weibo2014_16,DLCSPauto + shLDA,MotorImagery,WithinSession
-423,0.4,0.98683584,400.0,4,0,60,1,Weibo2014_16,DLCSPauto + shLDA,MotorImagery,WithinSession
-424,0.41,0.9208155,400.0,5,0,60,1,Weibo2014_16,DLCSPauto + shLDA,MotorImagery,WithinSession
-425,0.56666666,0.9854797,360.0,6,0,60,1,Weibo2014_16,DLCSPauto + shLDA,MotorImagery,WithinSession
-426,0.4375,1.0779922,400.0,7,0,60,1,Weibo2014_16,DLCSPauto + shLDA,MotorImagery,WithinSession
-427,0.645,0.82808053,400.0,8,0,60,1,Weibo2014_16,DLCSPauto + shLDA,MotorImagery,WithinSession
-428,0.7,1.0163198,400.0,9,0,60,1,Weibo2014_16,DLCSPauto + shLDA,MotorImagery,WithinSession
-429,0.3425,0.9215558,400.0,10,0,60,1,Weibo2014_16,DLCSPauto + shLDA,MotorImagery,WithinSession
-430,0.525,0.9239173,400.0,1,0,60,1,Weibo2014_64_5-classes,DLCSPauto + shLDA,MotorImagery,WithinSession
-431,0.4,1.0059009,400.0,2,0,60,1,Weibo2014_64_5-classes,DLCSPauto + shLDA,MotorImagery,WithinSession
-432,0.445,1.0096674,400.0,3,0,60,1,Weibo2014_64_5-classes,DLCSPauto + shLDA,MotorImagery,WithinSession
-433,0.4,0.9655732,400.0,4,0,60,1,Weibo2014_64_5-classes,DLCSPauto + shLDA,MotorImagery,WithinSession
-434,0.41,0.9352099,400.0,5,0,60,1,Weibo2014_64_5-classes,DLCSPauto + shLDA,MotorImagery,WithinSession
-435,0.56666666,0.9439353,360.0,6,0,60,1,Weibo2014_64_5-classes,DLCSPauto + shLDA,MotorImagery,WithinSession
-436,0.4375,1.0735123,400.0,7,0,60,1,Weibo2014_64_5-classes,DLCSPauto + shLDA,MotorImagery,WithinSession
-437,0.645,0.80675924,400.0,8,0,60,1,Weibo2014_64_5-classes,DLCSPauto + shLDA,MotorImagery,WithinSession
-438,0.7,1.000959,400.0,9,0,60,1,Weibo2014_64_5-classes,DLCSPauto + shLDA,MotorImagery,WithinSession
-439,0.3425,0.91297084,400.0,10,0,60,1,Weibo2014_64_5-classes,DLCSPauto + shLDA,MotorImagery,WithinSession
-440,0.69,22.945232,400.0,1,0,60,1,Weibo2014_16,Tangent Space SVM Grid,MotorImagery,WithinSession
-441,0.7475,19.460545,400.0,2,0,60,1,Weibo2014_16,Tangent Space SVM Grid,MotorImagery,WithinSession
-442,0.5675,19.341978,400.0,3,0,60,1,Weibo2014_16,Tangent Space SVM Grid,MotorImagery,WithinSession
-443,0.7075,19.348692,400.0,4,0,60,1,Weibo2014_16,Tangent Space SVM Grid,MotorImagery,WithinSession
-444,0.6325,19.355495,400.0,5,0,60,1,Weibo2014_16,Tangent Space SVM Grid,MotorImagery,WithinSession
-445,0.71944445,17.37487,360.0,6,0,60,1,Weibo2014_16,Tangent Space SVM Grid,MotorImagery,WithinSession
-446,0.72,19.519209,400.0,7,0,60,1,Weibo2014_16,Tangent Space SVM Grid,MotorImagery,WithinSession
-447,0.83,29.62583,400.0,8,0,60,1,Weibo2014_16,Tangent Space SVM Grid,MotorImagery,WithinSession
-448,0.85,19.129383,400.0,9,0,60,1,Weibo2014_16,Tangent Space SVM Grid,MotorImagery,WithinSession
-449,0.645,18.476374,400.0,10,0,60,1,Weibo2014_16,Tangent Space SVM Grid,MotorImagery,WithinSession
-450,0.69,22.729338,400.0,1,0,60,1,Weibo2014_64_5-classes,Tangent Space SVM Grid,MotorImagery,WithinSession
-451,0.7475,19.347887,400.0,2,0,60,1,Weibo2014_64_5-classes,Tangent Space SVM Grid,MotorImagery,WithinSession
-452,0.5675,19.52641,400.0,3,0,60,1,Weibo2014_64_5-classes,Tangent Space SVM Grid,MotorImagery,WithinSession
-453,0.7075,19.185358,400.0,4,0,60,1,Weibo2014_64_5-classes,Tangent Space SVM Grid,MotorImagery,WithinSession
-454,0.6325,19.364576,400.0,5,0,60,1,Weibo2014_64_5-classes,Tangent Space SVM Grid,MotorImagery,WithinSession
-455,0.71944445,17.319496,360.0,6,0,60,1,Weibo2014_64_5-classes,Tangent Space SVM Grid,MotorImagery,WithinSession
-456,0.72,19.381468,400.0,7,0,60,1,Weibo2014_64_5-classes,Tangent Space SVM Grid,MotorImagery,WithinSession
-457,0.83,29.568401,400.0,8,0,60,1,Weibo2014_64_5-classes,Tangent Space SVM Grid,MotorImagery,WithinSession
-458,0.85,19.250515,400.0,9,0,60,1,Weibo2014_64_5-classes,Tangent Space SVM Grid,MotorImagery,WithinSession
-459,0.645,18.571754,400.0,10,0,60,1,Weibo2014_64_5-classes,Tangent Space SVM Grid,MotorImagery,WithinSession
-460,0.5006723,1.0831666,174.0,1,0,64,1,PhysionetMotorImagery,DLCSPauto + shLDA,MotorImagery,WithinSession
-461,0.5285714,1.109308,174.0,2,0,64,1,PhysionetMotorImagery,DLCSPauto + shLDA,MotorImagery,WithinSession
-462,0.59210086,1.1381605,174.0,3,0,64,1,PhysionetMotorImagery,DLCSPauto + shLDA,MotorImagery,WithinSession
-463,0.54537815,1.1934103,174.0,4,0,64,1,PhysionetMotorImagery,DLCSPauto + shLDA,MotorImagery,WithinSession
-464,0.35647058,1.2503763,174.0,5,0,64,1,PhysionetMotorImagery,DLCSPauto + shLDA,MotorImagery,WithinSession
-465,0.42487395,0.99408555,174.0,6,0,64,1,PhysionetMotorImagery,DLCSPauto + shLDA,MotorImagery,WithinSession
-466,0.5294118,1.1155965,174.0,7,0,64,1,PhysionetMotorImagery,DLCSPauto + shLDA,MotorImagery,WithinSession
-467,0.47663864,1.1401564,174.0,8,0,64,1,PhysionetMotorImagery,DLCSPauto + shLDA,MotorImagery,WithinSession
-468,0.4368067,0.9485148,174.0,9,0,64,1,PhysionetMotorImagery,DLCSPauto + shLDA,MotorImagery,WithinSession
-469,0.4544538,1.332022,174.0,10,0,64,1,PhysionetMotorImagery,DLCSPauto + shLDA,MotorImagery,WithinSession
-470,0.48268908,0.14284606,174.0,1,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
-471,0.4252101,0.14629345,174.0,2,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
-472,0.4882353,0.14471479,174.0,3,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
-473,0.5119328,0.13643655,174.0,4,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
-474,0.45394957,0.14879623,174.0,5,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
-475,0.46,0.14230528,174.0,6,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
-476,0.6378151,0.06856451,174.0,7,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
-477,0.4887395,0.06732349,174.0,8,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
-478,0.43092436,0.073689125,174.0,9,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
-479,0.48857144,0.09382324,174.0,10,0,16,1,PhysionetMotorImagery16,DLCSPauto + shLDA,MotorImagery,WithinSession
-480,0.70134455,2.1686697,174.0,1,0,64,1,PhysionetMotorImagery,Tangent Space LR,MotorImagery,WithinSession
-481,0.66655463,2.9336715,174.0,2,0,64,1,PhysionetMotorImagery,Tangent Space LR,MotorImagery,WithinSession
-482,0.6036975,1.812538,174.0,3,0,64,1,PhysionetMotorImagery,Tangent Space LR,MotorImagery,WithinSession
-483,0.81563026,2.4153965,174.0,4,0,64,1,PhysionetMotorImagery,Tangent Space LR,MotorImagery,WithinSession
-484,0.48268908,1.8263239,174.0,5,0,64,1,PhysionetMotorImagery,Tangent Space LR,MotorImagery,WithinSession
-485,0.5290756,4.149938,174.0,6,0,64,1,PhysionetMotorImagery,Tangent Space LR,MotorImagery,WithinSession
-486,0.83310926,2.1900706,174.0,7,0,64,1,PhysionetMotorImagery,Tangent Space LR,MotorImagery,WithinSession
-487,0.6497479,2.5037432,174.0,8,0,64,1,PhysionetMotorImagery,Tangent Space LR,MotorImagery,WithinSession
-488,0.5057143,2.8450146,174.0,9,0,64,1,PhysionetMotorImagery,Tangent Space LR,MotorImagery,WithinSession
-489,0.5230252,3.2486975,174.0,10,0,64,1,PhysionetMotorImagery,Tangent Space LR,MotorImagery,WithinSession
-490,0.58,0.13146853,174.0,1,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
-491,0.6262185,0.1278306,174.0,2,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
-492,0.5053781,0.12645178,174.0,3,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
-493,0.71882355,0.129487,174.0,4,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
-494,0.5058824,0.12480607,174.0,5,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
-495,0.4312605,0.1266584,174.0,6,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
-496,0.7584874,0.09233813,174.0,7,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
-497,0.5231933,0.087132975,174.0,8,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
-498,0.517479,0.09371314,174.0,9,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
-499,0.5231933,0.08894424,174.0,10,0,16,1,PhysionetMotorImagery16,Tangent Space LR,MotorImagery,WithinSession
-500,0.729916,16.435505,174.0,1,0,64,1,PhysionetMotorImagery,TS ElasticNet Grid,MotorImagery,WithinSession
-501,0.7352941,32.043697,174.0,2,0,64,1,PhysionetMotorImagery,TS ElasticNet Grid,MotorImagery,WithinSession
-502,0.6672269,16.44566,174.0,3,0,64,1,PhysionetMotorImagery,TS ElasticNet Grid,MotorImagery,WithinSession
-503,0.81613445,17.471638,174.0,4,0,64,1,PhysionetMotorImagery,TS ElasticNet Grid,MotorImagery,WithinSession
-504,0.47747898,16.213488,174.0,5,0,64,1,PhysionetMotorImagery,TS ElasticNet Grid,MotorImagery,WithinSession
-505,0.4821849,22.108397,174.0,6,0,64,1,PhysionetMotorImagery,TS ElasticNet Grid,MotorImagery,WithinSession
-506,0.8563025,18.83467,174.0,7,0,64,1,PhysionetMotorImagery,TS ElasticNet Grid,MotorImagery,WithinSession
-507,0.5922689,16.476465,174.0,8,0,64,1,PhysionetMotorImagery,TS ElasticNet Grid,MotorImagery,WithinSession
-508,0.47714287,15.57828,174.0,9,0,64,1,PhysionetMotorImagery,TS ElasticNet Grid,MotorImagery,WithinSession
-509,0.5115966,19.719833,174.0,10,0,64,1,PhysionetMotorImagery,TS ElasticNet Grid,MotorImagery,WithinSession
-510,0.5744538,0.609946,174.0,1,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
-511,0.6262185,0.5122841,174.0,2,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
-512,0.49411765,0.5036264,174.0,3,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
-513,0.73613447,0.4767891,174.0,4,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
-514,0.49983194,0.6619177,174.0,5,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
-515,0.47126052,0.5149253,174.0,6,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
-516,0.7529412,1.0347037,174.0,7,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
-517,0.5057143,0.99710125,174.0,8,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
-518,0.5117647,0.9933823,174.0,9,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
-519,0.5231933,1.0350261,174.0,10,0,16,1,PhysionetMotorImagery16,TS ElasticNet Grid,MotorImagery,WithinSession
-520,0.6260504,0.55500346,174.0,1,0,64,1,PhysionetMotorImagery,MDM,MotorImagery,WithinSession
-521,0.5109244,0.5841069,174.0,2,0,64,1,PhysionetMotorImagery,MDM,MotorImagery,WithinSession
-522,0.38537815,0.55602825,174.0,3,0,64,1,PhysionetMotorImagery,MDM,MotorImagery,WithinSession
-523,0.752605,0.58355236,174.0,4,0,64,1,PhysionetMotorImagery,MDM,MotorImagery,WithinSession
-524,0.39092436,0.55168617,174.0,5,0,64,1,PhysionetMotorImagery,MDM,MotorImagery,WithinSession
-525,0.2410084,0.59070724,174.0,6,0,64,1,PhysionetMotorImagery,MDM,MotorImagery,WithinSession
-526,0.58016807,0.5897938,174.0,7,0,64,1,PhysionetMotorImagery,MDM,MotorImagery,WithinSession
-527,0.43109244,0.55441505,174.0,8,0,64,1,PhysionetMotorImagery,MDM,MotorImagery,WithinSession
-528,0.21327731,0.5891001,174.0,9,0,64,1,PhysionetMotorImagery,MDM,MotorImagery,WithinSession
-529,0.22386554,0.5628954,174.0,10,0,64,1,PhysionetMotorImagery,MDM,MotorImagery,WithinSession
-530,0.54487395,0.035946082,174.0,1,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
-531,0.55142856,0.038457155,174.0,2,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
-532,0.28773108,0.038182545,174.0,3,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
-533,0.6892437,0.035708617,174.0,4,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
-534,0.3852101,0.03574481,174.0,5,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
-535,0.20134453,0.03554654,174.0,6,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
-536,0.6141176,0.050073147,174.0,7,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
-537,0.34521008,0.052334882,174.0,8,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
-538,0.23042017,0.05235977,174.0,9,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
-539,0.28739497,0.052953195,174.0,10,0,16,1,PhysionetMotorImagery16,MDM,MotorImagery,WithinSession
-540,0.66117644,1.9331268,174.0,1,0,64,1,PhysionetMotorImagery,FgMDM,MotorImagery,WithinSession
-541,0.56890756,1.9261574,174.0,2,0,64,1,PhysionetMotorImagery,FgMDM,MotorImagery,WithinSession
-542,0.58638656,2.1106439,174.0,3,0,64,1,PhysionetMotorImagery,FgMDM,MotorImagery,WithinSession
-543,0.80470586,1.9005194,174.0,4,0,64,1,PhysionetMotorImagery,FgMDM,MotorImagery,WithinSession
-544,0.47680673,1.8798968,174.0,5,0,64,1,PhysionetMotorImagery,FgMDM,MotorImagery,WithinSession
-545,0.44840336,1.8682591,174.0,6,0,64,1,PhysionetMotorImagery,FgMDM,MotorImagery,WithinSession
-546,0.787563,1.899829,174.0,7,0,64,1,PhysionetMotorImagery,FgMDM,MotorImagery,WithinSession
-547,0.54067224,1.8974323,174.0,8,0,64,1,PhysionetMotorImagery,FgMDM,MotorImagery,WithinSession
-548,0.5287395,1.883449,174.0,9,0,64,1,PhysionetMotorImagery,FgMDM,MotorImagery,WithinSession
-549,0.48857144,1.8963524,174.0,10,0,64,1,PhysionetMotorImagery,FgMDM,MotorImagery,WithinSession
-550,0.56268907,0.039547205,174.0,1,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
-551,0.6436975,0.04000206,174.0,2,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
-552,0.39714286,0.039534092,174.0,3,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
-553,0.67798316,0.040130377,174.0,4,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
-554,0.47126052,0.037407827,174.0,5,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
-555,0.3157983,0.039877843,174.0,6,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
-556,0.7295798,0.23299217,174.0,7,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
-557,0.39058822,0.29833966,174.0,8,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
-558,0.4317647,0.22535133,174.0,9,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
-559,0.4317647,0.25160518,174.0,10,0,16,1,PhysionetMotorImagery16,FgMDM,MotorImagery,WithinSession
-560,0.69563025,9.500361,174.0,1,0,64,1,PhysionetMotorImagery,Tangent Space SVM Grid,MotorImagery,WithinSession
-561,0.712437,10.03322,174.0,2,0,64,1,PhysionetMotorImagery,Tangent Space SVM Grid,MotorImagery,WithinSession
-562,0.5919328,9.558607,174.0,3,0,64,1,PhysionetMotorImagery,Tangent Space SVM Grid,MotorImagery,WithinSession
-563,0.78134453,9.637939,174.0,4,0,64,1,PhysionetMotorImagery,Tangent Space SVM Grid,MotorImagery,WithinSession
-564,0.48285714,9.6661215,174.0,5,0,64,1,PhysionetMotorImagery,Tangent Space SVM Grid,MotorImagery,WithinSession
-565,0.47714287,9.854119,174.0,6,0,64,1,PhysionetMotorImagery,Tangent Space SVM Grid,MotorImagery,WithinSession
-566,0.83310926,9.944113,174.0,7,0,64,1,PhysionetMotorImagery,Tangent Space SVM Grid,MotorImagery,WithinSession
-567,0.6386555,9.569996,174.0,8,0,64,1,PhysionetMotorImagery,Tangent Space SVM Grid,MotorImagery,WithinSession
-568,0.5117647,10.031318,174.0,9,0,64,1,PhysionetMotorImagery,Tangent Space SVM Grid,MotorImagery,WithinSession
-569,0.5285714,9.568347,174.0,10,0,64,1,PhysionetMotorImagery,Tangent Space SVM Grid,MotorImagery,WithinSession
-570,0.5917647,0.49282146,174.0,1,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
-571,0.5855462,0.5150061,174.0,2,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
-572,0.5058824,0.49243632,174.0,3,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
-573,0.7647059,0.5085469,174.0,4,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
-574,0.5228571,0.5011688,174.0,5,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
-575,0.48285714,0.49502707,174.0,6,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
-576,0.752437,1.0169225,174.0,7,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
-577,0.54016805,1.0317602,174.0,8,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
-578,0.48857144,1.0308682,174.0,9,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
-579,0.5114286,1.0265427,174.0,10,0,16,1,PhysionetMotorImagery16,Tangent Space SVM Grid,MotorImagery,WithinSession
-580,0.4892437,168.74207,174.0,1,0,64,1,PhysionetMotorImagery,CSP + SVM Grid,MotorImagery,WithinSession
-581,0.5,187.99088,174.0,2,0,64,1,PhysionetMotorImagery,CSP + SVM Grid,MotorImagery,WithinSession
-582,0.58588237,193.7815,174.0,3,0,64,1,PhysionetMotorImagery,CSP + SVM Grid,MotorImagery,WithinSession
-583,0.56924367,208.4824,174.0,4,0,64,1,PhysionetMotorImagery,CSP + SVM Grid,MotorImagery,WithinSession
-584,0.48285714,211.83301,174.0,5,0,64,1,PhysionetMotorImagery,CSP + SVM Grid,MotorImagery,WithinSession
-585,0.48285714,175.10545,174.0,6,0,64,1,PhysionetMotorImagery,CSP + SVM Grid,MotorImagery,WithinSession
-586,0.58067226,173.26852,174.0,7,0,64,1,PhysionetMotorImagery,CSP + SVM Grid,MotorImagery,WithinSession
-587,0.46571428,161.39659,174.0,8,0,64,1,PhysionetMotorImagery,CSP + SVM Grid,MotorImagery,WithinSession
-588,0.48285714,145.82788,174.0,9,0,64,1,PhysionetMotorImagery,CSP + SVM Grid,MotorImagery,WithinSession
-589,0.47714287,194.64636,174.0,10,0,64,1,PhysionetMotorImagery,CSP + SVM Grid,MotorImagery,WithinSession
-590,0.48890758,21.184464,174.0,1,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
-591,0.47109243,19.089352,174.0,2,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
-592,0.5,21.766146,174.0,3,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
-593,0.5342857,22.268614,174.0,4,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
-594,0.48285714,26.749447,174.0,5,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
-595,0.48285714,20.275661,174.0,6,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
-596,0.614958,10.076891,174.0,7,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
-597,0.4942857,10.295957,174.0,8,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
-598,0.48285714,11.874509,174.0,9,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
-599,0.48840335,12.554469,174.0,10,0,16,1,PhysionetMotorImagery16,CSP + SVM Grid,MotorImagery,WithinSession
-600,0.5290756,0.5454176,174.0,1,0,64,1,PhysionetMotorImagery,CSP + LDA,MotorImagery,WithinSession
-601,0.46588236,1.1347016,174.0,2,0,64,1,PhysionetMotorImagery,CSP + LDA,MotorImagery,WithinSession
-602,0.58084035,1.158503,174.0,3,0,64,1,PhysionetMotorImagery,CSP + LDA,MotorImagery,WithinSession
-603,0.52840334,1.1876483,174.0,4,0,64,1,PhysionetMotorImagery,CSP + LDA,MotorImagery,WithinSession
-604,0.39109245,1.3399559,174.0,5,0,64,1,PhysionetMotorImagery,CSP + LDA,MotorImagery,WithinSession
-605,0.43663865,0.98297733,174.0,6,0,64,1,PhysionetMotorImagery,CSP + LDA,MotorImagery,WithinSession
-606,0.5005042,1.1123396,174.0,7,0,64,1,PhysionetMotorImagery,CSP + LDA,MotorImagery,WithinSession
-607,0.47109243,1.1311663,174.0,8,0,64,1,PhysionetMotorImagery,CSP + LDA,MotorImagery,WithinSession
-608,0.41378152,0.9776917,174.0,9,0,64,1,PhysionetMotorImagery,CSP + LDA,MotorImagery,WithinSession
-609,0.40218487,1.3390561,174.0,10,0,64,1,PhysionetMotorImagery,CSP + LDA,MotorImagery,WithinSession
-610,0.442521,0.044692803,174.0,1,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
-611,0.4077311,0.04172077,174.0,2,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
-612,0.48806724,0.043399382,174.0,3,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
-613,0.48285714,0.041303586,174.0,4,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
-614,0.44806722,0.04325404,174.0,5,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
-615,0.4544538,0.042948246,174.0,6,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
-616,0.6378151,0.06784229,174.0,7,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
-617,0.4887395,0.06609855,174.0,8,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
-618,0.41966388,0.074483156,174.0,9,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
-619,0.44218487,0.09446125,174.0,10,0,16,1,PhysionetMotorImagery16,CSP + LDA,MotorImagery,WithinSession
+0,0.6421053,0.65069556,98.0,1,0,16,4,BrainBot4600ms,TS ElasticNet Grid,MotorImagery,WithinSession
+1,0.48691323,1.1972423,187.0,2,0,16,4,BrainBot4600ms,TS ElasticNet Grid,MotorImagery,WithinSession
+2,0.5507692,1.5034997,196.0,3,0,16,4,BrainBot4600ms,TS ElasticNet Grid,MotorImagery,WithinSession
+3,0.61210525,0.650112,98.0,3,1,16,4,BrainBot4600ms,TS ElasticNet Grid,MotorImagery,WithinSession
+4,0.59842104,0.6675005,97.0,3,2,16,4,BrainBot4600ms,TS ElasticNet Grid,MotorImagery,WithinSession
+5,0.62,0.9557182,147.0,3,3,16,4,BrainBot4600ms,TS ElasticNet Grid,MotorImagery,WithinSession
+6,0.59105265,0.0517519,98.0,1,0,16,4,BrainBot4600ms,Tangent Space LR,MotorImagery,WithinSession
+7,0.486771,0.091693066,187.0,2,0,16,4,BrainBot4600ms,Tangent Space LR,MotorImagery,WithinSession
+8,0.5102564,0.10129108,196.0,3,0,16,4,BrainBot4600ms,Tangent Space LR,MotorImagery,WithinSession
+9,0.61263156,0.048115395,98.0,3,1,16,4,BrainBot4600ms,Tangent Space LR,MotorImagery,WithinSession
+10,0.58842105,0.062041283,97.0,3,2,16,4,BrainBot4600ms,Tangent Space LR,MotorImagery,WithinSession
+11,0.61310345,0.07716732,147.0,3,3,16,4,BrainBot4600ms,Tangent Space LR,MotorImagery,WithinSession
+12,0.6410526,0.063417,98.0,1,0,16,4,BrainBot4600ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+13,0.4655761,0.09859433,187.0,2,0,16,4,BrainBot4600ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+14,0.52576923,0.09184952,196.0,3,0,16,4,BrainBot4600ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+15,0.5610526,0.07930684,98.0,3,1,16,4,BrainBot4600ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+16,0.49578947,0.07173042,97.0,3,2,16,4,BrainBot4600ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+17,0.5583908,0.09249787,147.0,3,3,16,4,BrainBot4600ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+18,0.58105266,0.6666762,98.0,1,0,16,4,BrainBot4600ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+19,0.51906115,1.1770401,187.0,2,0,16,4,BrainBot4600ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+20,0.5357692,1.5072718,196.0,3,0,16,4,BrainBot4600ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+21,0.53157896,0.91475034,98.0,3,1,16,4,BrainBot4600ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+22,0.5978947,0.9544655,97.0,3,2,16,4,BrainBot4600ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+23,0.5862069,0.915467,147.0,3,3,16,4,BrainBot4600ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+24,0.56210524,0.03296895,98.0,1,0,16,4,BrainBot4600ms,MDM,MotorImagery,WithinSession
+25,0.43854907,0.06275783,187.0,2,0,16,4,BrainBot4600ms,MDM,MotorImagery,WithinSession
+26,0.43858975,0.06770053,196.0,3,0,16,4,BrainBot4600ms,MDM,MotorImagery,WithinSession
+27,0.5926316,0.034785222,98.0,3,1,16,4,BrainBot4600ms,MDM,MotorImagery,WithinSession
+28,0.42473683,0.036057472,97.0,3,2,16,4,BrainBot4600ms,MDM,MotorImagery,WithinSession
+29,0.5445977,0.04719186,147.0,3,3,16,4,BrainBot4600ms,MDM,MotorImagery,WithinSession
+30,0.60210526,0.14616552,98.0,1,0,16,4,BrainBot4600ms,FgMDM,MotorImagery,WithinSession
+31,0.46500713,0.2715505,187.0,2,0,16,4,BrainBot4600ms,FgMDM,MotorImagery,WithinSession
+32,0.48948717,0.27977905,196.0,3,0,16,4,BrainBot4600ms,FgMDM,MotorImagery,WithinSession
+33,0.5205263,0.14192061,98.0,3,1,16,4,BrainBot4600ms,FgMDM,MotorImagery,WithinSession
+34,0.57631576,0.17049961,97.0,3,2,16,4,BrainBot4600ms,FgMDM,MotorImagery,WithinSession
+35,0.5928736,0.2362679,147.0,3,3,16,4,BrainBot4600ms,FgMDM,MotorImagery,WithinSession
+36,0.58105266,10.312738,98.0,1,0,16,4,BrainBot4600ms,CSP + SVM Grid,MotorImagery,WithinSession
+37,0.49260312,13.384742,187.0,2,0,16,4,BrainBot4600ms,CSP + SVM Grid,MotorImagery,WithinSession
+38,0.56641024,12.530692,196.0,3,0,16,4,BrainBot4600ms,CSP + SVM Grid,MotorImagery,WithinSession
+39,0.54,10.558115,98.0,3,1,16,4,BrainBot4600ms,CSP + SVM Grid,MotorImagery,WithinSession
+40,0.48421052,11.3761425,97.0,3,2,16,4,BrainBot4600ms,CSP + SVM Grid,MotorImagery,WithinSession
+41,0.51011497,12.676011,147.0,3,3,16,4,BrainBot4600ms,CSP + SVM Grid,MotorImagery,WithinSession
+42,0.6310526,0.06047926,98.0,1,0,16,4,BrainBot4600ms,CSP + LDA,MotorImagery,WithinSession
+43,0.48165008,0.099436,187.0,2,0,16,4,BrainBot4600ms,CSP + LDA,MotorImagery,WithinSession
+44,0.520641,0.08829699,196.0,3,0,16,4,BrainBot4600ms,CSP + LDA,MotorImagery,WithinSession
+45,0.55,0.087147616,98.0,3,1,16,4,BrainBot4600ms,CSP + LDA,MotorImagery,WithinSession
+46,0.47421053,0.0652987,97.0,3,2,16,4,BrainBot4600ms,CSP + LDA,MotorImagery,WithinSession
+47,0.5452874,0.09456687,147.0,3,3,16,4,BrainBot4600ms,CSP + LDA,MotorImagery,WithinSession
+48,0.6526316,0.060502578,98.0,1,0,16,4,BrainBot4700ms,CSP + LDA,MotorImagery,WithinSession
+49,0.4655761,0.08620534,187.0,2,0,16,4,BrainBot4700ms,CSP + LDA,MotorImagery,WithinSession
+50,0.52576923,0.08799543,196.0,3,0,16,4,BrainBot4700ms,CSP + LDA,MotorImagery,WithinSession
+51,0.54052633,0.07650165,98.0,3,1,16,4,BrainBot4700ms,CSP + LDA,MotorImagery,WithinSession
+52,0.50526315,0.06347551,97.0,3,2,16,4,BrainBot4700ms,CSP + LDA,MotorImagery,WithinSession
+53,0.56528735,0.38552007,147.0,3,3,16,4,BrainBot4700ms,CSP + LDA,MotorImagery,WithinSession
+54,0.59157896,0.0605186,98.0,1,0,16,4,BrainBot4700ms,Tangent Space LR,MotorImagery,WithinSession
+55,0.47027028,0.101159,187.0,2,0,16,4,BrainBot4700ms,Tangent Space LR,MotorImagery,WithinSession
+56,0.5253846,0.10309706,196.0,3,0,16,4,BrainBot4700ms,Tangent Space LR,MotorImagery,WithinSession
+57,0.58157897,0.042263173,98.0,3,1,16,4,BrainBot4700ms,Tangent Space LR,MotorImagery,WithinSession
+58,0.58789474,0.057925127,97.0,3,2,16,4,BrainBot4700ms,Tangent Space LR,MotorImagery,WithinSession
+59,0.61310345,0.07655654,147.0,3,3,16,4,BrainBot4700ms,Tangent Space LR,MotorImagery,WithinSession
+60,0.6315789,0.64796364,98.0,1,0,16,4,BrainBot4700ms,TS ElasticNet Grid,MotorImagery,WithinSession
+61,0.48691323,1.1342708,187.0,2,0,16,4,BrainBot4700ms,TS ElasticNet Grid,MotorImagery,WithinSession
+62,0.5507692,1.2889142,196.0,3,0,16,4,BrainBot4700ms,TS ElasticNet Grid,MotorImagery,WithinSession
+63,0.59157896,0.586347,98.0,3,1,16,4,BrainBot4700ms,TS ElasticNet Grid,MotorImagery,WithinSession
+64,0.57789475,0.5872776,97.0,3,2,16,4,BrainBot4700ms,TS ElasticNet Grid,MotorImagery,WithinSession
+65,0.62,0.91491073,147.0,3,3,16,4,BrainBot4700ms,TS ElasticNet Grid,MotorImagery,WithinSession
+66,0.61105263,0.06255011,98.0,1,0,16,4,BrainBot4700ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+67,0.48150784,0.085665464,187.0,2,0,16,4,BrainBot4700ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+68,0.52576923,0.08465719,196.0,3,0,16,4,BrainBot4700ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+69,0.5610526,0.07889004,98.0,3,1,16,4,BrainBot4700ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+70,0.5378947,0.062479686,97.0,3,2,16,4,BrainBot4700ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+71,0.5645977,0.07447219,147.0,3,3,16,4,BrainBot4700ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+72,0.59210527,10.670298,98.0,1,0,16,4,BrainBot4700ms,CSP + SVM Grid,MotorImagery,WithinSession
+73,0.47112375,15.058436,187.0,2,0,16,4,BrainBot4700ms,CSP + SVM Grid,MotorImagery,WithinSession
+74,0.56153846,12.806678,196.0,3,0,16,4,BrainBot4700ms,CSP + SVM Grid,MotorImagery,WithinSession
+75,0.54,9.93941,98.0,3,1,16,4,BrainBot4700ms,CSP + SVM Grid,MotorImagery,WithinSession
+76,0.5368421,10.091577,97.0,3,2,16,4,BrainBot4700ms,CSP + SVM Grid,MotorImagery,WithinSession
+77,0.53149426,11.749484,147.0,3,3,16,4,BrainBot4700ms,CSP + SVM Grid,MotorImagery,WithinSession
+78,0.59210527,0.14051476,98.0,1,0,16,4,BrainBot4700ms,FgMDM,MotorImagery,WithinSession
+79,0.4541963,0.66800046,187.0,2,0,16,4,BrainBot4700ms,FgMDM,MotorImagery,WithinSession
+80,0.5048718,0.26593262,196.0,3,0,16,4,BrainBot4700ms,FgMDM,MotorImagery,WithinSession
+81,0.53,0.12807211,98.0,3,1,16,4,BrainBot4700ms,FgMDM,MotorImagery,WithinSession
+82,0.5668421,0.14405636,97.0,3,2,16,4,BrainBot4700ms,FgMDM,MotorImagery,WithinSession
+83,0.56551725,0.24785633,147.0,3,3,16,4,BrainBot4700ms,FgMDM,MotorImagery,WithinSession
+84,0.62210524,0.70344484,98.0,1,0,16,4,BrainBot4700ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+85,0.5240398,1.2581335,187.0,2,0,16,4,BrainBot4700ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+86,0.5048718,1.1953595,196.0,3,0,16,4,BrainBot4700ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+87,0.54210526,0.6293838,98.0,3,1,16,4,BrainBot4700ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+88,0.608421,0.62931097,97.0,3,2,16,4,BrainBot4700ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+89,0.62689656,1.2571193,147.0,3,3,16,4,BrainBot4700ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+90,0.59210527,0.0322392,98.0,1,0,16,4,BrainBot4700ms,MDM,MotorImagery,WithinSession
+91,0.44921765,0.063117504,187.0,2,0,16,4,BrainBot4700ms,MDM,MotorImagery,WithinSession
+92,0.43846154,0.063839294,196.0,3,0,16,4,BrainBot4700ms,MDM,MotorImagery,WithinSession
+93,0.5826316,0.033210896,98.0,3,1,16,4,BrainBot4700ms,MDM,MotorImagery,WithinSession
+94,0.44526315,0.034007408,97.0,3,2,16,4,BrainBot4700ms,MDM,MotorImagery,WithinSession
+95,0.537931,0.05162873,147.0,3,3,16,4,BrainBot4700ms,MDM,MotorImagery,WithinSession
+96,0.67157894,0.0700983,98.0,1,0,16,4,BrainBot4800ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+97,0.48150784,0.08849545,187.0,2,0,16,4,BrainBot4800ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+98,0.5307692,0.38460153,196.0,3,0,16,4,BrainBot4800ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+99,0.54052633,0.072017096,98.0,3,1,16,4,BrainBot4800ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+100,0.5378947,0.08135281,97.0,3,2,16,4,BrainBot4800ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+101,0.60551727,0.07379117,147.0,3,3,16,4,BrainBot4800ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+102,0.61315787,0.14059702,98.0,1,0,16,4,BrainBot4800ms,FgMDM,MotorImagery,WithinSession
+103,0.46514937,0.27957493,187.0,2,0,16,4,BrainBot4800ms,FgMDM,MotorImagery,WithinSession
+104,0.4898718,0.27114677,196.0,3,0,16,4,BrainBot4800ms,FgMDM,MotorImagery,WithinSession
+105,0.5194737,0.14846435,98.0,3,1,16,4,BrainBot4800ms,FgMDM,MotorImagery,WithinSession
+106,0.5873684,0.16561136,97.0,3,2,16,4,BrainBot4800ms,FgMDM,MotorImagery,WithinSession
+107,0.5721839,0.24171081,147.0,3,3,16,4,BrainBot4800ms,FgMDM,MotorImagery,WithinSession
+108,0.68263155,0.6356502,98.0,1,0,16,4,BrainBot4800ms,TS ElasticNet Grid,MotorImagery,WithinSession
+109,0.486771,1.2810645,187.0,2,0,16,4,BrainBot4800ms,TS ElasticNet Grid,MotorImagery,WithinSession
+110,0.5458974,1.2663907,196.0,3,0,16,4,BrainBot4800ms,TS ElasticNet Grid,MotorImagery,WithinSession
+111,0.58105266,0.6450578,98.0,3,1,16,4,BrainBot4800ms,TS ElasticNet Grid,MotorImagery,WithinSession
+112,0.5978947,0.62988555,97.0,3,2,16,4,BrainBot4800ms,TS ElasticNet Grid,MotorImagery,WithinSession
+113,0.62689656,0.89241177,147.0,3,3,16,4,BrainBot4800ms,TS ElasticNet Grid,MotorImagery,WithinSession
+114,0.6731579,0.066057585,98.0,1,0,16,4,BrainBot4800ms,CSP + LDA,MotorImagery,WithinSession
+115,0.46529162,0.09000287,187.0,2,0,16,4,BrainBot4800ms,CSP + LDA,MotorImagery,WithinSession
+116,0.51576924,0.07745228,196.0,3,0,16,4,BrainBot4800ms,CSP + LDA,MotorImagery,WithinSession
+117,0.52947366,0.072542764,98.0,3,1,16,4,BrainBot4800ms,CSP + LDA,MotorImagery,WithinSession
+118,0.55789477,0.08172278,97.0,3,2,16,4,BrainBot4800ms,CSP + LDA,MotorImagery,WithinSession
+119,0.5583908,0.07607989,147.0,3,3,16,4,BrainBot4800ms,CSP + LDA,MotorImagery,WithinSession
+120,0.60210526,0.9772936,98.0,1,0,16,4,BrainBot4800ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+121,0.513229,1.2298048,187.0,2,0,16,4,BrainBot4800ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+122,0.53602564,1.3660966,196.0,3,0,16,4,BrainBot4800ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+123,0.48052633,0.64982235,98.0,3,1,16,4,BrainBot4800ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+124,0.5978947,0.6433807,97.0,3,2,16,4,BrainBot4800ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+125,0.59310347,0.9347737,147.0,3,3,16,4,BrainBot4800ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+126,0.61210525,0.049847938,98.0,1,0,16,4,BrainBot4800ms,Tangent Space LR,MotorImagery,WithinSession
+127,0.47581792,0.102183774,187.0,2,0,16,4,BrainBot4800ms,Tangent Space LR,MotorImagery,WithinSession
+128,0.5102564,0.09780531,196.0,3,0,16,4,BrainBot4800ms,Tangent Space LR,MotorImagery,WithinSession
+129,0.58105266,0.06705365,98.0,3,1,16,4,BrainBot4800ms,Tangent Space LR,MotorImagery,WithinSession
+130,0.5978947,0.06287746,97.0,3,2,16,4,BrainBot4800ms,Tangent Space LR,MotorImagery,WithinSession
+131,0.5928736,0.078668974,147.0,3,3,16,4,BrainBot4800ms,Tangent Space LR,MotorImagery,WithinSession
+132,0.5931579,0.03432536,98.0,1,0,16,4,BrainBot4800ms,MDM,MotorImagery,WithinSession
+133,0.43869132,0.06131663,187.0,2,0,16,4,BrainBot4800ms,MDM,MotorImagery,WithinSession
+134,0.45884615,0.06728544,196.0,3,0,16,4,BrainBot4800ms,MDM,MotorImagery,WithinSession
+135,0.5615789,0.033657264,98.0,3,1,16,4,BrainBot4800ms,MDM,MotorImagery,WithinSession
+136,0.44526315,0.033764314,97.0,3,2,16,4,BrainBot4800ms,MDM,MotorImagery,WithinSession
+137,0.53103447,0.048436306,147.0,3,3,16,4,BrainBot4800ms,MDM,MotorImagery,WithinSession
+138,0.68263155,10.92286,98.0,1,0,16,4,BrainBot4800ms,CSP + SVM Grid,MotorImagery,WithinSession
+139,0.45462304,13.849385,187.0,2,0,16,4,BrainBot4800ms,CSP + SVM Grid,MotorImagery,WithinSession
+140,0.55115384,14.095447,196.0,3,0,16,4,BrainBot4800ms,CSP + SVM Grid,MotorImagery,WithinSession
+141,0.53894734,10.334734,98.0,3,1,16,4,BrainBot4800ms,CSP + SVM Grid,MotorImagery,WithinSession
+142,0.41315788,11.489109,97.0,3,2,16,4,BrainBot4800ms,CSP + SVM Grid,MotorImagery,WithinSession
+143,0.53126436,12.895499,147.0,3,3,16,4,BrainBot4800ms,CSP + SVM Grid,MotorImagery,WithinSession
+144,0.60157895,0.6515992,98.0,1,0,16,4,BrainBot4900ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+145,0.51877666,1.2012738,187.0,2,0,16,4,BrainBot4900ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+146,0.54615384,1.2746842,196.0,3,0,16,4,BrainBot4900ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+147,0.5,0.6346108,98.0,3,1,16,4,BrainBot4900ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+148,0.58789474,0.71078944,97.0,3,2,16,4,BrainBot4900ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+149,0.61356324,0.9292505,147.0,3,3,16,4,BrainBot4900ms,Tangent Space SVM Grid,MotorImagery,WithinSession
+150,0.68210524,0.0647943,98.0,1,0,16,4,BrainBot4900ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+151,0.48122332,0.09019303,187.0,2,0,16,4,BrainBot4900ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+152,0.54115385,0.082043216,196.0,3,0,16,4,BrainBot4900ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+153,0.5505263,0.07128334,98.0,3,1,16,4,BrainBot4900ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+154,0.5263158,0.06938867,97.0,3,2,16,4,BrainBot4900ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+155,0.5986207,0.07788835,147.0,3,3,16,4,BrainBot4900ms,DLCSPauto + shLDA,MotorImagery,WithinSession
+156,0.7036842,0.063301705,98.0,1,0,16,4,BrainBot4900ms,CSP + LDA,MotorImagery,WithinSession
+157,0.46514937,0.083339736,187.0,2,0,16,4,BrainBot4900ms,CSP + LDA,MotorImagery,WithinSession
+158,0.52589744,0.08203783,196.0,3,0,16,4,BrainBot4900ms,CSP + LDA,MotorImagery,WithinSession
+159,0.54,0.0746542,98.0,3,1,16,4,BrainBot4900ms,CSP + LDA,MotorImagery,WithinSession
+160,0.5363158,0.06843128,97.0,3,2,16,4,BrainBot4900ms,CSP + LDA,MotorImagery,WithinSession
+161,0.571954,0.08460145,147.0,3,3,16,4,BrainBot4900ms,CSP + LDA,MotorImagery,WithinSession
+162,0.7042105,10.795913,98.0,1,0,16,4,BrainBot4900ms,CSP + SVM Grid,MotorImagery,WithinSession
+163,0.5078236,13.281258,187.0,2,0,16,4,BrainBot4900ms,CSP + SVM Grid,MotorImagery,WithinSession
+164,0.55115384,12.963124,196.0,3,0,16,4,BrainBot4900ms,CSP + SVM Grid,MotorImagery,WithinSession
+165,0.52,9.771734,98.0,3,1,16,4,BrainBot4900ms,CSP + SVM Grid,MotorImagery,WithinSession
+166,0.46473685,10.93637,97.0,3,2,16,4,BrainBot4900ms,CSP + SVM Grid,MotorImagery,WithinSession
+167,0.5857471,11.699545,147.0,3,3,16,4,BrainBot4900ms,CSP + SVM Grid,MotorImagery,WithinSession
+168,0.6410526,0.6084544,98.0,1,0,16,4,BrainBot4900ms,TS ElasticNet Grid,MotorImagery,WithinSession
+169,0.48691323,1.2435175,187.0,2,0,16,4,BrainBot4900ms,TS ElasticNet Grid,MotorImagery,WithinSession
+170,0.56641024,1.5614166,196.0,3,0,16,4,BrainBot4900ms,TS ElasticNet Grid,MotorImagery,WithinSession
+171,0.62210524,0.9972607,98.0,3,1,16,4,BrainBot4900ms,TS ElasticNet Grid,MotorImagery,WithinSession
+172,0.6078947,0.62410426,97.0,3,2,16,4,BrainBot4900ms,TS ElasticNet Grid,MotorImagery,WithinSession
+173,0.6402299,0.94898903,147.0,3,3,16,4,BrainBot4900ms,TS ElasticNet Grid,MotorImagery,WithinSession
+174,0.6321053,0.055626534,98.0,1,0,16,4,BrainBot4900ms,Tangent Space LR,MotorImagery,WithinSession
+175,0.486771,0.10215978,187.0,2,0,16,4,BrainBot4900ms,Tangent Space LR,MotorImagery,WithinSession
+176,0.52076924,0.103822134,196.0,3,0,16,4,BrainBot4900ms,Tangent Space LR,MotorImagery,WithinSession
+177,0.58157897,0.057213686,98.0,3,1,16,4,BrainBot4900ms,Tangent Space LR,MotorImagery,WithinSession
+178,0.6294737,0.06670146,97.0,3,2,16,4,BrainBot4900ms,Tangent Space LR,MotorImagery,WithinSession
+179,0.61356324,0.067984626,147.0,3,3,16,4,BrainBot4900ms,Tangent Space LR,MotorImagery,WithinSession
+180,0.61368424,0.0332747,98.0,1,0,16,4,BrainBot4900ms,MDM,MotorImagery,WithinSession
+181,0.42802277,0.06126976,187.0,2,0,16,4,BrainBot4900ms,MDM,MotorImagery,WithinSession
+182,0.44358975,0.06760659,196.0,3,0,16,4,BrainBot4900ms,MDM,MotorImagery,WithinSession
+183,0.55105263,0.033672858,98.0,3,1,16,4,BrainBot4900ms,MDM,MotorImagery,WithinSession
+184,0.43421054,0.036564015,97.0,3,2,16,4,BrainBot4900ms,MDM,MotorImagery,WithinSession
+185,0.5445977,0.051991273,147.0,3,3,16,4,BrainBot4900ms,MDM,MotorImagery,WithinSession
+186,0.6436842,0.14716849,98.0,1,0,16,4,BrainBot4900ms,FgMDM,MotorImagery,WithinSession
+187,0.44921765,0.2554663,187.0,2,0,16,4,BrainBot4900ms,FgMDM,MotorImagery,WithinSession
+188,0.5102564,0.27953538,196.0,3,0,16,4,BrainBot4900ms,FgMDM,MotorImagery,WithinSession
+189,0.55,0.13384251,98.0,3,1,16,4,BrainBot4900ms,FgMDM,MotorImagery,WithinSession
+190,0.6073684,0.15284343,97.0,3,2,16,4,BrainBot4900ms,FgMDM,MotorImagery,WithinSession
+191,0.5590805,0.26498586,147.0,3,3,16,4,BrainBot4900ms,FgMDM,MotorImagery,WithinSession
