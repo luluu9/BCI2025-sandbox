@@ -9,9 +9,9 @@ mne.set_log_level('INFO')
 
 SUBJECTS = 10
 MAX_TRIALS = 4
-INTERVALS = [[0, 4.6], [0, 4.7], [0, 4.8], [0, 4.9]]
+INTERVALS = [[0, 4.0], [0, 4.5], [0, 5.0]]
 
-datasets = get_all_datasets(subjects=SUBJECTS, max_trials=MAX_TRIALS, brainbot_intervals=INTERVALS)
+datasets = get_brainbot_datasets(subjects=SUBJECTS, max_trials=MAX_TRIALS, brainbot_intervals=INTERVALS)
 dataset_results = {}
 dataset_events = ["left_hand", "right_hand", "feet", "hands", "rest"]
 sampling = 160 # based on Physionet sampling rate 

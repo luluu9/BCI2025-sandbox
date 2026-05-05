@@ -138,7 +138,7 @@ def generate_file_structure(path):
     return file_struct
 
 
-data_dir = r"brainbot_data/5s-interval/"
+data_dir = r"brainbot_data/5s-interval-nofiltering/"
 files = generate_file_structure(data_dir)
 
 # assert that event ids are consistent across all subject files
