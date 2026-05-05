@@ -78,19 +78,23 @@ class BrainBotDataset(moabb.datasets.base.BaseDataset):
         
         return sessions
 
-def get_brainbot_dataset(interval=[0.0, 2.5]):
+def get_brainbot_dataset(interval=[0.0, 2.5], events=None, code_suffix=""):
     # moabb suggests to have sessions_per_subjects as min number of sessions across subjects
     # so this may lead to some issues, but for now assume max sessions to use all data
     # (currently no drawbacks of this approach seen)
+    if events is None:
+        events = loaded_events_id
     sessions_per_subject = len(max(files.values(), key=len))
     subjects_sorted = sorted(list(files.keys()))
     dataset = BrainBotDataset(
         data_dir=data_dir,
         subjects=subjects_sorted,
-        events=loaded_events_id,
+        events=events,
         interval=interval,
         data_names=files,
         sessions_per_subject=sessions_per_subject)
+    if code_suffix:
+        dataset.code = dataset.code + code_suffix
     return dataset
 
 

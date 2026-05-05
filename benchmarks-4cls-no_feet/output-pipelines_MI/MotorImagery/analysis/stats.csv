@@ -1,0 +1,193 @@
+,dataset,index,pipe1,pipe2,p,smd,nsub
+0,BrainBot4000ms-4cls_no_feet,0,CSP + LDA,CSP + LDA,0.875,0.0,3
+1,BrainBot4000ms-4cls_no_feet,1,CSP + SVM Grid,CSP + LDA,0.875,-1.1208789348602295,3
+2,BrainBot4000ms-4cls_no_feet,2,DLCSPauto + shLDA,CSP + LDA,0.375,0.1272786557674408,3
+3,BrainBot4000ms-4cls_no_feet,3,FgMDM,CSP + LDA,0.25,0.7625584006309509,3
+4,BrainBot4000ms-4cls_no_feet,4,MDM,CSP + LDA,0.875,-0.6530514359474182,3
+5,BrainBot4000ms-4cls_no_feet,5,TS ElasticNet Grid,CSP + LDA,0.125,1.9887185096740723,3
+6,BrainBot4000ms-4cls_no_feet,6,Tangent Space LR,CSP + LDA,0.25,0.48924607038497925,3
+7,BrainBot4000ms-4cls_no_feet,7,Tangent Space SVM Grid,CSP + LDA,0.25,1.0515906810760498,3
+8,BrainBot4000ms-4cls_no_feet,8,CSP + LDA,CSP + SVM Grid,0.125,1.1208789348602295,3
+9,BrainBot4000ms-4cls_no_feet,9,CSP + SVM Grid,CSP + SVM Grid,0.875,0.0,3
+10,BrainBot4000ms-4cls_no_feet,10,DLCSPauto + shLDA,CSP + SVM Grid,0.125,1.1503078937530518,3
+11,BrainBot4000ms-4cls_no_feet,11,FgMDM,CSP + SVM Grid,0.125,1.9491996765136719,3
+12,BrainBot4000ms-4cls_no_feet,12,MDM,CSP + SVM Grid,0.5,0.008153680711984634,3
+13,BrainBot4000ms-4cls_no_feet,13,TS ElasticNet Grid,CSP + SVM Grid,0.125,7.50726842880249,3
+14,BrainBot4000ms-4cls_no_feet,14,Tangent Space LR,CSP + SVM Grid,0.125,1.8661547899246216,3
+15,BrainBot4000ms-4cls_no_feet,15,Tangent Space SVM Grid,CSP + SVM Grid,0.125,6.56365442276001,3
+16,BrainBot4000ms-4cls_no_feet,16,CSP + LDA,DLCSPauto + shLDA,0.75,-0.1272786557674408,3
+17,BrainBot4000ms-4cls_no_feet,17,CSP + SVM Grid,DLCSPauto + shLDA,0.875,-1.1503078937530518,3
+18,BrainBot4000ms-4cls_no_feet,18,DLCSPauto + shLDA,DLCSPauto + shLDA,0.875,0.0,3
+19,BrainBot4000ms-4cls_no_feet,19,FgMDM,DLCSPauto + shLDA,0.25,0.6424503326416016,3
+20,BrainBot4000ms-4cls_no_feet,20,MDM,DLCSPauto + shLDA,0.875,-0.6108590364456177,3
+21,BrainBot4000ms-4cls_no_feet,21,TS ElasticNet Grid,DLCSPauto + shLDA,0.125,1.6142587661743164,3
+22,BrainBot4000ms-4cls_no_feet,22,Tangent Space LR,DLCSPauto + shLDA,0.375,0.4369952380657196,3
+23,BrainBot4000ms-4cls_no_feet,23,Tangent Space SVM Grid,DLCSPauto + shLDA,0.25,1.1106122732162476,3
+24,BrainBot4000ms-4cls_no_feet,24,CSP + LDA,FgMDM,0.875,-0.7625584006309509,3
+25,BrainBot4000ms-4cls_no_feet,25,CSP + SVM Grid,FgMDM,0.875,-1.9491996765136719,3
+26,BrainBot4000ms-4cls_no_feet,26,DLCSPauto + shLDA,FgMDM,0.875,-0.6424503326416016,3
+27,BrainBot4000ms-4cls_no_feet,27,FgMDM,FgMDM,0.875,0.0,3
+28,BrainBot4000ms-4cls_no_feet,28,MDM,FgMDM,0.875,-7.436403751373291,3
+29,BrainBot4000ms-4cls_no_feet,29,TS ElasticNet Grid,FgMDM,0.5,0.12270042300224304,3
+30,BrainBot4000ms-4cls_no_feet,30,Tangent Space LR,FgMDM,0.875,-0.5015493631362915,3
+31,BrainBot4000ms-4cls_no_feet,31,Tangent Space SVM Grid,FgMDM,0.625,-0.07920856773853302,3
+32,BrainBot4000ms-4cls_no_feet,32,CSP + LDA,MDM,0.25,0.6530514359474182,3
+33,BrainBot4000ms-4cls_no_feet,33,CSP + SVM Grid,MDM,0.625,-0.008153680711984634,3
+34,BrainBot4000ms-4cls_no_feet,34,DLCSPauto + shLDA,MDM,0.25,0.6108590364456177,3
+35,BrainBot4000ms-4cls_no_feet,35,FgMDM,MDM,0.125,7.436403751373291,3
+36,BrainBot4000ms-4cls_no_feet,36,MDM,MDM,0.875,0.0,3
+37,BrainBot4000ms-4cls_no_feet,37,TS ElasticNet Grid,MDM,0.125,2.6052610874176025,3
+38,BrainBot4000ms-4cls_no_feet,38,Tangent Space LR,MDM,0.125,4.326517105102539,3
+39,BrainBot4000ms-4cls_no_feet,39,Tangent Space SVM Grid,MDM,0.125,1.7924389839172363,3
+40,BrainBot4000ms-4cls_no_feet,40,CSP + LDA,TS ElasticNet Grid,0.875,-1.9887185096740723,3
+41,BrainBot4000ms-4cls_no_feet,41,CSP + SVM Grid,TS ElasticNet Grid,0.875,-7.50726842880249,3
+42,BrainBot4000ms-4cls_no_feet,42,DLCSPauto + shLDA,TS ElasticNet Grid,0.875,-1.6142587661743164,3
+43,BrainBot4000ms-4cls_no_feet,43,FgMDM,TS ElasticNet Grid,0.625,-0.12270042300224304,3
+44,BrainBot4000ms-4cls_no_feet,44,MDM,TS ElasticNet Grid,0.875,-2.6052610874176025,3
+45,BrainBot4000ms-4cls_no_feet,45,TS ElasticNet Grid,TS ElasticNet Grid,0.875,0.0,3
+46,BrainBot4000ms-4cls_no_feet,46,Tangent Space LR,TS ElasticNet Grid,0.75,-0.42637255787849426,3
+47,BrainBot4000ms-4cls_no_feet,47,Tangent Space SVM Grid,TS ElasticNet Grid,0.875,-0.3941410779953003,3
+48,BrainBot4000ms-4cls_no_feet,48,CSP + LDA,Tangent Space LR,0.875,-0.48924607038497925,3
+49,BrainBot4000ms-4cls_no_feet,49,CSP + SVM Grid,Tangent Space LR,0.875,-1.8661547899246216,3
+50,BrainBot4000ms-4cls_no_feet,50,DLCSPauto + shLDA,Tangent Space LR,0.75,-0.4369952380657196,3
+51,BrainBot4000ms-4cls_no_feet,51,FgMDM,Tangent Space LR,0.25,0.5015493631362915,3
+52,BrainBot4000ms-4cls_no_feet,52,MDM,Tangent Space LR,0.875,-4.326517105102539,3
+53,BrainBot4000ms-4cls_no_feet,53,TS ElasticNet Grid,Tangent Space LR,0.375,0.42637255787849426,3
+54,BrainBot4000ms-4cls_no_feet,54,Tangent Space LR,Tangent Space LR,0.875,0.0,3
+55,BrainBot4000ms-4cls_no_feet,55,Tangent Space SVM Grid,Tangent Space LR,0.375,0.20162519812583923,3
+56,BrainBot4000ms-4cls_no_feet,56,CSP + LDA,Tangent Space SVM Grid,0.875,-1.0515906810760498,3
+57,BrainBot4000ms-4cls_no_feet,57,CSP + SVM Grid,Tangent Space SVM Grid,0.875,-6.56365442276001,3
+58,BrainBot4000ms-4cls_no_feet,58,DLCSPauto + shLDA,Tangent Space SVM Grid,0.875,-1.1106122732162476,3
+59,BrainBot4000ms-4cls_no_feet,59,FgMDM,Tangent Space SVM Grid,0.5,0.07920856773853302,3
+60,BrainBot4000ms-4cls_no_feet,60,MDM,Tangent Space SVM Grid,0.875,-1.7924389839172363,3
+61,BrainBot4000ms-4cls_no_feet,61,TS ElasticNet Grid,Tangent Space SVM Grid,0.25,0.3941410779953003,3
+62,BrainBot4000ms-4cls_no_feet,62,Tangent Space LR,Tangent Space SVM Grid,0.75,-0.20162519812583923,3
+63,BrainBot4000ms-4cls_no_feet,63,Tangent Space SVM Grid,Tangent Space SVM Grid,0.875,0.0,3
+64,BrainBot4500ms-4cls_no_feet,0,CSP + LDA,CSP + LDA,0.875,0.0,3
+65,BrainBot4500ms-4cls_no_feet,1,CSP + SVM Grid,CSP + LDA,0.75,-0.45316147804260254,3
+66,BrainBot4500ms-4cls_no_feet,2,DLCSPauto + shLDA,CSP + LDA,0.375,0.39512899518013,3
+67,BrainBot4500ms-4cls_no_feet,3,FgMDM,CSP + LDA,0.125,1.3667621612548828,3
+68,BrainBot4500ms-4cls_no_feet,4,MDM,CSP + LDA,0.625,-0.07493001967668533,3
+69,BrainBot4500ms-4cls_no_feet,5,TS ElasticNet Grid,CSP + LDA,0.125,2.3180017471313477,3
+70,BrainBot4500ms-4cls_no_feet,6,Tangent Space LR,CSP + LDA,0.25,0.611192524433136,3
+71,BrainBot4500ms-4cls_no_feet,7,Tangent Space SVM Grid,CSP + LDA,0.25,0.5582637786865234,3
+72,BrainBot4500ms-4cls_no_feet,8,CSP + LDA,CSP + SVM Grid,0.5,0.45316147804260254,3
+73,BrainBot4500ms-4cls_no_feet,9,CSP + SVM Grid,CSP + SVM Grid,0.875,0.0,3
+74,BrainBot4500ms-4cls_no_feet,10,DLCSPauto + shLDA,CSP + SVM Grid,0.5,0.46479931473731995,3
+75,BrainBot4500ms-4cls_no_feet,11,FgMDM,CSP + SVM Grid,0.125,2.0494019985198975,3
+76,BrainBot4500ms-4cls_no_feet,12,MDM,CSP + SVM Grid,0.375,0.3048349618911743,3
+77,BrainBot4500ms-4cls_no_feet,13,TS ElasticNet Grid,CSP + SVM Grid,0.125,3.015411615371704,3
+78,BrainBot4500ms-4cls_no_feet,14,Tangent Space LR,CSP + SVM Grid,0.125,1.8705754280090332,3
+79,BrainBot4500ms-4cls_no_feet,15,Tangent Space SVM Grid,CSP + SVM Grid,0.125,5.095577716827393,3
+80,BrainBot4500ms-4cls_no_feet,16,CSP + LDA,DLCSPauto + shLDA,0.75,-0.39512899518013,3
+81,BrainBot4500ms-4cls_no_feet,17,CSP + SVM Grid,DLCSPauto + shLDA,0.625,-0.46479931473731995,3
+82,BrainBot4500ms-4cls_no_feet,18,DLCSPauto + shLDA,DLCSPauto + shLDA,0.875,0.0,3
+83,BrainBot4500ms-4cls_no_feet,19,FgMDM,DLCSPauto + shLDA,0.125,0.954150915145874,3
+84,BrainBot4500ms-4cls_no_feet,20,MDM,DLCSPauto + shLDA,0.625,-0.15515772998332977,3
+85,BrainBot4500ms-4cls_no_feet,21,TS ElasticNet Grid,DLCSPauto + shLDA,0.125,1.3553158044815063,3
+86,BrainBot4500ms-4cls_no_feet,22,Tangent Space LR,DLCSPauto + shLDA,0.375,0.4160579741001129,3
+87,BrainBot4500ms-4cls_no_feet,23,Tangent Space SVM Grid,DLCSPauto + shLDA,0.375,0.3519251048564911,3
+88,BrainBot4500ms-4cls_no_feet,24,CSP + LDA,FgMDM,0.875,-1.3667621612548828,3
+89,BrainBot4500ms-4cls_no_feet,25,CSP + SVM Grid,FgMDM,0.875,-2.0494019985198975,3
+90,BrainBot4500ms-4cls_no_feet,26,DLCSPauto + shLDA,FgMDM,0.875,-0.954150915145874,3
+91,BrainBot4500ms-4cls_no_feet,27,FgMDM,FgMDM,0.875,0.0,3
+92,BrainBot4500ms-4cls_no_feet,28,MDM,FgMDM,0.875,-5.477296829223633,3
+93,BrainBot4500ms-4cls_no_feet,29,TS ElasticNet Grid,FgMDM,0.625,-0.14753492176532745,3
+94,BrainBot4500ms-4cls_no_feet,30,Tangent Space LR,FgMDM,0.875,-1.011409044265747,3
+95,BrainBot4500ms-4cls_no_feet,31,Tangent Space SVM Grid,FgMDM,0.875,-0.9574486613273621,3
+96,BrainBot4500ms-4cls_no_feet,32,CSP + LDA,MDM,0.5,0.07493001967668533,3
+97,BrainBot4500ms-4cls_no_feet,33,CSP + SVM Grid,MDM,0.75,-0.3048349618911743,3
+98,BrainBot4500ms-4cls_no_feet,34,DLCSPauto + shLDA,MDM,0.5,0.15515772998332977,3
+99,BrainBot4500ms-4cls_no_feet,35,FgMDM,MDM,0.125,5.477296829223633,3
+100,BrainBot4500ms-4cls_no_feet,36,MDM,MDM,0.875,0.0,3
+101,BrainBot4500ms-4cls_no_feet,37,TS ElasticNet Grid,MDM,0.125,2.474562883377075,3
+102,BrainBot4500ms-4cls_no_feet,38,Tangent Space LR,MDM,0.25,0.9803672432899475,3
+103,BrainBot4500ms-4cls_no_feet,39,Tangent Space SVM Grid,MDM,0.25,0.6133689880371094,3
+104,BrainBot4500ms-4cls_no_feet,40,CSP + LDA,TS ElasticNet Grid,0.875,-2.3180017471313477,3
+105,BrainBot4500ms-4cls_no_feet,41,CSP + SVM Grid,TS ElasticNet Grid,0.875,-3.015411615371704,3
+106,BrainBot4500ms-4cls_no_feet,42,DLCSPauto + shLDA,TS ElasticNet Grid,0.875,-1.3553158044815063,3
+107,BrainBot4500ms-4cls_no_feet,43,FgMDM,TS ElasticNet Grid,0.5,0.14753492176532745,3
+108,BrainBot4500ms-4cls_no_feet,44,MDM,TS ElasticNet Grid,0.875,-2.474562883377075,3
+109,BrainBot4500ms-4cls_no_feet,45,TS ElasticNet Grid,TS ElasticNet Grid,0.875,0.0,3
+110,BrainBot4500ms-4cls_no_feet,46,Tangent Space LR,TS ElasticNet Grid,0.875,-0.7342613339424133,3
+111,BrainBot4500ms-4cls_no_feet,47,Tangent Space SVM Grid,TS ElasticNet Grid,0.875,-1.1309850215911865,3
+112,BrainBot4500ms-4cls_no_feet,48,CSP + LDA,Tangent Space LR,0.875,-0.611192524433136,3
+113,BrainBot4500ms-4cls_no_feet,49,CSP + SVM Grid,Tangent Space LR,0.875,-1.8705754280090332,3
+114,BrainBot4500ms-4cls_no_feet,50,DLCSPauto + shLDA,Tangent Space LR,0.75,-0.4160579741001129,3
+115,BrainBot4500ms-4cls_no_feet,51,FgMDM,Tangent Space LR,0.25,1.011409044265747,3
+116,BrainBot4500ms-4cls_no_feet,52,MDM,Tangent Space LR,0.875,-0.9803672432899475,3
+117,BrainBot4500ms-4cls_no_feet,53,TS ElasticNet Grid,Tangent Space LR,0.25,0.7342613339424133,3
+118,BrainBot4500ms-4cls_no_feet,54,Tangent Space LR,Tangent Space LR,0.875,0.0,3
+119,BrainBot4500ms-4cls_no_feet,55,Tangent Space SVM Grid,Tangent Space LR,0.75,-0.41626307368278503,3
+120,BrainBot4500ms-4cls_no_feet,56,CSP + LDA,Tangent Space SVM Grid,0.875,-0.5582637786865234,3
+121,BrainBot4500ms-4cls_no_feet,57,CSP + SVM Grid,Tangent Space SVM Grid,0.875,-5.095577716827393,3
+122,BrainBot4500ms-4cls_no_feet,58,DLCSPauto + shLDA,Tangent Space SVM Grid,0.75,-0.3519251048564911,3
+123,BrainBot4500ms-4cls_no_feet,59,FgMDM,Tangent Space SVM Grid,0.25,0.9574486613273621,3
+124,BrainBot4500ms-4cls_no_feet,60,MDM,Tangent Space SVM Grid,0.875,-0.6133689880371094,3
+125,BrainBot4500ms-4cls_no_feet,61,TS ElasticNet Grid,Tangent Space SVM Grid,0.125,1.1309850215911865,3
+126,BrainBot4500ms-4cls_no_feet,62,Tangent Space LR,Tangent Space SVM Grid,0.375,0.41626307368278503,3
+127,BrainBot4500ms-4cls_no_feet,63,Tangent Space SVM Grid,Tangent Space SVM Grid,0.875,0.0,3
+128,BrainBot5000ms-4cls_no_feet,0,CSP + LDA,CSP + LDA,0.875,0.0,3
+129,BrainBot5000ms-4cls_no_feet,1,CSP + SVM Grid,CSP + LDA,0.25,1.108149766921997,3
+130,BrainBot5000ms-4cls_no_feet,2,DLCSPauto + shLDA,CSP + LDA,0.875,-1.4640854597091675,3
+131,BrainBot5000ms-4cls_no_feet,3,FgMDM,CSP + LDA,0.125,5.571840763092041,3
+132,BrainBot5000ms-4cls_no_feet,4,MDM,CSP + LDA,0.75,-0.29202717542648315,3
+133,BrainBot5000ms-4cls_no_feet,5,TS ElasticNet Grid,CSP + LDA,0.125,6.347762107849121,3
+134,BrainBot5000ms-4cls_no_feet,6,Tangent Space LR,CSP + LDA,0.125,1.9571712017059326,3
+135,BrainBot5000ms-4cls_no_feet,7,Tangent Space SVM Grid,CSP + LDA,0.125,9.5706148147583,3
+136,BrainBot5000ms-4cls_no_feet,8,CSP + LDA,CSP + SVM Grid,0.875,-1.108149766921997,3
+137,BrainBot5000ms-4cls_no_feet,9,CSP + SVM Grid,CSP + SVM Grid,0.875,0.0,3
+138,BrainBot5000ms-4cls_no_feet,10,DLCSPauto + shLDA,CSP + SVM Grid,0.875,-4.4668707847595215,3
+139,BrainBot5000ms-4cls_no_feet,11,FgMDM,CSP + SVM Grid,0.125,3.348808765411377,3
+140,BrainBot5000ms-4cls_no_feet,12,MDM,CSP + SVM Grid,0.875,-0.4435058832168579,3
+141,BrainBot5000ms-4cls_no_feet,13,TS ElasticNet Grid,CSP + SVM Grid,0.125,3.1194536685943604,3
+142,BrainBot5000ms-4cls_no_feet,14,Tangent Space LR,CSP + SVM Grid,0.125,1.4205255508422852,3
+143,BrainBot5000ms-4cls_no_feet,15,Tangent Space SVM Grid,CSP + SVM Grid,0.125,4.709781646728516,3
+144,BrainBot5000ms-4cls_no_feet,16,CSP + LDA,DLCSPauto + shLDA,0.125,1.4640854597091675,3
+145,BrainBot5000ms-4cls_no_feet,17,CSP + SVM Grid,DLCSPauto + shLDA,0.125,4.4668707847595215,3
+146,BrainBot5000ms-4cls_no_feet,18,DLCSPauto + shLDA,DLCSPauto + shLDA,0.875,0.0,3
+147,BrainBot5000ms-4cls_no_feet,19,FgMDM,DLCSPauto + shLDA,0.125,5.157761573791504,3
+148,BrainBot5000ms-4cls_no_feet,20,MDM,DLCSPauto + shLDA,0.625,-0.03420725464820862,3
+149,BrainBot5000ms-4cls_no_feet,21,TS ElasticNet Grid,DLCSPauto + shLDA,0.125,5.228082656860352,3
+150,BrainBot5000ms-4cls_no_feet,22,Tangent Space LR,DLCSPauto + shLDA,0.125,2.036189317703247,3
+151,BrainBot5000ms-4cls_no_feet,23,Tangent Space SVM Grid,DLCSPauto + shLDA,0.125,7.833077430725098,3
+152,BrainBot5000ms-4cls_no_feet,24,CSP + LDA,FgMDM,0.875,-5.571840763092041,3
+153,BrainBot5000ms-4cls_no_feet,25,CSP + SVM Grid,FgMDM,0.875,-3.348808765411377,3
+154,BrainBot5000ms-4cls_no_feet,26,DLCSPauto + shLDA,FgMDM,0.875,-5.157761573791504,3
+155,BrainBot5000ms-4cls_no_feet,27,FgMDM,FgMDM,0.875,0.0,3
+156,BrainBot5000ms-4cls_no_feet,28,MDM,FgMDM,0.875,-3.1123623847961426,3
+157,BrainBot5000ms-4cls_no_feet,29,TS ElasticNet Grid,FgMDM,0.875,-3.507383346557617,3
+158,BrainBot5000ms-4cls_no_feet,30,Tangent Space LR,FgMDM,0.875,-0.4602539837360382,3
+159,BrainBot5000ms-4cls_no_feet,31,Tangent Space SVM Grid,FgMDM,0.375,0.1336442232131958,3
+160,BrainBot5000ms-4cls_no_feet,32,CSP + LDA,MDM,0.375,0.29202717542648315,3
+161,BrainBot5000ms-4cls_no_feet,33,CSP + SVM Grid,MDM,0.375,0.4435058832168579,3
+162,BrainBot5000ms-4cls_no_feet,34,DLCSPauto + shLDA,MDM,0.5,0.03420725464820862,3
+163,BrainBot5000ms-4cls_no_feet,35,FgMDM,MDM,0.125,3.1123623847961426,3
+164,BrainBot5000ms-4cls_no_feet,36,MDM,MDM,0.875,0.0,3
+165,BrainBot5000ms-4cls_no_feet,37,TS ElasticNet Grid,MDM,0.125,2.50901198387146,3
+166,BrainBot5000ms-4cls_no_feet,38,Tangent Space LR,MDM,0.125,3.238124132156372,3
+167,BrainBot5000ms-4cls_no_feet,39,Tangent Space SVM Grid,MDM,0.125,2.827012777328491,3
+168,BrainBot5000ms-4cls_no_feet,40,CSP + LDA,TS ElasticNet Grid,0.875,-6.347762107849121,3
+169,BrainBot5000ms-4cls_no_feet,41,CSP + SVM Grid,TS ElasticNet Grid,0.875,-3.1194536685943604,3
+170,BrainBot5000ms-4cls_no_feet,42,DLCSPauto + shLDA,TS ElasticNet Grid,0.875,-5.228082656860352,3
+171,BrainBot5000ms-4cls_no_feet,43,FgMDM,TS ElasticNet Grid,0.125,3.507383346557617,3
+172,BrainBot5000ms-4cls_no_feet,44,MDM,TS ElasticNet Grid,0.875,-2.50901198387146,3
+173,BrainBot5000ms-4cls_no_feet,45,TS ElasticNet Grid,TS ElasticNet Grid,0.875,0.0,3
+174,BrainBot5000ms-4cls_no_feet,46,Tangent Space LR,TS ElasticNet Grid,0.375,0.24642373621463776,3
+175,BrainBot5000ms-4cls_no_feet,47,Tangent Space SVM Grid,TS ElasticNet Grid,0.125,6.259706974029541,3
+176,BrainBot5000ms-4cls_no_feet,48,CSP + LDA,Tangent Space LR,0.875,-1.9571712017059326,3
+177,BrainBot5000ms-4cls_no_feet,49,CSP + SVM Grid,Tangent Space LR,0.875,-1.4205255508422852,3
+178,BrainBot5000ms-4cls_no_feet,50,DLCSPauto + shLDA,Tangent Space LR,0.875,-2.036189317703247,3
+179,BrainBot5000ms-4cls_no_feet,51,FgMDM,Tangent Space LR,0.25,0.4602539837360382,3
+180,BrainBot5000ms-4cls_no_feet,52,MDM,Tangent Space LR,0.875,-3.238124132156372,3
+181,BrainBot5000ms-4cls_no_feet,53,TS ElasticNet Grid,Tangent Space LR,0.75,-0.24642373621463776,3
+182,BrainBot5000ms-4cls_no_feet,54,Tangent Space LR,Tangent Space LR,0.875,0.0,3
+183,BrainBot5000ms-4cls_no_feet,55,Tangent Space SVM Grid,Tangent Space LR,0.375,0.38966527581214905,3
+184,BrainBot5000ms-4cls_no_feet,56,CSP + LDA,Tangent Space SVM Grid,0.875,-9.5706148147583,3
+185,BrainBot5000ms-4cls_no_feet,57,CSP + SVM Grid,Tangent Space SVM Grid,0.875,-4.709781646728516,3
+186,BrainBot5000ms-4cls_no_feet,58,DLCSPauto + shLDA,Tangent Space SVM Grid,0.875,-7.833077430725098,3
+187,BrainBot5000ms-4cls_no_feet,59,FgMDM,Tangent Space SVM Grid,0.75,-0.1336442232131958,3
+188,BrainBot5000ms-4cls_no_feet,60,MDM,Tangent Space SVM Grid,0.875,-2.827012777328491,3
+189,BrainBot5000ms-4cls_no_feet,61,TS ElasticNet Grid,Tangent Space SVM Grid,0.875,-6.259706974029541,3
+190,BrainBot5000ms-4cls_no_feet,62,Tangent Space LR,Tangent Space SVM Grid,0.75,-0.38966527581214905,3
+191,BrainBot5000ms-4cls_no_feet,63,Tangent Space SVM Grid,Tangent Space SVM Grid,0.875,0.0,3

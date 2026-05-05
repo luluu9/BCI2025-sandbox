@@ -5,10 +5,10 @@ from moabb.datasets import PhysionetMI
 from brainbot_dataset import get_brainbot_dataset
 from datasets import PhysionetMI16, Weibo2014_16, Weibo2014_64_5_classes
 
-def get_brainbot_datasets(subjects=10, max_trials=4, brainbot_intervals=[[0.0, 2.5]]):
+def get_brainbot_datasets(subjects=10, max_trials=4, brainbot_intervals=[[0.0, 2.5]], events=None, code_suffix=""):
     brainbot_datasets = []
     for interval in brainbot_intervals:
-        bb_ds = get_brainbot_dataset(interval=interval)
+        bb_ds = get_brainbot_dataset(interval=interval, events=events, code_suffix=code_suffix)
         bb_ds.n_sessions = min(max_trials, bb_ds.n_sessions)
         bb_ds.subject_list = bb_ds.subject_list[:subjects]
         brainbot_datasets.append(bb_ds)

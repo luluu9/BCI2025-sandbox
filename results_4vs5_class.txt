@@ -1,0 +1,74 @@
+config                                               4cls_no_feet  4cls_no_hands   5cls
+pipeline               dataset                                                         
+CSP + LDA              BrainBot4000ms                         NaN            NaN  0.537
+                       BrainBot4000ms-4cls_no_feet          0.245            NaN    NaN
+                       BrainBot4000ms-4cls_no_hands           NaN          0.247    NaN
+                       BrainBot4500ms                         NaN            NaN  0.564
+                       BrainBot4500ms-4cls_no_feet          0.242            NaN    NaN
+                       BrainBot4500ms-4cls_no_hands           NaN          0.232    NaN
+                       BrainBot5000ms                         NaN            NaN  0.285
+                       BrainBot5000ms-4cls_no_feet          0.317            NaN    NaN
+                       BrainBot5000ms-4cls_no_hands           NaN          0.353    NaN
+CSP + SVM Grid         BrainBot4000ms                         NaN            NaN  0.508
+                       BrainBot4000ms-4cls_no_feet          0.215            NaN    NaN
+                       BrainBot4000ms-4cls_no_hands           NaN          0.204    NaN
+                       BrainBot4500ms                         NaN            NaN  0.545
+                       BrainBot4500ms-4cls_no_feet          0.236            NaN    NaN
+                       BrainBot4500ms-4cls_no_hands           NaN          0.196    NaN
+                       BrainBot5000ms                         NaN            NaN  0.305
+                       BrainBot5000ms-4cls_no_feet          0.347            NaN    NaN
+                       BrainBot5000ms-4cls_no_hands           NaN          0.339    NaN
+DLCSPauto + shLDA      BrainBot4000ms                         NaN            NaN  0.533
+                       BrainBot4000ms-4cls_no_feet          0.255            NaN    NaN
+                       BrainBot4000ms-4cls_no_hands           NaN          0.223    NaN
+                       BrainBot4500ms                         NaN            NaN  0.546
+                       BrainBot4500ms-4cls_no_feet          0.251            NaN    NaN
+                       BrainBot4500ms-4cls_no_hands           NaN          0.232    NaN
+                       BrainBot5000ms                         NaN            NaN  0.276
+                       BrainBot5000ms-4cls_no_feet          0.304            NaN    NaN
+                       BrainBot5000ms-4cls_no_hands           NaN          0.339    NaN
+FgMDM                  BrainBot4000ms                         NaN            NaN  0.506
+                       BrainBot4000ms-4cls_no_feet          0.294            NaN    NaN
+                       BrainBot4000ms-4cls_no_hands           NaN          0.363    NaN
+                       BrainBot4500ms                         NaN            NaN  0.530
+                       BrainBot4500ms-4cls_no_feet          0.319            NaN    NaN
+                       BrainBot4500ms-4cls_no_hands           NaN          0.392    NaN
+                       BrainBot5000ms                         NaN            NaN  0.479
+                       BrainBot5000ms-4cls_no_feet          0.502            NaN    NaN
+                       BrainBot5000ms-4cls_no_hands           NaN          0.550    NaN
+MDM                    BrainBot4000ms                         NaN            NaN  0.479
+                       BrainBot4000ms-4cls_no_feet          0.205            NaN    NaN
+                       BrainBot4000ms-4cls_no_hands           NaN          0.216    NaN
+                       BrainBot4500ms                         NaN            NaN  0.495
+                       BrainBot4500ms-4cls_no_feet          0.218            NaN    NaN
+                       BrainBot4500ms-4cls_no_hands           NaN          0.228    NaN
+                       BrainBot5000ms                         NaN            NaN  0.205
+                       BrainBot5000ms-4cls_no_feet          0.254            NaN    NaN
+                       BrainBot5000ms-4cls_no_hands           NaN          0.255    NaN
+TS ElasticNet Grid     BrainBot4000ms                         NaN            NaN  0.570
+                       BrainBot4000ms-4cls_no_feet          0.310            NaN    NaN
+                       BrainBot4000ms-4cls_no_hands           NaN          0.378    NaN
+                       BrainBot4500ms                         NaN            NaN  0.583
+                       BrainBot4500ms-4cls_no_feet          0.324            NaN    NaN
+                       BrainBot4500ms-4cls_no_hands           NaN          0.403    NaN
+                       BrainBot5000ms                         NaN            NaN  0.420
+                       BrainBot5000ms-4cls_no_feet          0.463            NaN    NaN
+                       BrainBot5000ms-4cls_no_hands           NaN          0.513    NaN
+Tangent Space LR       BrainBot4000ms                         NaN            NaN  0.538
+                       BrainBot4000ms-4cls_no_feet          0.296            NaN    NaN
+                       BrainBot4000ms-4cls_no_hands           NaN          0.359    NaN
+                       BrainBot4500ms                         NaN            NaN  0.565
+                       BrainBot4500ms-4cls_no_feet          0.300            NaN    NaN
+                       BrainBot4500ms-4cls_no_hands           NaN          0.375    NaN
+                       BrainBot5000ms                         NaN            NaN  0.432
+                       BrainBot5000ms-4cls_no_feet          0.471            NaN    NaN
+                       BrainBot5000ms-4cls_no_hands           NaN          0.513    NaN
+Tangent Space SVM Grid BrainBot4000ms                         NaN            NaN  0.536
+                       BrainBot4000ms-4cls_no_feet          0.315            NaN    NaN
+                       BrainBot4000ms-4cls_no_hands           NaN          0.355    NaN
+                       BrainBot4500ms                         NaN            NaN  0.558
+                       BrainBot4500ms-4cls_no_feet          0.298            NaN    NaN
+                       BrainBot4500ms-4cls_no_hands           NaN          0.365    NaN
+                       BrainBot5000ms                         NaN            NaN  0.456
+                       BrainBot5000ms-4cls_no_feet          0.506            NaN    NaN
+                       BrainBot5000ms-4cls_no_hands           NaN          0.531    NaN

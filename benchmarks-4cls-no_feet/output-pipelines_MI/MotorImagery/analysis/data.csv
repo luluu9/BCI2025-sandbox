@@ -1,0 +1,145 @@
+,score,time,samples,subject,session,channels,n_sessions,dataset,pipeline,paradigm,evaluation
+0,0.2575,0.11134787,78.0,1,0,16,4,BrainBot4000ms-4cls_no_feet,DLCSPauto + shLDA,MotorImagery,WithinSession
+1,0.22,0.09922624,150.0,2,0,16,4,BrainBot4000ms-4cls_no_feet,DLCSPauto + shLDA,MotorImagery,WithinSession
+2,0.21774194,0.09453764,156.0,3,0,16,4,BrainBot4000ms-4cls_no_feet,DLCSPauto + shLDA,MotorImagery,WithinSession
+3,0.23083334,0.08095803,78.0,3,1,16,4,BrainBot4000ms-4cls_no_feet,DLCSPauto + shLDA,MotorImagery,WithinSession
+4,0.3475,0.098421715,78.0,3,2,16,4,BrainBot4000ms-4cls_no_feet,DLCSPauto + shLDA,MotorImagery,WithinSession
+5,0.25652173,0.113724515,117.0,3,3,16,4,BrainBot4000ms-4cls_no_feet,DLCSPauto + shLDA,MotorImagery,WithinSession
+6,0.1675,14.8795395,78.0,1,0,16,4,BrainBot4000ms-4cls_no_feet,CSP + SVM Grid,MotorImagery,WithinSession
+7,0.20666666,16.59015,150.0,2,0,16,4,BrainBot4000ms-4cls_no_feet,CSP + SVM Grid,MotorImagery,WithinSession
+8,0.16088709,15.099668,156.0,3,0,16,4,BrainBot4000ms-4cls_no_feet,CSP + SVM Grid,MotorImagery,WithinSession
+9,0.22833334,12.151221,78.0,3,1,16,4,BrainBot4000ms-4cls_no_feet,CSP + SVM Grid,MotorImagery,WithinSession
+10,0.27166668,16.363632,78.0,3,2,16,4,BrainBot4000ms-4cls_no_feet,CSP + SVM Grid,MotorImagery,WithinSession
+11,0.25688407,16.613699,117.0,3,3,16,4,BrainBot4000ms-4cls_no_feet,CSP + SVM Grid,MotorImagery,WithinSession
+12,0.25583333,0.5785512,78.0,1,0,16,4,BrainBot4000ms-4cls_no_feet,Tangent Space SVM Grid,MotorImagery,WithinSession
+13,0.28666666,1.0509136,150.0,2,0,16,4,BrainBot4000ms-4cls_no_feet,Tangent Space SVM Grid,MotorImagery,WithinSession
+14,0.35927418,1.1165152,156.0,3,0,16,4,BrainBot4000ms-4cls_no_feet,Tangent Space SVM Grid,MotorImagery,WithinSession
+15,0.28166667,0.58993375,78.0,3,1,16,4,BrainBot4000ms-4cls_no_feet,Tangent Space SVM Grid,MotorImagery,WithinSession
+16,0.34666666,0.5756578,78.0,3,2,16,4,BrainBot4000ms-4cls_no_feet,Tangent Space SVM Grid,MotorImagery,WithinSession
+17,0.3594203,0.9845157,117.0,3,3,16,4,BrainBot4000ms-4cls_no_feet,Tangent Space SVM Grid,MotorImagery,WithinSession
+18,0.25583333,0.11183767,78.0,1,0,16,4,BrainBot4000ms-4cls_no_feet,CSP + LDA,MotorImagery,WithinSession
+19,0.23333333,0.09840059,150.0,2,0,16,4,BrainBot4000ms-4cls_no_feet,CSP + LDA,MotorImagery,WithinSession
+20,0.16653226,0.09775362,156.0,3,0,16,4,BrainBot4000ms-4cls_no_feet,CSP + LDA,MotorImagery,WithinSession
+21,0.2425,0.080543324,78.0,3,1,16,4,BrainBot4000ms-4cls_no_feet,CSP + LDA,MotorImagery,WithinSession
+22,0.33416668,0.0968142,78.0,3,2,16,4,BrainBot4000ms-4cls_no_feet,CSP + LDA,MotorImagery,WithinSession
+23,0.23913044,0.11389246,117.0,3,3,16,4,BrainBot4000ms-4cls_no_feet,CSP + LDA,MotorImagery,WithinSession
+24,0.24416667,0.1395615,78.0,1,0,16,4,BrainBot4000ms-4cls_no_feet,FgMDM,MotorImagery,WithinSession
+25,0.36,0.25814128,150.0,2,0,16,4,BrainBot4000ms-4cls_no_feet,FgMDM,MotorImagery,WithinSession
+26,0.26330644,0.2657458,156.0,3,0,16,4,BrainBot4000ms-4cls_no_feet,FgMDM,MotorImagery,WithinSession
+27,0.2575,0.15558882,78.0,3,1,16,4,BrainBot4000ms-4cls_no_feet,FgMDM,MotorImagery,WithinSession
+28,0.32166666,0.14403716,78.0,3,2,16,4,BrainBot4000ms-4cls_no_feet,FgMDM,MotorImagery,WithinSession
+29,0.31666666,0.24010158,117.0,3,3,16,4,BrainBot4000ms-4cls_no_feet,FgMDM,MotorImagery,WithinSession
+30,0.20666666,0.06203852,78.0,1,0,16,4,BrainBot4000ms-4cls_no_feet,Tangent Space LR,MotorImagery,WithinSession
+31,0.33333334,0.077825025,150.0,2,0,16,4,BrainBot4000ms-4cls_no_feet,Tangent Space LR,MotorImagery,WithinSession
+32,0.32096773,0.088312626,156.0,3,0,16,4,BrainBot4000ms-4cls_no_feet,Tangent Space LR,MotorImagery,WithinSession
+33,0.23,0.04058485,78.0,3,1,16,4,BrainBot4000ms-4cls_no_feet,Tangent Space LR,MotorImagery,WithinSession
+34,0.385,0.04902215,78.0,3,2,16,4,BrainBot4000ms-4cls_no_feet,Tangent Space LR,MotorImagery,WithinSession
+35,0.29927537,0.06426978,117.0,3,3,16,4,BrainBot4000ms-4cls_no_feet,Tangent Space LR,MotorImagery,WithinSession
+36,0.14333333,0.03124075,78.0,1,0,16,4,BrainBot4000ms-4cls_no_feet,MDM,MotorImagery,WithinSession
+37,0.25333333,0.05208535,150.0,2,0,16,4,BrainBot4000ms-4cls_no_feet,MDM,MotorImagery,WithinSession
+38,0.17318548,0.05625663,156.0,3,0,16,4,BrainBot4000ms-4cls_no_feet,MDM,MotorImagery,WithinSession
+39,0.19333333,0.032989215,78.0,3,1,16,4,BrainBot4000ms-4cls_no_feet,MDM,MotorImagery,WithinSession
+40,0.29416665,0.031351138,78.0,3,2,16,4,BrainBot4000ms-4cls_no_feet,MDM,MotorImagery,WithinSession
+41,0.17101449,0.04618902,117.0,3,3,16,4,BrainBot4000ms-4cls_no_feet,MDM,MotorImagery,WithinSession
+42,0.28083333,0.83242166,78.0,1,0,16,4,BrainBot4000ms-4cls_no_feet,TS ElasticNet Grid,MotorImagery,WithinSession
+43,0.31333333,1.2802618,150.0,2,0,16,4,BrainBot4000ms-4cls_no_feet,TS ElasticNet Grid,MotorImagery,WithinSession
+44,0.32721773,1.379396,156.0,3,0,16,4,BrainBot4000ms-4cls_no_feet,TS ElasticNet Grid,MotorImagery,WithinSession
+45,0.20666666,0.6985075,78.0,3,1,16,4,BrainBot4000ms-4cls_no_feet,TS ElasticNet Grid,MotorImagery,WithinSession
+46,0.3725,0.7025809,78.0,3,2,16,4,BrainBot4000ms-4cls_no_feet,TS ElasticNet Grid,MotorImagery,WithinSession
+47,0.3597826,1.1260054,117.0,3,3,16,4,BrainBot4000ms-4cls_no_feet,TS ElasticNet Grid,MotorImagery,WithinSession
+48,0.2575,0.121192314,78.0,1,0,16,4,BrainBot4500ms-4cls_no_feet,DLCSPauto + shLDA,MotorImagery,WithinSession
+49,0.20666666,0.0949028,150.0,2,0,16,4,BrainBot4500ms-4cls_no_feet,DLCSPauto + shLDA,MotorImagery,WithinSession
+50,0.2435484,0.084098145,156.0,3,0,16,4,BrainBot4500ms-4cls_no_feet,DLCSPauto + shLDA,MotorImagery,WithinSession
+51,0.21666667,0.09525366,78.0,3,1,16,4,BrainBot4500ms-4cls_no_feet,DLCSPauto + shLDA,MotorImagery,WithinSession
+52,0.36083335,0.08416037,78.0,3,2,16,4,BrainBot4500ms-4cls_no_feet,DLCSPauto + shLDA,MotorImagery,WithinSession
+53,0.2228261,0.10572882,117.0,3,3,16,4,BrainBot4500ms-4cls_no_feet,DLCSPauto + shLDA,MotorImagery,WithinSession
+54,0.28,0.68588257,78.0,1,0,16,4,BrainBot4500ms-4cls_no_feet,TS ElasticNet Grid,MotorImagery,WithinSession
+55,0.34,1.2808722,150.0,2,0,16,4,BrainBot4500ms-4cls_no_feet,TS ElasticNet Grid,MotorImagery,WithinSession
+56,0.34657258,1.3759855,156.0,3,0,16,4,BrainBot4500ms-4cls_no_feet,TS ElasticNet Grid,MotorImagery,WithinSession
+57,0.19333333,0.6938802,78.0,3,1,16,4,BrainBot4500ms-4cls_no_feet,TS ElasticNet Grid,MotorImagery,WithinSession
+58,0.3475,0.69693714,78.0,3,2,16,4,BrainBot4500ms-4cls_no_feet,TS ElasticNet Grid,MotorImagery,WithinSession
+59,0.43731883,1.1227468,117.0,3,3,16,4,BrainBot4500ms-4cls_no_feet,TS ElasticNet Grid,MotorImagery,WithinSession
+60,0.1925,0.5804334,78.0,1,0,16,4,BrainBot4500ms-4cls_no_feet,Tangent Space SVM Grid,MotorImagery,WithinSession
+61,0.29333332,1.1935047,150.0,2,0,16,4,BrainBot4500ms-4cls_no_feet,Tangent Space SVM Grid,MotorImagery,WithinSession
+62,0.3653226,1.1352968,156.0,3,0,16,4,BrainBot4500ms-4cls_no_feet,Tangent Space SVM Grid,MotorImagery,WithinSession
+63,0.27,0.58455193,78.0,3,1,16,4,BrainBot4500ms-4cls_no_feet,Tangent Space SVM Grid,MotorImagery,WithinSession
+64,0.33416668,0.5887283,78.0,3,2,16,4,BrainBot4500ms-4cls_no_feet,Tangent Space SVM Grid,MotorImagery,WithinSession
+65,0.33405796,0.8937951,117.0,3,3,16,4,BrainBot4500ms-4cls_no_feet,Tangent Space SVM Grid,MotorImagery,WithinSession
+66,0.19333333,0.051187325,78.0,1,0,16,4,BrainBot4500ms-4cls_no_feet,Tangent Space LR,MotorImagery,WithinSession
+67,0.34,0.08270216,150.0,2,0,16,4,BrainBot4500ms-4cls_no_feet,Tangent Space LR,MotorImagery,WithinSession
+68,0.33991936,0.0894146,156.0,3,0,16,4,BrainBot4500ms-4cls_no_feet,Tangent Space LR,MotorImagery,WithinSession
+69,0.21833333,0.053836584,78.0,3,1,16,4,BrainBot4500ms-4cls_no_feet,Tangent Space LR,MotorImagery,WithinSession
+70,0.3975,0.05033846,78.0,3,2,16,4,BrainBot4500ms-4cls_no_feet,Tangent Space LR,MotorImagery,WithinSession
+71,0.307971,0.067089416,117.0,3,3,16,4,BrainBot4500ms-4cls_no_feet,Tangent Space LR,MotorImagery,WithinSession
+72,0.23166667,0.12008963,78.0,1,0,16,4,BrainBot4500ms-4cls_no_feet,CSP + LDA,MotorImagery,WithinSession
+73,0.22,0.09903006,150.0,2,0,16,4,BrainBot4500ms-4cls_no_feet,CSP + LDA,MotorImagery,WithinSession
+74,0.23064516,0.08492198,156.0,3,0,16,4,BrainBot4500ms-4cls_no_feet,CSP + LDA,MotorImagery,WithinSession
+75,0.20416667,0.09434958,78.0,3,1,16,4,BrainBot4500ms-4cls_no_feet,CSP + LDA,MotorImagery,WithinSession
+76,0.33416668,0.082874395,78.0,3,2,16,4,BrainBot4500ms-4cls_no_feet,CSP + LDA,MotorImagery,WithinSession
+77,0.23115942,0.10586367,117.0,3,3,16,4,BrainBot4500ms-4cls_no_feet,CSP + LDA,MotorImagery,WithinSession
+78,0.26916668,0.28055677,78.0,1,0,16,4,BrainBot4500ms-4cls_no_feet,FgMDM,MotorImagery,WithinSession
+79,0.38,0.26174927,150.0,2,0,16,4,BrainBot4500ms-4cls_no_feet,FgMDM,MotorImagery,WithinSession
+80,0.31471774,0.2741993,156.0,3,0,16,4,BrainBot4500ms-4cls_no_feet,FgMDM,MotorImagery,WithinSession
+81,0.295,0.15266624,78.0,3,1,16,4,BrainBot4500ms-4cls_no_feet,FgMDM,MotorImagery,WithinSession
+82,0.33583334,0.1272336,78.0,3,2,16,4,BrainBot4500ms-4cls_no_feet,FgMDM,MotorImagery,WithinSession
+83,0.317029,0.23764472,117.0,3,3,16,4,BrainBot4500ms-4cls_no_feet,FgMDM,MotorImagery,WithinSession
+84,0.19416666,0.031161785,78.0,1,0,16,4,BrainBot4500ms-4cls_no_feet,MDM,MotorImagery,WithinSession
+85,0.28666666,0.053106926,150.0,2,0,16,4,BrainBot4500ms-4cls_no_feet,MDM,MotorImagery,WithinSession
+86,0.17318548,0.059209727,156.0,3,0,16,4,BrainBot4500ms-4cls_no_feet,MDM,MotorImagery,WithinSession
+87,0.1925,0.03187685,78.0,3,1,16,4,BrainBot4500ms-4cls_no_feet,MDM,MotorImagery,WithinSession
+88,0.2825,0.031028222,78.0,3,2,16,4,BrainBot4500ms-4cls_no_feet,MDM,MotorImagery,WithinSession
+89,0.17971015,0.046216298,117.0,3,3,16,4,BrainBot4500ms-4cls_no_feet,MDM,MotorImagery,WithinSession
+90,0.14333333,16.51725,78.0,1,0,16,4,BrainBot4500ms-4cls_no_feet,CSP + SVM Grid,MotorImagery,WithinSession
+91,0.22,17.370766,150.0,2,0,16,4,BrainBot4500ms-4cls_no_feet,CSP + SVM Grid,MotorImagery,WithinSession
+92,0.21794355,15.504125,156.0,3,0,16,4,BrainBot4500ms-4cls_no_feet,CSP + SVM Grid,MotorImagery,WithinSession
+93,0.29333332,11.805766,78.0,3,1,16,4,BrainBot4500ms-4cls_no_feet,CSP + SVM Grid,MotorImagery,WithinSession
+94,0.24333334,15.802699,78.0,3,2,16,4,BrainBot4500ms-4cls_no_feet,CSP + SVM Grid,MotorImagery,WithinSession
+95,0.29855072,16.588617,117.0,3,3,16,4,BrainBot4500ms-4cls_no_feet,CSP + SVM Grid,MotorImagery,WithinSession
+96,0.3475,0.132552,78.0,1,0,16,4,BrainBot5000ms-4cls_no_feet,DLCSPauto + shLDA,MotorImagery,WithinSession
+97,0.16,0.11200728,150.0,2,0,16,4,BrainBot5000ms-4cls_no_feet,DLCSPauto + shLDA,MotorImagery,WithinSession
+98,0.22419354,0.104586504,156.0,3,0,16,4,BrainBot5000ms-4cls_no_feet,DLCSPauto + shLDA,MotorImagery,WithinSession
+99,0.32166666,0.114426754,78.0,3,1,16,4,BrainBot5000ms-4cls_no_feet,DLCSPauto + shLDA,MotorImagery,WithinSession
+100,0.46333334,0.1245656,78.0,3,2,16,4,BrainBot5000ms-4cls_no_feet,DLCSPauto + shLDA,MotorImagery,WithinSession
+101,0.3076087,0.087107226,117.0,3,3,16,4,BrainBot5000ms-4cls_no_feet,DLCSPauto + shLDA,MotorImagery,WithinSession
+102,0.46333334,0.05379858,78.0,1,0,16,4,BrainBot5000ms-4cls_no_feet,Tangent Space LR,MotorImagery,WithinSession
+103,0.44666666,0.094888546,150.0,2,0,16,4,BrainBot5000ms-4cls_no_feet,Tangent Space LR,MotorImagery,WithinSession
+104,0.3782258,0.10856442,156.0,3,0,16,4,BrainBot5000ms-4cls_no_feet,Tangent Space LR,MotorImagery,WithinSession
+105,0.51416665,0.047450922,78.0,3,1,16,4,BrainBot5000ms-4cls_no_feet,Tangent Space LR,MotorImagery,WithinSession
+106,0.56333333,0.056533672,78.0,3,2,16,4,BrainBot5000ms-4cls_no_feet,Tangent Space LR,MotorImagery,WithinSession
+107,0.46050724,0.08064027,117.0,3,3,16,4,BrainBot5000ms-4cls_no_feet,Tangent Space LR,MotorImagery,WithinSession
+108,0.4,19.43105,78.0,1,0,16,4,BrainBot5000ms-4cls_no_feet,CSP + SVM Grid,MotorImagery,WithinSession
+109,0.19333333,16.30035,150.0,2,0,16,4,BrainBot5000ms-4cls_no_feet,CSP + SVM Grid,MotorImagery,WithinSession
+110,0.25,15.073278,156.0,3,0,16,4,BrainBot5000ms-4cls_no_feet,CSP + SVM Grid,MotorImagery,WithinSession
+111,0.435,13.6215515,78.0,3,1,16,4,BrainBot5000ms-4cls_no_feet,CSP + SVM Grid,MotorImagery,WithinSession
+112,0.48666668,14.996405,78.0,3,2,16,4,BrainBot5000ms-4cls_no_feet,CSP + SVM Grid,MotorImagery,WithinSession
+113,0.3155797,17.140179,117.0,3,3,16,4,BrainBot5000ms-4cls_no_feet,CSP + SVM Grid,MotorImagery,WithinSession
+114,0.54083335,0.61159533,78.0,1,0,16,4,BrainBot5000ms-4cls_no_feet,Tangent Space SVM Grid,MotorImagery,WithinSession
+115,0.4,1.1261476,150.0,2,0,16,4,BrainBot5000ms-4cls_no_feet,Tangent Space SVM Grid,MotorImagery,WithinSession
+116,0.40987903,1.2276387,156.0,3,0,16,4,BrainBot5000ms-4cls_no_feet,Tangent Space SVM Grid,MotorImagery,WithinSession
+117,0.53833336,0.61945856,78.0,3,1,16,4,BrainBot5000ms-4cls_no_feet,Tangent Space SVM Grid,MotorImagery,WithinSession
+118,0.64166665,0.64776134,78.0,3,2,16,4,BrainBot5000ms-4cls_no_feet,Tangent Space SVM Grid,MotorImagery,WithinSession
+119,0.5036232,1.0308554,117.0,3,3,16,4,BrainBot5000ms-4cls_no_feet,Tangent Space SVM Grid,MotorImagery,WithinSession
+120,0.37333333,0.12769489,78.0,1,0,16,4,BrainBot5000ms-4cls_no_feet,CSP + LDA,MotorImagery,WithinSession
+121,0.19333333,0.11296854,150.0,2,0,16,4,BrainBot5000ms-4cls_no_feet,CSP + LDA,MotorImagery,WithinSession
+122,0.21169356,0.10470648,156.0,3,0,16,4,BrainBot5000ms-4cls_no_feet,CSP + LDA,MotorImagery,WithinSession
+123,0.33416668,0.113594815,78.0,3,1,16,4,BrainBot5000ms-4cls_no_feet,CSP + LDA,MotorImagery,WithinSession
+124,0.475,0.13068262,78.0,3,2,16,4,BrainBot5000ms-4cls_no_feet,CSP + LDA,MotorImagery,WithinSession
+125,0.31630436,0.091122724,117.0,3,3,16,4,BrainBot5000ms-4cls_no_feet,CSP + LDA,MotorImagery,WithinSession
+126,0.33333334,0.03425617,78.0,1,0,16,4,BrainBot5000ms-4cls_no_feet,MDM,MotorImagery,WithinSession
+127,0.26,0.06000228,150.0,2,0,16,4,BrainBot5000ms-4cls_no_feet,MDM,MotorImagery,WithinSession
+128,0.14778225,0.06550999,156.0,3,0,16,4,BrainBot5000ms-4cls_no_feet,MDM,MotorImagery,WithinSession
+129,0.30666667,0.036176063,78.0,3,1,16,4,BrainBot5000ms-4cls_no_feet,MDM,MotorImagery,WithinSession
+130,0.33333334,0.036026765,78.0,3,2,16,4,BrainBot5000ms-4cls_no_feet,MDM,MotorImagery,WithinSession
+131,0.14528985,0.050970506,117.0,3,3,16,4,BrainBot5000ms-4cls_no_feet,MDM,MotorImagery,WithinSession
+132,0.52666664,0.14020658,78.0,1,0,16,4,BrainBot5000ms-4cls_no_feet,FgMDM,MotorImagery,WithinSession
+133,0.41333333,0.26788497,150.0,2,0,16,4,BrainBot5000ms-4cls_no_feet,FgMDM,MotorImagery,WithinSession
+134,0.3467742,0.3624173,156.0,3,0,16,4,BrainBot5000ms-4cls_no_feet,FgMDM,MotorImagery,WithinSession
+135,0.56583333,0.15013175,78.0,3,1,16,4,BrainBot5000ms-4cls_no_feet,FgMDM,MotorImagery,WithinSession
+136,0.6933333,0.22942825,78.0,3,2,16,4,BrainBot5000ms-4cls_no_feet,FgMDM,MotorImagery,WithinSession
+137,0.46847826,0.2244,117.0,3,3,16,4,BrainBot5000ms-4cls_no_feet,FgMDM,MotorImagery,WithinSession
+138,0.50083333,0.69582355,78.0,1,0,16,4,BrainBot5000ms-4cls_no_feet,TS ElasticNet Grid,MotorImagery,WithinSession
+139,0.36666667,1.2992941,150.0,2,0,16,4,BrainBot5000ms-4cls_no_feet,TS ElasticNet Grid,MotorImagery,WithinSession
+140,0.31451613,1.5006931,156.0,3,0,16,4,BrainBot5000ms-4cls_no_feet,TS ElasticNet Grid,MotorImagery,WithinSession
+141,0.5391667,0.70884794,78.0,3,1,16,4,BrainBot5000ms-4cls_no_feet,TS ElasticNet Grid,MotorImagery,WithinSession
+142,0.5516667,0.72391504,78.0,3,2,16,4,BrainBot5000ms-4cls_no_feet,TS ElasticNet Grid,MotorImagery,WithinSession
+143,0.5039855,1.1918464,117.0,3,3,16,4,BrainBot5000ms-4cls_no_feet,TS ElasticNet Grid,MotorImagery,WithinSession
