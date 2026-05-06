@@ -19,7 +19,7 @@ from pyriemann.tangentspace import TangentSpace
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.svm import SVC
 from sklearn.preprocessing import LabelEncoder
-from sklearn.model_selection import StratifiedShuffleSplit
+from sklearn.model_selection import StratifiedKFold, learning_curve
 from sklearn.pipeline import Pipeline
 
 mne.set_log_level('ERROR')
@@ -31,8 +31,7 @@ DATA_DIR   = Path("brainbot_data/5s-interval-nofiltering")
 SUBJECT_ID = 3
 TMAX       = 5.0       # interwał czasowy epoki
 N_FOLDS    = 5
-N_REPEATS  = 10    # ile razy losujemy podzbiór treningowy dla każdego rozmiaru
-TEST_FRAC  = 0.20  # stały holdout testowy
+N_JOBS     = 16         # sklearn learning_curve
 
 ALL_EVENTS = {'rest': 1, 'left_hand': 2, 'right_hand': 3, 'hands': 4, 'feet': 5}
 
@@ -115,61 +114,38 @@ def get_xy(epochs, events_filter, tmax):
 
 # ---------------------------------------------------------------------------
 # Oblicz krzywe uczenia dla jednej sesji / jednej konfiguracji klas
-#
-# Schemat:
-#   1. Stały holdout: 20% danych → test set (nigdy nie trenujemy na nim)
-#   2. Pozostałe 80% → pula treningowa
-#   3. Dla każdego train_size losujemy N_REPEATS razy podzbiór z puli
-#      i oceniamy na stałym test set → mean ± std
 # ---------------------------------------------------------------------------
-def compute_learning_curve(X, y, sfreq):
+def compute_learning_curve(X, y, sfreq, n_folds=N_FOLDS):
     n = len(X)
-    n_cls = len(np.unique(y))
-
-    # stały podział train_pool / test (stratyfikowany)
-    sss = StratifiedShuffleSplit(n_splits=1, test_size=TEST_FRAC, random_state=0)
-    train_pool_idx, test_idx = next(sss.split(X, y))
-
-    X_pool, y_pool = X[train_pool_idx], y[train_pool_idx]
-    X_test, y_test = X[test_idx],       y[test_idx]
-
-    n_pool = len(X_pool)
-    # rozmiary treningu: od min_train do n_pool (15 kroków)
-    min_train = max(n_cls * 4, 10)
-    if n_pool < min_train + 3:
+    min_cls_count = np.min(np.bincount(y))
+    # min train size: tyle żeby każda klasa miała ≥2 próbki w CV
+    min_train = max(n_folds * len(np.unique(y)), 10)
+    if n < min_train + 5:
         return None
 
-    step = max(1, (n_pool - min_train) // 14)
-    train_sizes = np.arange(min_train, n_pool, step)  # n_pool excluded (sklearn wymaga < n_pool)
-    if len(train_sizes) < 3:
+    # train_sizes jako bezwzględne liczby próbek
+    max_train = int(n * (n_folds - 1) / n_folds)
+    step = max(1, (max_train - min_train) // 15)
+    train_sizes_abs = np.arange(min_train, max_train + 1, step)
+    if len(train_sizes_abs) < 3:
         return None
 
-    test_means, test_stds   = [], []
-    train_means, train_stds = [], []
-
-    for ts in train_sizes:
-        t_scores, tr_scores = [], []
-        rng = np.random.default_rng(42)
-        for _ in range(N_REPEATS):
-            sub_idx = rng.choice(n_pool, size=int(ts), replace=False)
-            Xtr, ytr = X_pool[sub_idx], y_pool[sub_idx]
-            clf = make_ts_svm(sfreq=sfreq)
-            clf.fit(Xtr, ytr)
-            t_scores.append(clf.score(X_test, y_test))
-            tr_scores.append(clf.score(Xtr, ytr))
-
-        test_means.append(np.mean(t_scores))
-        test_stds.append(np.std(t_scores))
-        train_means.append(np.mean(tr_scores))
-        train_stds.append(np.std(tr_scores))
-
+    cv = StratifiedKFold(n_splits=n_folds, shuffle=True, random_state=42)
+    train_sizes, train_scores, test_scores = learning_curve(
+        make_ts_svm(sfreq=sfreq),
+        X, y,
+        train_sizes=train_sizes_abs,
+        cv=cv,
+        scoring='accuracy',
+        n_jobs=N_JOBS,
+        error_score='raise',
+    )
     return {
         'train_sizes':  train_sizes,
-        'n_test':       len(test_idx),
-        'test_mean':    np.array(test_means),
-        'test_std':     np.array(test_stds),
-        'train_mean':   np.array(train_means),
-        'train_std':    np.array(train_stds),
+        'test_mean':    test_scores.mean(axis=1),
+        'test_std':     test_scores.std(axis=1),
+        'train_mean':   train_scores.mean(axis=1),
+        'train_std':    train_scores.std(axis=1),
     }
 
 
@@ -202,12 +178,10 @@ def run():
             print(f"  {cfg_name}: {len(X)} epok, {n_cls} klas", end="  →  ")
             result = compute_learning_curve(X, y, sfreq)
             if result is None:
-                best = float('nan')
-                n_test = '?'
+                print("za mało próbek")
             else:
                 best = result['test_mean'].max()
-                n_test = result['n_test']
-            print(f"max acc={best:.3f}  (n_train_max={result['train_sizes'][-1] if result else '?'}, n_test={n_test})")
+                print(f"max acc={best:.3f}  (n_train_max={result['train_sizes'][-1]})")
             all_results[ses_id][cfg_name] = result
 
     # --- wykresy ---
@@ -246,14 +220,8 @@ def run():
                 result['train_mean'] + result['train_std'],
                 alpha=0.15, color=color)
 
-        # --- tytuł z info o test set ---
-        n_test_info = ""
-        for cfg_name, result in all_results[ses_id].items():
-            if result is not None:
-                n_test_info = f"  (test={result['n_test']} próbek, stały)"
-                break
-
-        ax_test.set_title(f"Sesja {ses_id} — TEST accuracy{n_test_info}\n(linie przerywane = chance)", fontsize=10)
+        # wspólna linia chance dla 5cls (dla referencji)
+        ax_test.set_title(f"Sesja {ses_id} — TEST accuracy\n(linie przerywane = chance)", fontsize=10)
         ax_test.set_xlabel("Liczba próbek treningowych")
         ax_test.set_ylabel("Accuracy")
         ax_test.legend(fontsize=8)
@@ -269,7 +237,7 @@ def run():
 
     fig.suptitle(
         f"Subject {SUBJECT_ID} — krzywe uczenia TS-SVM (8–32 Hz, filtr w CV)\n"
-        f"t=[0, {TMAX}]s  |  stały holdout test={int(TEST_FRAC*100)}%  |  {N_REPEATS} losowań/punkt",
+        f"t=[0, {TMAX}]s, {N_FOLDS}-fold StratifiedKFold",
         fontsize=13, y=1.01
     )
 
