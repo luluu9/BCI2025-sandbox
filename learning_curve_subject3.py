@@ -1,7 +1,7 @@
 """
 Krzywe uczenia (learning curves) dla subject3 — każda sesja osobno.
-Pokazuje jak accuracy TS-SVM zmienia się w zależności od liczby próbek treningowych.
-Cel: wyznaczyć punkt stabilizacji.
+4 klasy: left_hand, right_hand, feet, rest.
+Filtracja 8-32 Hz wewnątrz CV (bez przecieku między foldami).
 """
 
 import os
@@ -18,8 +18,9 @@ from pyriemann.estimation import Covariances
 from pyriemann.tangentspace import TangentSpace
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.svm import SVC
+from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import LabelEncoder
-from sklearn.model_selection import StratifiedKFold, learning_curve
+from sklearn.model_selection import StratifiedKFold, learning_curve, GridSearchCV
 from sklearn.pipeline import Pipeline
 
 mne.set_log_level('ERROR')
@@ -27,25 +28,20 @@ mne.set_log_level('ERROR')
 # ---------------------------------------------------------------------------
 # Konfiguracja
 # ---------------------------------------------------------------------------
-DATA_DIR   = Path("brainbot_data/5s-interval-nofiltering")
+DATA_DIR   = Path(__file__).parent / "brainbot_data/5s-interval-nofiltering"
 SUBJECT_ID = 3
-TMAX       = 5.0       # interwał czasowy epoki
+TMAX       = 5.0
 N_FOLDS    = 5
-N_JOBS     = 16         # sklearn learning_curve
+N_JOBS     = 32
 
-ALL_EVENTS = {'rest': 1, 'left_hand': 2, 'right_hand': 3, 'hands': 4, 'feet': 5}
+EVENTS = {'rest': 1, 'left_hand': 2, 'right_hand': 3, 'feet': 5}
 
-CONFIGS = {
-    "5cls":          ALL_EVENTS,
-    "4cls_no_hands": {k: v for k, v in ALL_EVENTS.items() if k != 'hands'},
-    "4cls_no_feet":  {k: v for k, v in ALL_EVENTS.items() if k != 'feet'},
+PIPELINE_COLORS = {
+    "TSLR":        "#1f77b4",  # niebieski
+    "TSSVM_grid":  "#2ca02c",  # zielony
+    "EN_grid":     "#d62728",  # czerwony
 }
 
-CONFIG_COLORS = {
-    "5cls":          "#1f77b4",   # niebieski
-    "4cls_no_hands": "#2ca02c",   # zielony
-    "4cls_no_feet":  "#ff7f0e",   # pomarańczowy
-}
 
 # ---------------------------------------------------------------------------
 # EpochBandpassFilter (filtracja wewnątrz CV)
@@ -71,22 +67,61 @@ class EpochBandpassFilter(BaseEstimator, TransformerMixin):
         return out
 
 
-def make_ts_svm(sfreq=256.0):
+def make_tslr(sfreq=256.0):
+    """Tangent Space + Logistic Regression (bez grid search)."""
     return Pipeline([
         ("bp",  EpochBandpassFilter(sfreq=sfreq)),
-        ("cov", Covariances(estimator='lwf')),
+        ("cov", Covariances(estimator='oas')),
         ("ts",  TangentSpace(metric='riemann')),
-        ("svm", SVC(kernel='rbf', C=1.0, gamma='scale')),
+        ("lr",  LogisticRegression(C=1.0, max_iter=1000, solver='lbfgs')),
     ])
+
+
+def make_tssvm_grid(sfreq=256.0):
+    """Tangent Space + SVM z nested grid search (C, kernel)."""
+    pipe = Pipeline([
+        ("bp",  EpochBandpassFilter(sfreq=sfreq)),
+        ("cov", Covariances(estimator='oas')),
+        ("ts",  TangentSpace(metric='riemann')),
+        ("svc", SVC()),
+    ])
+    param_grid = {
+        'svc__C':      [0.5, 1.0, 1.5],
+        'svc__kernel': ['rbf', 'linear'],
+    }
+    return GridSearchCV(pipe, param_grid, cv=3, scoring='accuracy',
+                        n_jobs=1, refit=True)
+
+
+def make_en_grid(sfreq=256.0):
+    """Tangent Space + ElasticNet Logistic Regression z nested grid search."""
+    pipe = Pipeline([
+        ("bp",  EpochBandpassFilter(sfreq=sfreq)),
+        ("cov", Covariances(estimator='oas')),
+        ("ts",  TangentSpace(metric='riemann')),
+        ("lr",  LogisticRegression(penalty='elasticnet', solver='saga',
+                                   intercept_scaling=1000.0, max_iter=1000,
+                                   l1_ratio=0.70)),
+    ])
+    param_grid = {
+        'lr__l1_ratio': [0.20, 0.30, 0.45, 0.65, 0.75],
+    }
+    return GridSearchCV(pipe, param_grid, cv=3, scoring='accuracy',
+                        n_jobs=1, refit=True)
+
+
+PIPELINES = {
+    "TSLR":       make_tslr,
+    "TSSVM_grid": make_tssvm_grid,
+    "EN_grid":    make_en_grid,
+}
 
 
 # ---------------------------------------------------------------------------
 # Wczytywanie — jedna sesja
 # ---------------------------------------------------------------------------
 def load_session(subject_id: int, session_id: int):
-    pattern = re.compile(
-        rf"subject{subject_id}_ses{session_id}_run(\d+)_.*\.epo\.fif"
-    )
+    pattern = re.compile(rf"subject{subject_id}_ses{session_id}_run(\d+)_.*\.epo\.fif")
     files = sorted([f for f in os.listdir(DATA_DIR) if pattern.match(f)])
     if not files:
         return None, None
@@ -96,56 +131,48 @@ def load_session(subject_id: int, session_id: int):
     for ep in epoch_list[1:]:
         ep.info['dev_head_t'] = ref_t
     epochs = mne.concatenate_epochs(epoch_list, verbose=False)
-    sfreq  = epochs.info['sfreq']
-    return epochs, sfreq
+    return epochs, epochs.info['sfreq']
 
 
-def get_xy(epochs, events_filter, tmax):
-    wanted = set(events_filter.values())
-    mask   = np.isin(epochs.events[:, 2], list(wanted))
+def get_xy(epochs, tmax):
+    wanted = set(EVENTS.values())
+    mask = np.isin(epochs.events[:, 2], list(wanted))
     cropped = epochs.copy().crop(tmin=0.0, tmax=tmax, verbose=False)
     X = cropped.get_data()[mask]
-    inv = {v: k for k, v in events_filter.items()}
+    inv = {v: k for k, v in EVENTS.items()}
     y_str = np.array([inv[i] for i in epochs.events[mask, 2]])
     le = LabelEncoder()
-    y = le.fit_transform(y_str)
-    return X, y, le.classes_
+    return X, le.fit_transform(y_str)
 
 
 # ---------------------------------------------------------------------------
-# Oblicz krzywe uczenia dla jednej sesji / jednej konfiguracji klas
+# Krzywa uczenia (StratifiedKFold CV, nested dla grid search)
 # ---------------------------------------------------------------------------
-def compute_learning_curve(X, y, sfreq, n_folds=N_FOLDS):
-    n = len(X)
-    min_cls_count = np.min(np.bincount(y))
-    # min train size: tyle żeby każda klasa miała ≥2 próbki w CV
-    min_train = max(n_folds * len(np.unique(y)), 10)
-    if n < min_train + 5:
+def compute_learning_curve(estimator, X, y):
+    n_cls = len(np.unique(y))
+    min_train = max(N_FOLDS * n_cls, 10)
+    max_train = int(len(X) * (N_FOLDS - 1) / N_FOLDS)
+    if max_train < min_train + 5:
         return None
 
-    # train_sizes jako bezwzględne liczby próbek
-    max_train = int(n * (n_folds - 1) / n_folds)
     step = max(1, (max_train - min_train) // 15)
     train_sizes_abs = np.arange(min_train, max_train + 1, step)
     if len(train_sizes_abs) < 3:
         return None
 
-    cv = StratifiedKFold(n_splits=n_folds, shuffle=True, random_state=42)
+    cv = StratifiedKFold(n_splits=N_FOLDS, shuffle=True, random_state=42)
     train_sizes, train_scores, test_scores = learning_curve(
-        make_ts_svm(sfreq=sfreq),
-        X, y,
+        estimator, X, y,
         train_sizes=train_sizes_abs,
-        cv=cv,
-        scoring='accuracy',
-        n_jobs=N_JOBS,
-        error_score='raise',
+        cv=cv, scoring='accuracy',
+        n_jobs=N_JOBS, error_score='raise',
     )
     return {
-        'train_sizes':  train_sizes,
-        'test_mean':    test_scores.mean(axis=1),
-        'test_std':     test_scores.std(axis=1),
-        'train_mean':   train_scores.mean(axis=1),
-        'train_std':    train_scores.std(axis=1),
+        'train_sizes': train_sizes,
+        'test_mean':   test_scores.mean(axis=1),
+        'test_std':    test_scores.std(axis=1),
+        'train_mean':  train_scores.mean(axis=1),
+        'train_std':   train_scores.std(axis=1),
     }
 
 
@@ -153,92 +180,88 @@ def compute_learning_curve(X, y, sfreq, n_folds=N_FOLDS):
 # Główna pętla
 # ---------------------------------------------------------------------------
 def run():
-    # wykryj dostępne sesje subject3
-    pattern  = re.compile(rf"subject{SUBJECT_ID}_ses(\d+)_run\d+_.*\.epo\.fif")
+    pattern = re.compile(rf"subject{SUBJECT_ID}_ses(\d+)_run\d+_.*\.epo\.fif")
     session_ids = sorted(set(
         int(m.group(1)) for f in os.listdir(DATA_DIR)
         if (m := pattern.match(f))
     ))
+    chance = 1 / len(EVENTS)
     print(f"Subject {SUBJECT_ID} — sesje: {session_ids}")
+    print(f"Klasy: {list(EVENTS.keys())}  chance={chance:.3f}")
+    print(f"Pipeline'y: {list(PIPELINES.keys())}\n")
 
-    # --- zbierz wyniki ---
-    all_results = {}   # all_results[ses_id][cfg_name] = curve_dict | None
+    # all_results[ses_id][pipeline_name] = result_dict | None
+    all_results = {}
 
     for ses_id in session_ids:
-        print(f"\n--- Sesja {ses_id} ---")
+        print(f"--- Sesja {ses_id} ---")
         epochs, sfreq = load_session(SUBJECT_ID, ses_id)
         if epochs is None:
             print("  brak danych")
             continue
+
+        X, y = get_xy(epochs, TMAX)
+        print(f"  {len(X)} epok, {len(np.unique(y))} klas")
         all_results[ses_id] = {}
 
-        for cfg_name, events_filter in CONFIGS.items():
-            X, y, classes = get_xy(epochs, events_filter, TMAX)
-            n_cls = len(np.unique(y))
-            print(f"  {cfg_name}: {len(X)} epok, {n_cls} klas", end="  →  ")
-            result = compute_learning_curve(X, y, sfreq)
+        for pipe_name, pipe_factory in PIPELINES.items():
+            estimator = pipe_factory(sfreq=sfreq)
+            print(f"  [{pipe_name}] ", end="", flush=True)
+            result = compute_learning_curve(estimator, X, y)
             if result is None:
                 print("za mało próbek")
             else:
-                best = result['test_mean'].max()
-                print(f"max acc={best:.3f}  (n_train_max={result['train_sizes'][-1]})")
-            all_results[ses_id][cfg_name] = result
+                print(f"max acc={result['test_mean'].max():.3f}  "
+                      f"(n_train_max={result['train_sizes'][-1]})")
+            all_results[ses_id][pipe_name] = result
 
-    # --- wykresy ---
-    n_ses = len(all_results)
-    fig = plt.figure(figsize=(6 * n_ses, 10))
-    gs  = gridspec.GridSpec(2, n_ses, hspace=0.45, wspace=0.3)
+    # --- wykresy: 2 wiersze (test / train), kolumny = sesje ---
+    valid_sessions = [s for s, r in all_results.items()
+                      if any(v is not None for v in r.values())]
+    n_ses = len(valid_sessions)
+    if n_ses == 0:
+        print("Brak wyników do wykreślenia.")
+        return
 
-    for col, ses_id in enumerate(sorted(all_results)):
-        ax_test  = fig.add_subplot(gs[0, col])
-        ax_train = fig.add_subplot(gs[1, col])
+    fig, axes = plt.subplots(2, n_ses, figsize=(5 * n_ses, 8),
+                              squeeze=False,
+                              gridspec_kw=dict(hspace=0.45, wspace=0.3))
 
-        n_total_epochs = {}   # do tytułu
-        _, sfreq_tmp = load_session(SUBJECT_ID, ses_id)
+    for col, ses_id in enumerate(sorted(valid_sessions)):
+        ax_test  = axes[0][col]
+        ax_train = axes[1][col]
 
-        for cfg_name, result in all_results[ses_id].items():
+        for pipe_name, result in all_results[ses_id].items():
             if result is None:
                 continue
-            color = CONFIG_COLORS[cfg_name]
-            n_cls = len(CONFIGS[cfg_name])
-            chance = 1 / n_cls
+            color = PIPELINE_COLORS[pipe_name]
             xs = result['train_sizes']
 
-            # test accuracy
-            ax_test.plot(xs, result['test_mean'], color=color, label=cfg_name, linewidth=2)
-            ax_test.fill_between(xs,
-                result['test_mean'] - result['test_std'],
-                result['test_mean'] + result['test_std'],
-                alpha=0.15, color=color)
-            # linia chance
-            ax_test.axhline(chance, color=color, linestyle=':', linewidth=1, alpha=0.6)
+            for ax, key_m, key_s in [
+                (ax_test,  'test_mean',  'test_std'),
+                (ax_train, 'train_mean', 'train_std'),
+            ]:
+                m, s = result[key_m], result[key_s]
+                ax.plot(xs, m, color=color, linewidth=2, label=pipe_name)
+                ax.fill_between(xs, m - s, m + s, alpha=0.15, color=color)
 
-            # train accuracy
-            ax_train.plot(xs, result['train_mean'], color=color, label=cfg_name, linewidth=2)
-            ax_train.fill_between(xs,
-                result['train_mean'] - result['train_std'],
-                result['train_mean'] + result['train_std'],
-                alpha=0.15, color=color)
-
-        # wspólna linia chance dla 5cls (dla referencji)
-        ax_test.set_title(f"Sesja {ses_id} — TEST accuracy\n(linie przerywane = chance)", fontsize=10)
-        ax_test.set_xlabel("Liczba próbek treningowych")
-        ax_test.set_ylabel("Accuracy")
-        ax_test.legend(fontsize=8)
-        ax_test.set_ylim(0, 1.05)
-        ax_test.grid(True, alpha=0.3)
-
-        ax_train.set_title(f"Sesja {ses_id} — TRAIN accuracy", fontsize=10)
-        ax_train.set_xlabel("Liczba próbek treningowych")
-        ax_train.set_ylabel("Accuracy")
-        ax_train.legend(fontsize=8)
-        ax_train.set_ylim(0, 1.05)
-        ax_train.grid(True, alpha=0.3)
+        for ax, title in [
+            (ax_test,  f"Sesja {ses_id} — TEST"),
+            (ax_train, f"Sesja {ses_id} — TRAIN"),
+        ]:
+            ax.axhline(chance, color='gray', linestyle='--', linewidth=1,
+                       label=f"chance={chance:.2f}")
+            ax.set_title(title, fontsize=10)
+            ax.set_xlabel("Liczba próbek treningowych")
+            ax.set_ylabel("Accuracy")
+            ax.set_ylim(0, 1.05)
+            ax.legend(fontsize=7)
+            ax.grid(True, alpha=0.3)
 
     fig.suptitle(
-        f"Subject {SUBJECT_ID} — krzywe uczenia TS-SVM (8–32 Hz, filtr w CV)\n"
-        f"t=[0, {TMAX}]s, {N_FOLDS}-fold StratifiedKFold",
-        fontsize=13, y=1.01
+        f"Subject {SUBJECT_ID} — krzywe uczenia (8–32 Hz, filtr w CV, nested GS)\n"
+        f"4 klasy: {', '.join(EVENTS.keys())}  |  t=[0, {TMAX}]s  |  {N_FOLDS}-fold CV",
+        fontsize=12, y=1.01
     )
 
     out_path = Path(__file__).parent / f"learning_curve_subject{SUBJECT_ID}.png"
