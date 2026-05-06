@@ -28,7 +28,7 @@ from sklearn.pipeline import Pipeline
 
 # MOABB
 sys.path.insert(0, str(Path(__file__).parent.parent / "moabb"))
-from moabb.datasets import Weibo2014, PhysionetMI
+from moabb.datasets import Weibo2014, PhysionetMI, Zhou2016, BNCI2014_001
 from moabb.paradigms import MotorImagery
 
 mne.set_log_level('ERROR')
@@ -50,8 +50,10 @@ PIPELINE_COLORS = {
 }
 
 # Dataset-specific subject lists (None = wszystkie)
-SUBJECTS_WEIBO    = None # list(range(1, 2))   # 10 subjects
-SUBJECTS_PHYSIONET = list(range(1, 11))   # pierwsze 10, można rozszerzyć
+SUBJECTS_WEIBO     = None
+SUBJECTS_PHYSIONET = list(range(1, 11))
+SUBJECTS_ZHOU      = None          # 4 subjecty
+SUBJECTS_BNCI      = list(range(1, 10))  # 9 subjectów
 
 # ---------------------------------------------------------------------------
 # EpochBandpassFilter (filtracja wewnątrz CV — brak przecieku)
@@ -124,21 +126,18 @@ PIPELINES = {
 # ---------------------------------------------------------------------------
 # Ładowanie danych przez MOABB (bez filtrowania — filtrujemy w CV)
 # ---------------------------------------------------------------------------
-def load_moabb_dataset(dataset, subjects):
+def load_moabb_dataset(dataset, subjects, events):
     """
     Zwraca dict: subject_id -> (X, y, sfreq)
-    Używamy paradigm z fmin=None/fmax=None odpowiadającym brak filtrowania
-    i return_epochs=True, by dostać surowe epoki.
+    Używamy szerokiego pasma (1-45 Hz) — właściwą filtrację robimy w CV.
     """
-    # Paradigm bez filtrowania: fmin/fmax ustawiamy bardzo szeroko, żeby MOABB
-    # nie robił własnego filtrowania; właściwą filtrację robimy w CV.
     paradigm = MotorImagery(
-        events=TARGET_EVENTS,
-        n_classes=len(TARGET_EVENTS),
+        events=events,
+        n_classes=len(events),
         fmin=1.0,
         fmax=45.0,
         tmin=0.0,
-        tmax=None,           # użyj całego okna zdefiniowanego przez dataset
+        tmax=None,
         resample=None,
     )
 
@@ -198,10 +197,11 @@ def compute_learning_curve(estimator, X, y):
 # ---------------------------------------------------------------------------
 # Rysowanie
 # ---------------------------------------------------------------------------
-def plot_and_save(all_results, dataset_name, n_classes, out_path):
+def plot_and_save(all_results, dataset_name, events, out_path):
     """
     all_results: dict subject_id -> dict pipe_name -> result | None
     """
+    n_classes = len(events)
     valid_subjects = sorted(
         s for s, r in all_results.items()
         if any(v is not None for v in r.values())
@@ -248,7 +248,7 @@ def plot_and_save(all_results, dataset_name, n_classes, out_path):
 
     fig.suptitle(
         f"{dataset_name} — krzywe uczenia (8–32 Hz filtr w CV, nested GS)\n"
-        f"4 klasy: {', '.join(TARGET_EVENTS)}  |  {N_FOLDS}-fold CV",
+        f"{n_classes} klas: {', '.join(events)}  |  {N_FOLDS}-fold CV",
         fontsize=11, y=1.01,
     )
     plt.savefig(out_path, dpi=120, bbox_inches='tight')
@@ -259,12 +259,13 @@ def plot_and_save(all_results, dataset_name, n_classes, out_path):
 # ---------------------------------------------------------------------------
 # Główna funkcja per-dataset
 # ---------------------------------------------------------------------------
-def run_dataset(dataset, dataset_name, subjects):
+def run_dataset(dataset, dataset_name, subjects, events):
     print(f"\n{'='*60}")
     print(f"Dataset: {dataset_name}  (subjects: {subjects})")
+    print(f"Klasy: {events}")
     print(f"{'='*60}")
 
-    subject_data = load_moabb_dataset(dataset, subjects)
+    subject_data = load_moabb_dataset(dataset, subjects, events)
     if not subject_data:
         print("Brak danych — pomijam.")
         return
@@ -285,10 +286,17 @@ def run_dataset(dataset, dataset_name, subjects):
             all_results[subj][pipe_name] = result
 
     out_path = Path(__file__).parent / f"learning_curve_{dataset_name}.png"
-    plot_and_save(all_results, dataset_name, n_classes=len(TARGET_EVENTS), out_path=out_path)
+    plot_and_save(all_results, dataset_name, events=events, out_path=out_path)
 
 
 # ---------------------------------------------------------------------------
 if __name__ == "__main__":
-    run_dataset(Weibo2014(),    "Weibo2014",    SUBJECTS_WEIBO)
-    run_dataset(PhysionetMI(),  "PhysionetMI",  SUBJECTS_PHYSIONET)
+    WEIBO_EVENTS    = ['left_hand', 'right_hand', 'feet', 'rest']
+    PHYSIONET_EVENTS = ['left_hand', 'right_hand', 'feet', 'rest']
+    ZHOU_EVENTS     = ['left_hand', 'right_hand', 'feet']
+    BNCI_EVENTS     = ['left_hand', 'right_hand', 'feet', 'tongue']
+
+    # run_dataset(Weibo2014(),    "Weibo2014",    SUBJECTS_WEIBO,     WEIBO_EVENTS)
+    # run_dataset(PhysionetMI(),  "PhysionetMI",  SUBJECTS_PHYSIONET, PHYSIONET_EVENTS)
+    run_dataset(Zhou2016(),     "Zhou2016",     SUBJECTS_ZHOU,      ZHOU_EVENTS)
+    run_dataset(BNCI2014_001(), "BNCI2014_001", SUBJECTS_BNCI,      BNCI_EVENTS)
