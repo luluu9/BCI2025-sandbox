@@ -38,7 +38,9 @@ def split_annotated_into_segments(file_paths, segment_length_s, step_s, output_d
         eeg_channels = ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16"]
         raw.pick(picks=eeg_channels)
         raw.resample(sfreq=256)
-           
+        raw.filter(l_freq=8.0, h_freq=32.0, fir_design='firwin')
+        raw.notch_filter(freqs=[50.0])
+
         raw.rename_channels(mapping)
         montage = mne.channels.make_standard_montage('standard_1020')
         raw.set_montage(montage)
@@ -62,9 +64,9 @@ def split_annotated_into_segments(file_paths, segment_length_s, step_s, output_d
                 all_events_id_renamed.pop(events_pred, None)
             all_events = np.array([e for e in all_events if e[2] in events_real.values()])
 
-        # reject_criteria = dict(
-        #     eeg=80e-6,  # 80 µV
-        # ) 
+        reject_criteria = dict(
+            eeg=80e-6,  # 80 µV
+        ) 
 
         task_margin = 1.5 # event is when cue is shown
         task_duration = 3.5
@@ -77,11 +79,11 @@ def split_annotated_into_segments(file_paths, segment_length_s, step_s, output_d
             tmin=task_margin,
             tmax=task_end,
             preload=True,
-            # reject=reject_criteria
+            reject=reject_criteria
         )
 
         all_epochs = tools.split_epochs_into_segments(epochs, segment_length_s, step_s)
-        all_epochs_filename = f"{recording_name}_epochs_splitted_segment={segment_length_s}-step={step_s}-no_filtering-epo.fif"
+        all_epochs_filename = f"{recording_name}_epochs_splitted_segment={segment_length_s}-step={step_s}-8-32Hz.epo.fif"
         all_epochs.save(f"{output_dir}/{all_epochs_filename}", overwrite=True)
 
 

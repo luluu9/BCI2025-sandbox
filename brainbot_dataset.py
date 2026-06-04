@@ -26,7 +26,7 @@ class BrainBotDataset(moabb.datasets.base.BaseDataset):
             Number of sessions per subject.
         """
         duration_ms = int((interval[1] - interval[0]) * 1000)
-        dataset_code = f"BrainBot-PaperMethodology-{duration_ms}ms"
+        dataset_code = f"BrainBot-PaperMethodology-{duration_ms}ms-InitialFiltering"
 
         super().__init__(
             subjects=subjects,

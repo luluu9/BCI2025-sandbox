@@ -22,8 +22,8 @@ print("Used electrodes:", electrodes)
 
 brainbot_datasets = get_brainbot_datasets(subjects=SUBJECTS, max_trials=MAX_TRIALS, brainbot_intervals=INTERVALS)
 
-results = run_moabb_benchmark("pipelines_MI", datasets_list=brainbot_datasets, overwrite=True)
+results = run_moabb_benchmark("pipelines_MI", datasets_list=brainbot_datasets, overwrite=False)
 print_results_summary(results)
 
-results = run_moabb_benchmark("pipelines_MI_tensorflow", datasets_list=brainbot_datasets, overwrite=True)
+results = run_moabb_benchmark("pipelines_MI_tensorflow", datasets_list=brainbot_datasets, overwrite=False)
 print_results_summary(results)
