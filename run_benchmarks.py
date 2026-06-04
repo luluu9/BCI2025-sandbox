@@ -7,14 +7,14 @@ import mne
 moabb.set_log_level('INFO')
 mne.set_log_level('INFO')
 
-SUBJECTS = 10
-MAX_TRIALS = 4
-INTERVALS = [[0, 4.0], [0, 4.5], [0, 5.0]]
+SUBJECTS = 5
+MAX_TRIALS = 1
+INTERVALS = [[0, 3.5]]
 
 datasets = get_brainbot_datasets(subjects=SUBJECTS, max_trials=MAX_TRIALS, brainbot_intervals=INTERVALS)
 dataset_results = {}
-dataset_events = ["left_hand", "right_hand", "feet", "hands", "rest"]
-sampling = 160 # based on Physionet sampling rate 
+dataset_events = ["left_hand", "right_hand", "feet", "rest"]
+sampling = 256 
 
 electrodes, datasets = find_intersecting_channels(datasets)
 print("Datasets used:", [type(d).__name__ for d in datasets])

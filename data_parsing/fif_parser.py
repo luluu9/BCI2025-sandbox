@@ -24,8 +24,8 @@ mapping = {
 
 USE_ONLY_REAL_EVENTS = True # if False, use all event types (including classification result)
 
-events_real = {"rest": 1, "left_hand": 2, "right_hand": 3, "hands": 4, "feet": 5}
-events_predicted = {"rest_predicted": 11, "left_hand_predicted": 12, "right_hand_predicted": 13, "hands_predicted": 14, "feet_predicted": 15}
+events_real = {"rest": 1, "left_hand": 2, "right_hand": 3, "feet": 4}
+events_predicted = {"rest_predicted": 11, "left_hand_predicted": 12, "right_hand_predicted": 13, "feet_predicted": 14}
 classification_result = {"correct": 20, "incorrect": 21}
 all_possible_events_id = {**events_real, **events_predicted, **classification_result}
 
@@ -38,8 +38,6 @@ def split_annotated_into_segments(file_paths, segment_length_s, step_s, output_d
         eeg_channels = ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "A16"]
         raw.pick(picks=eeg_channels)
         raw.resample(sfreq=256)
-        raw.filter(l_freq=8.0, h_freq=32.0, fir_design='firwin')
-        raw.notch_filter(freqs=[50.0])
            
         raw.rename_channels(mapping)
         montage = mne.channels.make_standard_montage('standard_1020')
@@ -64,12 +62,12 @@ def split_annotated_into_segments(file_paths, segment_length_s, step_s, output_d
                 all_events_id_renamed.pop(events_pred, None)
             all_events = np.array([e for e in all_events if e[2] in events_real.values()])
 
-        reject_criteria = dict(
-            eeg=80e-6,  # 80 µV
-        ) 
+        # reject_criteria = dict(
+        #     eeg=80e-6,  # 80 µV
+        # ) 
 
-        task_margin = 1.0 # event is when cue is shown
-        task_duration = 5.0
+        task_margin = 1.5 # event is when cue is shown
+        task_duration = 3.5
         task_end = task_margin + task_duration
         epochs = mne.Epochs(
             raw=raw,
@@ -79,34 +77,34 @@ def split_annotated_into_segments(file_paths, segment_length_s, step_s, output_d
             tmin=task_margin,
             tmax=task_end,
             preload=True,
-            reject=reject_criteria
+            # reject=reject_criteria
         )
 
         all_epochs = tools.split_epochs_into_segments(epochs, segment_length_s, step_s)
-        all_epochs_filename = f"{recording_name}_epochs_splitted_segment={segment_length_s}-step={step_s}-8-32Hz.epo.fif"
+        all_epochs_filename = f"{recording_name}_epochs_splitted_segment={segment_length_s}-step={step_s}-no_filtering-epo.fif"
         all_epochs.save(f"{output_dir}/{all_epochs_filename}", overwrite=True)
 
 
 if __name__ == "__main__":
     base_dir = Path(__file__).resolve().parent.parent
-    data_dir = base_dir / "brainbot_data/recordings"
+    data_dir = base_dir / "brainbot_data/recordings_new"
     print(f"Searching .fif files in: {data_dir}")
 
     files = sorted(data_dir.rglob("*.fif"))
     if not files:
         print(f"No .fif files found in {data_dir}.")
-        print("You can place .fif files in the brainbot_data/recordings/ directory and rerun the script.")
+        print(f"You can place .fif files in the {data_dir} directory and rerun the script.")
         print("These files are too large to be included in the repository.")
     else:
-        segment_length_default = 2.0
-        step_default = 1.0
-        output_dir_default = base_dir / "brainbot_data/processed"
+        segment_length_default = 3.5
+        step_default = 3.5
+        output_dir_default = base_dir / "brainbot_data/processed_new"
         
         s = input(f"Enter segment length in seconds [default {segment_length_default}]: ").strip()
         segment_length = float(s) if s else segment_length_default
         s = input(f"Enter step size in seconds [default {step_default}]: ").strip()
         step = float(s) if s else step_default
-        s = input(f"Enter output directory [default brainbot_data/processed]: ").strip()
+        s = input(f"Enter output directory [default {output_dir_default}]: ").strip()
         output_dir = Path(s) if s else output_dir_default
         s = input(f"Proceed with segment_length={segment_length}, step={step}, output_dir={output_dir}? (y/n) [default y]: ").strip().lower()
         output_dir.mkdir(parents=True, exist_ok=True)

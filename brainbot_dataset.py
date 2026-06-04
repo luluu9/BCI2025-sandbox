@@ -26,7 +26,7 @@ class BrainBotDataset(moabb.datasets.base.BaseDataset):
             Number of sessions per subject.
         """
         duration_ms = int((interval[1] - interval[0]) * 1000)
-        dataset_code = f"BrainBot{duration_ms}ms"
+        dataset_code = f"BrainBot-PaperMethodology-{duration_ms}ms"
 
         super().__init__(
             subjects=subjects,
@@ -78,7 +78,7 @@ class BrainBotDataset(moabb.datasets.base.BaseDataset):
         
         return sessions
 
-def get_brainbot_dataset(interval=[0.0, 2.5]):
+def get_brainbot_dataset(interval=[0.0, 3.5]):
     # moabb suggests to have sessions_per_subjects as min number of sessions across subjects
     # so this may lead to some issues, but for now assume max sessions to use all data
     # (currently no drawbacks of this approach seen)
@@ -108,8 +108,8 @@ def generate_file_structure(path):
     if not os.path.exists(path):
         return None
 
-    # matches: subject3_ses1_run1_...
-    pattern = re.compile(rf"subject(\d+)_ses(\d+)_run(\d+)_.*\.epo\.fif")
+    # matches: SUBJ3_ses1_run1_...
+    pattern = re.compile(rf"SUBJ(\d+).*\-epo\.fif")
     
     sessions_map = {}
     
@@ -117,8 +117,8 @@ def generate_file_structure(path):
         match = pattern.match(filename)
         if match:
             subject_idx = int(match.group(1))
-            ses_idx = int(match.group(2))
-            run_idx = int(match.group(3))
+            ses_idx = 1
+            run_idx = 1
             
             if subject_idx not in sessions_map:
                 sessions_map[subject_idx] = {}
@@ -138,7 +138,7 @@ def generate_file_structure(path):
     return file_struct
 
 
-data_dir = r"brainbot_data/5s-interval-nofiltering/"
+data_dir = r"brainbot_data/processed_new/"
 files = generate_file_structure(data_dir)
 
 # assert that event ids are consistent across all subject files
