@@ -24,9 +24,9 @@ mapping = {
 
 USE_ONLY_REAL_EVENTS = True # if False, use all event types (including classification result)
 
-events_real = {"rest": 1, "left_hand": 2, "right_hand": 3, "feet": 4}
+events_real = {"left_hand": 20, "right_hand": 21}
 events_predicted = {"rest_predicted": 11, "left_hand_predicted": 12, "right_hand_predicted": 13, "feet_predicted": 14}
-classification_result = {"correct": 20, "incorrect": 21}
+classification_result = {"rest": 1, "correct": 2, "incorrect": 3, "feet": 4}
 all_possible_events_id = {**events_real, **events_predicted, **classification_result}
 
 def split_annotated_into_segments(file_paths, segment_length_s, step_s, output_dir):
@@ -68,8 +68,8 @@ def split_annotated_into_segments(file_paths, segment_length_s, step_s, output_d
             eeg=80e-6,  # 80 µV
         ) 
 
-        task_margin = 1.5 # event is when cue is shown
-        task_duration = 3.5
+        task_margin = 0.0 # event is when cue is shown
+        task_duration = 1.0
         task_end = task_margin + task_duration
         epochs = mne.Epochs(
             raw=raw,
@@ -100,7 +100,7 @@ if __name__ == "__main__":
     else:
         segment_length_default = 3.5
         step_default = 3.5
-        output_dir_default = base_dir / "brainbot_data/processed_new"
+        output_dir_default = base_dir / "brainbot_data/processed_new_errp"
         
         s = input(f"Enter segment length in seconds [default {segment_length_default}]: ").strip()
         segment_length = float(s) if s else segment_length_default

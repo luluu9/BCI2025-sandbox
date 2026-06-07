@@ -9,7 +9,7 @@ mne.set_log_level('INFO')
 
 SUBJECTS = 5
 MAX_TRIALS = 1
-INTERVALS = [[0, 3.5]]
+INTERVALS = [[0, 1.0]]
 
 datasets = get_brainbot_datasets(subjects=SUBJECTS, max_trials=MAX_TRIALS, brainbot_intervals=INTERVALS)
 dataset_results = {}
@@ -22,8 +22,8 @@ print("Used electrodes:", electrodes)
 
 brainbot_datasets = get_brainbot_datasets(subjects=SUBJECTS, max_trials=MAX_TRIALS, brainbot_intervals=INTERVALS)
 
-results = run_moabb_benchmark("pipelines_MI", datasets_list=brainbot_datasets, overwrite=False)
+results = run_moabb_benchmark("pipelines_MI", datasets_list=brainbot_datasets, overwrite=True)
 print_results_summary(results)
 
-results = run_moabb_benchmark("pipelines_MI_tensorflow", datasets_list=brainbot_datasets, overwrite=False)
+results = run_moabb_benchmark("pipelines_MI_tensorflow", datasets_list=brainbot_datasets, overwrite=True)
 print_results_summary(results)

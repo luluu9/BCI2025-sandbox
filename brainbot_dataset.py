@@ -26,7 +26,7 @@ class BrainBotDataset(moabb.datasets.base.BaseDataset):
             Number of sessions per subject.
         """
         duration_ms = int((interval[1] - interval[0]) * 1000)
-        dataset_code = f"BrainBot-PaperMethodology-{duration_ms}ms-InitialFiltering"
+        dataset_code = f"BrainBotErrP-PaperMethodology-{duration_ms}ms-InitialFiltering"
 
         super().__init__(
             subjects=subjects,
@@ -78,7 +78,7 @@ class BrainBotDataset(moabb.datasets.base.BaseDataset):
         
         return sessions
 
-def get_brainbot_dataset(interval=[0.0, 3.5]):
+def get_brainbot_dataset(interval=[0.0, 1.0]):
     # moabb suggests to have sessions_per_subjects as min number of sessions across subjects
     # so this may lead to some issues, but for now assume max sessions to use all data
     # (currently no drawbacks of this approach seen)
@@ -138,7 +138,7 @@ def generate_file_structure(path):
     return file_struct
 
 
-data_dir = r"brainbot_data/processed_new/"
+data_dir = r"brainbot_data/processed_new_errp/"
 files = generate_file_structure(data_dir)
 
 # assert that event ids are consistent across all subject files
@@ -148,7 +148,7 @@ for subject_id in files:
     for session in subject_sessions:
         for file in session:
             loaded_events_id = mne.read_events(data_dir+file, return_event_id=True)[1]
-            #print(loaded_events_id)
+            print(loaded_events_id)
             if previous_events_id is not None:
                 assert loaded_events_id == previous_events_id, f"Event IDs do not match in file {file}"
             previous_events_id = loaded_events_id
