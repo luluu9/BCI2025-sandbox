@@ -1,81 +1,41 @@
 ,score,time,samples,subject,session,channels,n_sessions,dataset,pipeline,paradigm,evaluation
-0,0.2695922,17.817772,238.0,1,0,16,1,BrainBot-PaperMethodology-3500ms,CSP + SVM Grid,MotorImagery,WithinSession
-1,0.21870567,21.222145,238.0,2,0,16,1,BrainBot-PaperMethodology-3500ms,CSP + SVM Grid,MotorImagery,WithinSession
-2,0.31507093,19.979301,238.0,3,0,16,1,BrainBot-PaperMethodology-3500ms,CSP + SVM Grid,MotorImagery,WithinSession
-3,0.21010639,17.396788,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms,CSP + SVM Grid,MotorImagery,WithinSession
-4,0.31764185,17.004353,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms,CSP + SVM Grid,MotorImagery,WithinSession
-5,0.5106383,13.717909,237.0,1,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,CSP + SVM Grid,MotorImagery,WithinSession
-6,0.24917874,12.966561,229.0,2,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,CSP + SVM Grid,MotorImagery,WithinSession
-7,0.28760406,13.737498,233.0,3,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,CSP + SVM Grid,MotorImagery,WithinSession
-8,0.44078013,13.697596,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,CSP + SVM Grid,MotorImagery,WithinSession
-9,0.44335106,13.543698,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,CSP + SVM Grid,MotorImagery,WithinSession
-10,0.39875886,0.2953054,238.0,1,0,16,1,BrainBot-PaperMethodology-3500ms,FgMDM,MotorImagery,WithinSession
-11,0.25638297,0.28978807,238.0,2,0,16,1,BrainBot-PaperMethodology-3500ms,FgMDM,MotorImagery,WithinSession
-12,0.40345743,0.31535777,238.0,3,0,16,1,BrainBot-PaperMethodology-3500ms,FgMDM,MotorImagery,WithinSession
-13,0.30283687,0.32041192,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms,FgMDM,MotorImagery,WithinSession
-14,0.43927306,0.31039834,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms,FgMDM,MotorImagery,WithinSession
-15,0.49335107,0.29403815,237.0,1,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,FgMDM,MotorImagery,WithinSession
-16,0.24859904,0.28767258,229.0,2,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,FgMDM,MotorImagery,WithinSession
-17,0.33061978,0.29221788,233.0,3,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,FgMDM,MotorImagery,WithinSession
-18,0.37757093,0.29068685,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,FgMDM,MotorImagery,WithinSession
-19,0.48519504,0.30331105,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,FgMDM,MotorImagery,WithinSession
-20,0.4156915,2.8600686,238.0,1,0,16,1,BrainBot-PaperMethodology-3500ms,TS ElasticNet Grid,MotorImagery,WithinSession
-21,0.31498227,2.6626027,238.0,2,0,16,1,BrainBot-PaperMethodology-3500ms,TS ElasticNet Grid,MotorImagery,WithinSession
-22,0.39893618,3.2079298,238.0,3,0,16,1,BrainBot-PaperMethodology-3500ms,TS ElasticNet Grid,MotorImagery,WithinSession
-23,0.3447695,2.5904598,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms,TS ElasticNet Grid,MotorImagery,WithinSession
-24,0.4474291,3.7151747,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms,TS ElasticNet Grid,MotorImagery,WithinSession
-25,0.51001775,1.5164026,237.0,1,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,TS ElasticNet Grid,MotorImagery,WithinSession
-26,0.24434783,1.5357778,229.0,2,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,TS ElasticNet Grid,MotorImagery,WithinSession
-27,0.3481036,1.4640911,233.0,3,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,TS ElasticNet Grid,MotorImagery,WithinSession
-28,0.40700355,1.5105795,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,TS ElasticNet Grid,MotorImagery,WithinSession
-29,0.43102837,1.4899102,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,TS ElasticNet Grid,MotorImagery,WithinSession
-30,0.2140071,0.14163837,238.0,1,0,16,1,BrainBot-PaperMethodology-3500ms,CSP + LDA,MotorImagery,WithinSession
-31,0.24423759,0.14703384,238.0,2,0,16,1,BrainBot-PaperMethodology-3500ms,CSP + LDA,MotorImagery,WithinSession
-32,0.35682625,0.16474709,238.0,3,0,16,1,BrainBot-PaperMethodology-3500ms,CSP + LDA,MotorImagery,WithinSession
-33,0.21835107,0.11315946,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms,CSP + LDA,MotorImagery,WithinSession
-34,0.30124113,0.102627374,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms,CSP + LDA,MotorImagery,WithinSession
-35,0.53129435,0.09522619,237.0,1,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,CSP + LDA,MotorImagery,WithinSession
-36,0.2536232,0.08260927,229.0,2,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,CSP + LDA,MotorImagery,WithinSession
-37,0.2918594,0.086543515,233.0,3,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,CSP + LDA,MotorImagery,WithinSession
-38,0.46161348,0.09199099,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,CSP + LDA,MotorImagery,WithinSession
-39,0.46001774,0.090603545,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,CSP + LDA,MotorImagery,WithinSession
-40,0.4156915,1.67087,238.0,1,0,16,1,BrainBot-PaperMethodology-3500ms,Tangent Space SVM Grid,MotorImagery,WithinSession
-41,0.32739362,1.6308736,238.0,2,0,16,1,BrainBot-PaperMethodology-3500ms,Tangent Space SVM Grid,MotorImagery,WithinSession
-42,0.45789006,1.6793053,238.0,3,0,16,1,BrainBot-PaperMethodology-3500ms,Tangent Space SVM Grid,MotorImagery,WithinSession
-43,0.35735816,1.6741221,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms,Tangent Space SVM Grid,MotorImagery,WithinSession
-44,0.43962765,1.6795205,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms,Tangent Space SVM Grid,MotorImagery,WithinSession
-45,0.5231383,1.6067548,237.0,1,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,Tangent Space SVM Grid,MotorImagery,WithinSession
-46,0.24019323,1.5631589,229.0,2,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,Tangent Space SVM Grid,MotorImagery,WithinSession
-47,0.32220167,1.556653,233.0,3,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,Tangent Space SVM Grid,MotorImagery,WithinSession
-48,0.37792554,1.632122,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,Tangent Space SVM Grid,MotorImagery,WithinSession
-49,0.46870568,1.5966289,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,Tangent Space SVM Grid,MotorImagery,WithinSession
-50,0.21001773,0.13390021,238.0,1,0,16,1,BrainBot-PaperMethodology-3500ms,DLCSPauto + shLDA,MotorImagery,WithinSession
-51,0.2231383,0.14580373,238.0,2,0,16,1,BrainBot-PaperMethodology-3500ms,DLCSPauto + shLDA,MotorImagery,WithinSession
-52,0.35265958,0.16387983,238.0,3,0,16,1,BrainBot-PaperMethodology-3500ms,DLCSPauto + shLDA,MotorImagery,WithinSession
-53,0.19734043,0.11430059,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms,DLCSPauto + shLDA,MotorImagery,WithinSession
-54,0.30141845,0.10464482,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms,DLCSPauto + shLDA,MotorImagery,WithinSession
-55,0.53554964,0.09151731,237.0,1,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,DLCSPauto + shLDA,MotorImagery,WithinSession
-56,0.24492754,0.081711575,229.0,2,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,DLCSPauto + shLDA,MotorImagery,WithinSession
-57,0.2960222,0.08902164,233.0,3,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,DLCSPauto + shLDA,MotorImagery,WithinSession
-58,0.47021276,0.09082804,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,DLCSPauto + shLDA,MotorImagery,WithinSession
-59,0.44335106,0.09183922,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,DLCSPauto + shLDA,MotorImagery,WithinSession
-60,0.42003545,0.12802497,238.0,1,0,16,1,BrainBot-PaperMethodology-3500ms,Tangent Space LR,MotorImagery,WithinSession
-61,0.30248228,0.12508321,238.0,2,0,16,1,BrainBot-PaperMethodology-3500ms,Tangent Space LR,MotorImagery,WithinSession
-62,0.40735817,0.12048221,238.0,3,0,16,1,BrainBot-PaperMethodology-3500ms,Tangent Space LR,MotorImagery,WithinSession
-63,0.32792553,0.12079263,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms,Tangent Space LR,MotorImagery,WithinSession
-64,0.46852836,0.12907863,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms,Tangent Space LR,MotorImagery,WithinSession
-65,0.50177306,0.11340322,237.0,1,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,Tangent Space LR,MotorImagery,WithinSession
-66,0.26608697,0.12335257,229.0,2,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,Tangent Space LR,MotorImagery,WithinSession
-67,0.32210916,0.10689578,233.0,3,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,Tangent Space LR,MotorImagery,WithinSession
-68,0.40709218,0.11404896,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,Tangent Space LR,MotorImagery,WithinSession
-69,0.481117,0.11380772,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,Tangent Space LR,MotorImagery,WithinSession
-70,0.272961,0.08406882,238.0,1,0,16,1,BrainBot-PaperMethodology-3500ms,MDM,MotorImagery,WithinSession
-71,0.17650709,0.08150902,238.0,2,0,16,1,BrainBot-PaperMethodology-3500ms,MDM,MotorImagery,WithinSession
-72,0.31861702,0.08778806,238.0,3,0,16,1,BrainBot-PaperMethodology-3500ms,MDM,MotorImagery,WithinSession
-73,0.19343972,0.08486843,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms,MDM,MotorImagery,WithinSession
-74,0.2594858,0.08541193,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms,MDM,MotorImagery,WithinSession
-75,0.49361703,0.07751946,237.0,1,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,MDM,MotorImagery,WithinSession
-76,0.20975846,0.07700376,229.0,2,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,MDM,MotorImagery,WithinSession
-77,0.2961147,0.0736753,233.0,3,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,MDM,MotorImagery,WithinSession
-78,0.3776596,0.07784963,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,MDM,MotorImagery,WithinSession
-79,0.44751772,0.07782545,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering,MDM,MotorImagery,WithinSession
+0,0.6401118,0.27544785,237.0,1,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,Tangent Space LR,MotorImagery,WithinSession
+1,0.45062262,0.314115,229.0,2,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,Tangent Space LR,MotorImagery,WithinSession
+2,0.67467535,0.2805985,233.0,3,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,Tangent Space LR,MotorImagery,WithinSession
+3,0.759412,0.27951702,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,Tangent Space LR,MotorImagery,WithinSession
+4,0.8295875,0.31314412,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,Tangent Space LR,MotorImagery,WithinSession
+5,0.6029305,1.5878755,237.0,1,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,Tangent Space SVM Grid,MotorImagery,WithinSession
+6,0.4294767,1.5681353,229.0,2,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,Tangent Space SVM Grid,MotorImagery,WithinSession
+7,0.6301299,1.572715,233.0,3,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,Tangent Space SVM Grid,MotorImagery,WithinSession
+8,0.72901034,1.6975837,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,Tangent Space SVM Grid,MotorImagery,WithinSession
+9,0.7939815,1.6502397,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,Tangent Space SVM Grid,MotorImagery,WithinSession
+10,0.60233647,0.07352547,237.0,1,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,MDM,MotorImagery,WithinSession
+11,0.4472307,0.074675605,229.0,2,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,MDM,MotorImagery,WithinSession
+12,0.63441557,0.07455416,233.0,3,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,MDM,MotorImagery,WithinSession
+13,0.72426045,0.08152385,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,MDM,MotorImagery,WithinSession
+14,0.7708333,0.07794981,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,MDM,MotorImagery,WithinSession
+15,0.60854256,0.052626133,237.0,1,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,DLCSPauto + shLDA,MotorImagery,WithinSession
+16,0.45669085,0.04789572,229.0,2,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,DLCSPauto + shLDA,MotorImagery,WithinSession
+17,0.63025975,0.04865589,233.0,3,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,DLCSPauto + shLDA,MotorImagery,WithinSession
+18,0.719038,0.050049353,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,DLCSPauto + shLDA,MotorImagery,WithinSession
+19,0.7684764,0.055903815,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,DLCSPauto + shLDA,MotorImagery,WithinSession
+20,0.61458755,0.053232003,237.0,1,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,CSP + LDA,MotorImagery,WithinSession
+21,0.44946268,0.047638845,229.0,2,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,CSP + LDA,MotorImagery,WithinSession
+22,0.6257576,0.049518157,233.0,3,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,CSP + LDA,MotorImagery,WithinSession
+23,0.7063059,0.049713325,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,CSP + LDA,MotorImagery,WithinSession
+24,0.7675505,0.052453566,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,CSP + LDA,MotorImagery,WithinSession
+25,0.5923593,7.920066,237.0,1,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,CSP + SVM Grid,MotorImagery,WithinSession
+26,0.5161548,7.7277184,229.0,2,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,CSP + SVM Grid,MotorImagery,WithinSession
+27,0.60458875,7.77588,233.0,3,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,CSP + SVM Grid,MotorImagery,WithinSession
+28,0.7361977,8.296098,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,CSP + SVM Grid,MotorImagery,WithinSession
+29,0.76969695,8.349046,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,CSP + SVM Grid,MotorImagery,WithinSession
+30,0.6328764,0.2853807,237.0,1,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,FgMDM,MotorImagery,WithinSession
+31,0.47725362,0.26380247,229.0,2,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,FgMDM,MotorImagery,WithinSession
+32,0.63610387,0.2894656,233.0,3,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,FgMDM,MotorImagery,WithinSession
+33,0.73857987,0.28953332,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,FgMDM,MotorImagery,WithinSession
+34,0.8195707,0.2814607,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,FgMDM,MotorImagery,WithinSession
+35,0.6241318,2.0379388,237.0,1,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,TS ElasticNet Grid,MotorImagery,WithinSession
+36,0.48898268,2.0185826,229.0,2,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,TS ElasticNet Grid,MotorImagery,WithinSession
+37,0.68116885,1.9605389,233.0,3,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,TS ElasticNet Grid,MotorImagery,WithinSession
+38,0.7662037,2.0743587,238.0,4,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,TS ElasticNet Grid,MotorImagery,WithinSession
+39,0.81721383,2.1915812,239.0,5,0,16,1,BrainBot-PaperMethodology-3500ms-InitialFiltering-RestVsMI,TS ElasticNet Grid,MotorImagery,WithinSession

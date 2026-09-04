@@ -7,8 +7,27 @@ import re
 moabb.set_log_level('ERROR')
 mne.set_log_level('ERROR')
 
+REST_EVENT = "rest"
+MI_EVENT = "imagery"
+
+
+def build_rest_vs_mi_mapping(source_events):
+    """Map original event ids to a binary rest vs motor imagery scheme.
+
+    Returns (events, id_map) where events is the moabb event dict
+    {"rest": 1, "imagery": 2} and id_map maps original event ids to the new ids.
+    """
+    events = {REST_EVENT: 1, MI_EVENT: 2}
+    id_map = {
+        event_id: (events[REST_EVENT] if name == REST_EVENT else events[MI_EVENT])
+        for name, event_id in source_events.items()
+    }
+    return events, id_map
+
+
 class BrainBotDataset(moabb.datasets.base.BaseDataset):
-    def __init__(self, data_dir, subjects, events, interval, data_names, sessions_per_subject):
+    def __init__(self, data_dir, subjects, events, interval, data_names, sessions_per_subject,
+                 event_id_map=None, code_suffix=""):
         """
         Parameters
         ----------
@@ -24,9 +43,15 @@ class BrainBotDataset(moabb.datasets.base.BaseDataset):
             Dictionary mapping subject identifiers to their corresponding data file names (can be multiple runs).
         sessions_per_subject : int
             Number of sessions per subject.
+        event_id_map : dict, optional
+            Mapping from the event ids stored in the files to the event ids used by
+            this dataset. Used to merge/relabel classes (e.g. rest vs imagery).
+        code_suffix : str, optional
+            Suffix appended to the dataset code, so different labelling schemes do
+            not share the same moabb cache entry.
         """
         duration_ms = int((interval[1] - interval[0]) * 1000)
-        dataset_code = f"BrainBot-PaperMethodology-{duration_ms}ms-InitialFiltering"
+        dataset_code = f"BrainBot-PaperMethodology-{duration_ms}ms-InitialFiltering{code_suffix}"
 
         super().__init__(
             subjects=subjects,
@@ -38,6 +63,7 @@ class BrainBotDataset(moabb.datasets.base.BaseDataset):
         )
         self.data_dir = data_dir
         self.data_names = data_names
+        self.event_id_map = event_id_map
 
     def data_path(self, subject, path=None, force_update=False, update_path=None, verbose=None):
         base = self.data_dir
@@ -64,7 +90,10 @@ class BrainBotDataset(moabb.datasets.base.BaseDataset):
                 stim = np.zeros(n_epochs * n_times, dtype=int)
                 for j, ev in enumerate(epochs.events):
                     sample = j * n_times
-                    stim[sample] = int(ev[2])
+                    event_id = int(ev[2])
+                    if self.event_id_map is not None:
+                        event_id = self.event_id_map[event_id]
+                    stim[sample] = event_id
                 data_with_stim = np.vstack([data_flat, stim])
 
                 sfreq = epochs.info['sfreq']
@@ -78,19 +107,29 @@ class BrainBotDataset(moabb.datasets.base.BaseDataset):
         
         return sessions
 
-def get_brainbot_dataset(interval=[0.0, 3.5]):
+def get_brainbot_dataset(interval=[0.0, 3.5], rest_vs_mi=False):
     # moabb suggests to have sessions_per_subjects as min number of sessions across subjects
     # so this may lead to some issues, but for now assume max sessions to use all data
     # (currently no drawbacks of this approach seen)
     sessions_per_subject = len(max(files.values(), key=len))
     subjects_sorted = sorted(list(files.keys()))
+
+    events = loaded_events_id
+    event_id_map = None
+    code_suffix = ""
+    if rest_vs_mi:
+        events, event_id_map = build_rest_vs_mi_mapping(loaded_events_id)
+        code_suffix = "-RestVsMI"
+
     dataset = BrainBotDataset(
         data_dir=data_dir,
         subjects=subjects_sorted,
-        events=loaded_events_id,
+        events=events,
         interval=interval,
         data_names=files,
-        sessions_per_subject=sessions_per_subject)
+        sessions_per_subject=sessions_per_subject,
+        event_id_map=event_id_map,
+        code_suffix=code_suffix)
     return dataset
 
 
