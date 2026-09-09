@@ -1,17 +1,20 @@
 """
-Wpływ długości okna czasowego na accuracy klasyfikatora TSLR.
+Wpływ długości okna czasowego na dokładność klasyfikacji potoku TS+LR.
 
-Okna testowane: TMIN_START .. dataset_tmax co TMAX_STEP sekund.
-Dla każdego okna liczymy cross-validated test accuracy (N_FOLDS-fold StratifiedKFold).
-Filtracja 8-32 Hz wewnątrz CV (bez przecieku).
+Datasety (każdy z własnym, natywnym zestawem klas):
+  - BrainBot (subject 3, wszystkie sesje) — lewa/prawa ręka, obie nogi, spoczynek
+  - Weibo2014                              — lewa/prawa ręka, obie nogi, spoczynek
+  - PhysionetMI                            — lewa/prawa ręka, obie nogi, spoczynek
+  - Zhou2016                               — lewa/prawa ręka, obie nogi (bez spoczynku)
+  - BNCI2014_001                           — lewa/prawa ręka, obie nogi, język (bez spoczynku)
 
-Layout wykresu:
-  Wiersze  = datasety (BrainBot, Weibo2014, PhysionetMI)
-  Kolumny  = sesje (BrainBot) lub subjecty (MOABB)
-  Oś X     = długość okna [s]
-  Oś Y     = test accuracy (mean ± std po foldach)
+Oś X = długość okna [s] (TMIN_START..tmax_max co TMAX_STEP)
+Filtracja: 8–32 Hz IIR wewnątrz CV (bez przecieku danych).
 
-Wynik: window_length_effect.png
+Wyniki cache'owane per (dataset, subject/sesja) w window_length_cache/,
+dzięki czemu można przegenerować sam wykres bez ponownego treningu.
+
+Wynik: ../paper/img/5_dlugosc_okna.png
 """
 
 import os
@@ -33,7 +36,7 @@ from sklearn.model_selection import StratifiedKFold, cross_val_score
 from sklearn.pipeline import Pipeline
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "moabb"))
-from moabb.datasets import Weibo2014, PhysionetMI
+from moabb.datasets import Weibo2014, PhysionetMI, Zhou2016, BNCI2014_001
 from moabb.paradigms import MotorImagery
 
 mne.set_log_level('ERROR')
@@ -41,28 +44,47 @@ mne.set_log_level('ERROR')
 # ---------------------------------------------------------------------------
 # Konfiguracja
 # ---------------------------------------------------------------------------
-TARGET_EVENTS   = ['left_hand', 'right_hand', 'feet', 'rest']
-BRAINBOT_EVENTS = {'rest': 1, 'left_hand': 2, 'right_hand': 3, 'feet': 5}
-
-TMIN_START = 1.0    # pierwsze okno: od 0 do 1 s
-TMAX_STEP  = 0.5    # krok
+TMIN_START = 1.0
+TMAX_STEP  = 0.5
 N_FOLDS    = 5
 N_JOBS     = 32
+
+# Katalog z zapisanymi wynikami per (dataset, subject/sesja) — pozwala
+# przegenerować sam wykres bez ponownego trenowania modeli.
+CACHE_DIR = Path(__file__).parent / "window_length_cache"
 
 BRAINBOT_SUBJECT  = 3
 BRAINBOT_DATA_DIR = Path(__file__).parent / "brainbot_data/5s-interval-nofiltering"
 BRAINBOT_TMAX_MAX = 5.0
+BRAINBOT_EVENTS   = {'rest': 1, 'left_hand': 2, 'right_hand': 3, 'feet': 5}
 
-# MOABB datasety — (klasa, subjects, tmax_max)
-# tmax_max = maksymalne okno sensowne dla danego datasetu
+# (dataset_instance, name, events, subjects, tmax_max)
 MOABB_DATASETS = [
-    # (dataset_instance, name, subjects, tmax_max)
-    (Weibo2014(),   "Weibo2014",   None,             4.0),   # okno [3,7] → 4 s
-    (PhysionetMI(), "PhysionetMI", list(range(1, 11)), 3.0),  # okno [0,3] → 3 s
+    (Weibo2014(),    "Weibo2014",
+     ['left_hand', 'right_hand', 'feet', 'rest'],
+     None, 4.0),
+    (PhysionetMI(),  "PhysionetMI",
+     ['left_hand', 'right_hand', 'feet', 'rest'],
+     list(range(1, 11)), 3.0),
+    (Zhou2016(),     "Zhou2016",
+     ['left_hand', 'right_hand', 'feet'],
+     [1, 2, 3, 4], 5.0),
+    (BNCI2014_001(), "BNCI2014_001",
+     ['left_hand', 'right_hand', 'feet', 'tongue'],
+     list(range(1, 10)), 4.0),
 ]
 
+EVENT_LABELS_PL = {
+    'left_hand': 'lewa ręka',
+    'right_hand': 'prawa ręka',
+    'feet': 'obie nogi',
+    'tongue': 'język',
+    'rest': 'spoczynek',
+}
+
+
 # ---------------------------------------------------------------------------
-# Pipeline TSLR (Tangent Space + Logistic Regression)
+# Pipeline TS+LR — filtracja 8–32 Hz IIR wewnątrz CV (bez przecieku)
 # ---------------------------------------------------------------------------
 class EpochBandpassFilter(BaseEstimator, TransformerMixin):
     def __init__(self, sfreq=256.0, l_freq=8.0, h_freq=32.0, method='iir'):
@@ -97,9 +119,9 @@ def make_tslr(sfreq=256.0):
 # ---------------------------------------------------------------------------
 # BrainBot — ładowanie
 # ---------------------------------------------------------------------------
-def load_brainbot_session(subject_id, session_id):
+def load_brainbot_session(session_id):
     pattern = re.compile(
-        rf"subject{subject_id}_ses{session_id}_run\d+_.*\.epo\.fif"
+        rf"subject{BRAINBOT_SUBJECT}_ses{session_id}_run\d+_.*\.epo\.fif"
     )
     files = sorted(f for f in os.listdir(BRAINBOT_DATA_DIR) if pattern.match(f))
     if not files:
@@ -116,9 +138,9 @@ def load_brainbot_session(subject_id, session_id):
     return epochs, epochs.info['sfreq']
 
 
-def get_brainbot_sessions(subject_id):
-    """Zwraca posortowaną listę ID sesji dostępnych dla danego subjecta."""
-    pattern = re.compile(rf"subject{subject_id}_ses(\d+)_run\d+_.*\.epo\.fif")
+def get_brainbot_sessions():
+    """Zwraca posortowaną listę ID sesji dostępnych dla BRAINBOT_SUBJECT."""
+    pattern = re.compile(rf"subject{BRAINBOT_SUBJECT}_ses(\d+)_run\d+_.*\.epo\.fif")
     return sorted(set(
         int(m.group(1))
         for f in os.listdir(BRAINBOT_DATA_DIR)
@@ -141,14 +163,14 @@ def brainbot_get_xy(epochs, tmax):
 # ---------------------------------------------------------------------------
 # MOABB — ładowanie (surowe, filtracja w CV)
 # ---------------------------------------------------------------------------
-def load_moabb_subject(dataset, subject, tmax_max):
+def load_moabb_subject(dataset, events, subject, tmax_max):
     """
     Zwraca (X_full, y, sfreq) — pełne epoki (do tmax_max).
     Używamy szerokiego pasma (1-45 Hz) żeby nie filtrować przed CV.
     """
     paradigm = MotorImagery(
-        events=TARGET_EVENTS,
-        n_classes=len(TARGET_EVENTS),
+        events=events,
+        n_classes=len(events),
         fmin=1.0,
         fmax=45.0,
         tmin=0.0,
@@ -160,7 +182,7 @@ def load_moabb_subject(dataset, subject, tmax_max):
             dataset, subjects=[subject], return_epochs=True
         )
     except Exception as e:
-        print(f"BŁĄD subject {subject}: {e}")
+        print(f"  BŁĄD subject {subject}: {e}")
         return None, None, None
 
     sfreq = epochs_obj.info['sfreq']
@@ -170,133 +192,170 @@ def load_moabb_subject(dataset, subject, tmax_max):
     return X, y, sfreq
 
 
-def moabb_crop_x(X, sfreq, tmax):
-    """Przycina X (n_epochs, n_ch, n_times) do tmax sekund."""
-    n_samples = int(np.round(tmax * sfreq)) + 1
-    return X[:, :, :n_samples]
+# ---------------------------------------------------------------------------
+# Cache wyników per (dataset, subject/sesja) na dysku
+# ---------------------------------------------------------------------------
+def cache_path(ds_name, unit_id):
+    return CACHE_DIR / f"{ds_name}_{unit_id}.npz"
+
+
+def load_cached_curve(ds_name, unit_id):
+    path = cache_path(ds_name, unit_id)
+    if not path.exists():
+        return None
+    data = np.load(path)
+    return data["tmax_values"], data["means"], data["stds"]
+
+
+def save_cached_curve(ds_name, unit_id, tmax_values, means, stds):
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    np.savez(cache_path(ds_name, unit_id),
+             tmax_values=tmax_values, means=means, stds=stds)
 
 
 # ---------------------------------------------------------------------------
 # Obliczanie accuracy vs. tmax
 # ---------------------------------------------------------------------------
-def compute_window_curve(X_full, y, sfreq, tmax_values):
+def compute_window_curve(X_full, y, sfreq, tmax_max):
     """
-    Dla każdego tmax w tmax_values liczy cross-val test accuracy.
-    X_full: epoki pełnej długości (będą przycinane do każdego tmax).
-    Zwraca (means, stds) — tablice tej samej długości co tmax_values.
+    Dla każdego okna w zakresie TMIN_START..tmax_max liczy cross-val test
+    accuracy. Zwraca (tmax_values, means, stds).
     """
+    tmax_values = np.arange(TMIN_START, tmax_max + 0.01, TMAX_STEP)
     cv = StratifiedKFold(n_splits=N_FOLDS, shuffle=True, random_state=42)
     means, stds = [], []
-
     for tmax in tmax_values:
-        X_crop = moabb_crop_x(X_full, sfreq, tmax)
-        estimator = make_tslr(sfreq=sfreq)
-        scores = cross_val_score(estimator, X_crop, y,
+        n_samples = int(np.round(tmax * sfreq)) + 1
+        X_crop = X_full[:, :, :n_samples]
+        scores = cross_val_score(make_tslr(sfreq), X_crop, y,
                                  cv=cv, scoring='accuracy', n_jobs=N_JOBS)
         means.append(scores.mean())
         stds.append(scores.std())
         print(f"    tmax={tmax:.1f}s  acc={scores.mean():.3f} ± {scores.std():.3f}")
-
-    return np.array(means), np.array(stds)
+    return tmax_values, np.array(means), np.array(stds)
 
 
 # ---------------------------------------------------------------------------
-# Zbieranie danych per-dataset
+# Zbieranie danych per-dataset (z użyciem cache)
 # ---------------------------------------------------------------------------
 def collect_brainbot():
-    """
-    Zwraca list of (label, tmax_values, means, stds) — jedna pozycja na sesję.
-    """
-    sessions = get_brainbot_sessions(BRAINBOT_SUBJECT)
-    tmax_values = np.arange(TMIN_START, BRAINBOT_TMAX_MAX + 0.01, TMAX_STEP)
+    """Zwraca listę (label, tmax_values, means, stds) — jedna pozycja na sesję."""
+    sessions = get_brainbot_sessions()
     entries = []
     for ses_id in sessions:
-        print(f"\n  [BrainBot sub{BRAINBOT_SUBJECT}] sesja {ses_id}")
-        epochs, sfreq = load_brainbot_session(BRAINBOT_SUBJECT, ses_id)
+        unit_id = f"ses{ses_id}"
+        cached = load_cached_curve("BrainBot", unit_id)
+        if cached is not None:
+            tv, m, s = cached
+            print(f"  [BrainBot] sesja {ses_id}: wczytano z cache")
+            entries.append((f"Sesja {ses_id}", tv, m, s))
+            continue
+
+        print(f"  [BrainBot] sesja {ses_id}: trening...")
+        epochs, sfreq = load_brainbot_session(ses_id)
         if epochs is None:
             print("    brak plików")
             continue
         X_full, y = brainbot_get_xy(epochs, BRAINBOT_TMAX_MAX)
-        means, stds = compute_window_curve(X_full, y, sfreq, tmax_values)
-        entries.append((f"Sesja {ses_id}", tmax_values, means, stds))
+        tv, m, s = compute_window_curve(X_full, y, sfreq, BRAINBOT_TMAX_MAX)
+        save_cached_curve("BrainBot", unit_id, tv, m, s)
+        entries.append((f"Sesja {ses_id}", tv, m, s))
     return entries
 
 
-def collect_moabb(dataset, dataset_name, subjects, tmax_max):
-    """
-    Zwraca list of (label, tmax_values, means, stds) — jedna pozycja na subject.
-    """
+def collect_moabb(dataset, ds_name, events, subjects, tmax_max):
+    """Zwraca listę (label, tmax_values, means, stds) — jedna pozycja na subject."""
     subjects_list = subjects if subjects is not None else dataset.subject_list
-    tmax_values = np.arange(TMIN_START, tmax_max + 0.01, TMAX_STEP)
     entries = []
     for subj in subjects_list:
-        print(f"\n  [{dataset_name}] subject {subj}")
-        X_full, y, sfreq = load_moabb_subject(dataset, subj, tmax_max)
+        cached = load_cached_curve(ds_name, subj)
+        if cached is not None:
+            tv, m, s = cached
+            print(f"  [{ds_name}] subject {subj}: wczytano z cache")
+            entries.append((f"Sub {subj}", tv, m, s))
+            continue
+
+        print(f"  [{ds_name}] subject {subj}: trening...")
+        X_full, y, sfreq = load_moabb_subject(dataset, events, subj, tmax_max)
         if X_full is None:
             continue
-        means, stds = compute_window_curve(X_full, y, sfreq, tmax_values)
-        entries.append((f"Sub {subj}", tmax_values, means, stds))
+        print(f"    {len(X_full)} epok, sfreq={sfreq} Hz")
+        tv, m, s = compute_window_curve(X_full, y, sfreq, tmax_max)
+        save_cached_curve(ds_name, subj, tv, m, s)
+        entries.append((f"Sub {subj}", tv, m, s))
     return entries
 
 
 # ---------------------------------------------------------------------------
-# Rysowanie
+# Rysowanie — agregacja uczestników/sesji w jeden wykres na dataset
 # ---------------------------------------------------------------------------
 def plot_all(rows_data):
     """
-    rows_data: list of (row_title, chance, entries)
-      entries: list of (col_label, tmax_values, means, stds)
+    rows_data: list of (ds_name, events, chance, entries)
+      entries: list of (label, tmax_values, means, stds)
     """
-    n_rows = len(rows_data)
-    n_cols  = max(len(r[2]) for r in rows_data)  # max kolumn
+    n_datasets = len(rows_data)
+    n_cols = 2
+    n_rows = int(np.ceil(n_datasets / n_cols))
+    is_last_row_alone = n_datasets % n_cols == 1
 
-    fig, axes = plt.subplots(
-        n_rows, n_cols,
-        figsize=(4 * n_cols, 3.5 * n_rows),
-        squeeze=False,
-        gridspec_kw=dict(hspace=0.55, wspace=0.35),
-    )
+    fig = plt.figure(figsize=(6.0 * n_cols, 5.0 * n_rows))
+    gs = fig.add_gridspec(n_rows, n_cols * 2)
 
-    # ukryj nadmiarowe subploty
-    for row_idx, (row_title, chance, entries) in enumerate(rows_data):
-        for col_idx in range(n_cols):
-            ax = axes[row_idx][col_idx]
-            if col_idx >= len(entries):
-                ax.set_visible(False)
-                continue
+    axes_list = []
+    for i in range(n_datasets):
+        row, col = divmod(i, n_cols)
+        if is_last_row_alone and row == n_rows - 1:
+            # ostatni, samotny wykres — wyśrodkowany w rzędzie
+            ax = fig.add_subplot(gs[row, 1:3])
+        else:
+            ax = fig.add_subplot(gs[row, col * 2:col * 2 + 2])
+        axes_list.append(ax)
 
-            col_label, tmax_values, means, stds = entries[col_idx]
-            ax.plot(tmax_values, means, color="#1f77b4", linewidth=2, marker='o',
-                    markersize=4)
-            ax.fill_between(tmax_values, means - stds, means + stds,
-                            alpha=0.2, color="#1f77b4")
-            ax.axhline(chance, color='gray', linestyle='--', linewidth=1,
-                       label=f"chance={chance:.2f}")
-            ax.set_title(f"{row_title}\n{col_label}", fontsize=9)
-            ax.set_xlabel("Długość okna [s]")
-            ax.set_ylabel("Test accuracy")
-            ax.set_ylim(0, 1.05)
-            ax.set_xticks(tmax_values)
-            ax.tick_params(axis='x', labelrotation=45, labelsize=7)
-            ax.legend(fontsize=7)
-            ax.grid(True, alpha=0.3)
+    for ax, (ds_name, events, chance, entries) in zip(axes_list, rows_data):
+        tv = entries[0][1]
+        curves = np.vstack([m for _, _, m, _ in entries])
+        agg_mean = curves.mean(axis=0)
+        agg_std = curves.std(axis=0, ddof=1) if len(entries) > 1 else np.zeros_like(agg_mean)
+
+        for _, _, m, _ in entries:
+            ax.plot(tv, m, color="gray", linewidth=1, alpha=0.55, zorder=1)
+
+        ax.plot(tv, agg_mean, color="#1f77b4", linewidth=2.5,
+                marker='o', markersize=5, zorder=3, label="Średnia")
+        ax.fill_between(tv, agg_mean - agg_std, agg_mean + agg_std,
+                        alpha=0.25, color="#1f77b4", zorder=2,
+                        label="Odch. std.")
+        ax.axhline(chance, color='black', linestyle='--', linewidth=1,
+                   label=f"Poziom losowy ({chance:.2f})")
+
+        ax.set_title(f"{ds_name}\nn={len(entries)}",
+                     fontsize=10)
+        ax.set_xlabel("Długość okna [s]")
+        ax.set_ylabel("Dokładność klasyfikacji")
+        ax.set_ylim(0, 1.05)
+        ax.set_xticks(tv)
+        ax.grid(True, alpha=0.3)
+
+        handles, labels = ax.get_legend_handles_labels()
+        gray_line = plt.Line2D([0], [0], color="gray", linewidth=1, alpha=0.6)
+        ax.legend(handles + [gray_line], labels + ["Pojedynczy uczestnik/sesja"],
+                  fontsize=7, loc="lower right")
 
     fig.suptitle(
-        f"Wpływ długości okna na accuracy — TSLR (8–32 Hz filtr w CV)\n"
-        f"4 klasy: {', '.join(TARGET_EVENTS)}  |  {N_FOLDS}-fold CV",
-        fontsize=12, y=1.01,
+        "Wpływ długości okna sygnału na dokładność klasyfikacji potoku TS+LR",
+        fontsize=13,
     )
+    plt.tight_layout(rect=[0, 0, 1, 0.97])
 
-    out_path = Path(__file__).parent / "window_length_effect.png"
-    plt.savefig(out_path, dpi=130, bbox_inches='tight')
+    out_path = Path(__file__).parent.parent / "paper" / "img" / "5_dlugosc_okna.png"
+    plt.savefig(out_path, dpi=150, bbox_inches='tight')
     plt.close(fig)
     print(f"\nWykres zapisany: {out_path}")
 
 
 # ---------------------------------------------------------------------------
 if __name__ == "__main__":
-    chance_4cls = 1.0 / 4
-
     rows_data = []
 
     # --- BrainBot ---
@@ -305,16 +364,17 @@ if __name__ == "__main__":
     print("="*60)
     bb_entries = collect_brainbot()
     if bb_entries:
-        rows_data.append((f"BrainBot sub{BRAINBOT_SUBJECT}", chance_4cls, bb_entries))
+        bb_events = ['left_hand', 'right_hand', 'feet', 'rest']
+        rows_data.append(("BrainBot", bb_events, 1.0 / len(bb_events), bb_entries))
 
     # --- MOABB ---
-    for dataset, ds_name, subjects, tmax_max in MOABB_DATASETS:
+    for dataset, ds_name, events, subjects, tmax_max in MOABB_DATASETS:
         print("\n" + "="*60)
         print(f"Dataset: {ds_name}")
         print("="*60)
-        entries = collect_moabb(dataset, ds_name, subjects, tmax_max)
+        entries = collect_moabb(dataset, ds_name, events, subjects, tmax_max)
         if entries:
-            rows_data.append((ds_name, chance_4cls, entries))
+            rows_data.append((ds_name, events, 1.0 / len(events), entries))
 
     if rows_data:
         plot_all(rows_data)
